@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>有馬温泉 1泊2日 旅のしおり</title>
+  <style>
+    /* 基本スタイル */
+    body {
+      font-family: "Helvetica Neue", Helvetica, Arial, "Hiragino Sans", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom, #f5e6d3 0%, #e8d4b8 100%);
+      color: #4a4a4a;
+      line-height: 1.7;
+    }
+
+    /* ヘッダー */
+    header {
+      background: linear-gradient(135deg, #d4a574 0%, #c89b65 100%);
+      color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: '⛩️';
+      position: absolute;
+      font-size: 80px;
+      opacity: 0.2;
+      left: 20px;
+      top: 20px;
+    }
+
+    header::after {
+      content: '♨️';
+      position: absolute;
+      font-size: 80px;
+      opacity: 0.2;
+      right: 20px;
+      top: 20px;
+    }
+
+    header h1 {
+      margin: 0 0 12px 0;
+      font-size: 2.2em;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+      position: relative;
+      z-index: 1;
+    }
+
+    header p {
+      margin: 6px 0;
+      font-size: 1em;
+      opacity: 0.95;
+    }
+
+    .member-info {
+      background: rgba(255,255,255,0.25);
+      padding: 12px 16px;
+      border-radius: 12px;
+      margin-top: 16px;
+      font-size: 0.95em;
+      display: inline-block;
+    }
+
+    /* コンテナ */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-bottom: 40px;
+    }
+
+    /* セクション */
+    section {
+      padding: 30px 20px;
+      border-bottom: 1px solid #d4a574;
+      background: #fff;
+      margin-bottom: 3px;
+    }
+
+    .intro-section {
+      text-align: center;
+      background: linear-gradient(to bottom, #fff 0%, #fef9f3 100%);
+    }
+
+    .intro-section p {
+      font-size: 1.05em;
+      margin: 10px 0;
+    }
+
+    /* ナビゲーショングリッド */
+    .navigation-section {
+      background: #fff;
+    }
+
+    .nav-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .nav-card {
+      background: linear-gradient(to bottom, #fff 0%, #fef9f3 100%);
+      border: 2px solid #d4a574;
+      border-radius: 12px;
+      padding: 24px;
+      text-decoration: none;
+      color: #4a4a4a;
+      transition: all 0.3s;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+      text-align: center;
+      cursor: pointer;
+    }
+
+    .nav-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      border-color: #a67c52;
+    }
+
+    .nav-icon {
+      font-size: 3em;
+      margin-bottom: 12px;
+    }
+
+    .nav-card h3 {
+      color: #a67c52;
+      margin: 12px 0 8px 0;
+      font-size: 1.3em;
+      border: none;
+      padding: 0;
+    }
+
+    .nav-card p {
+      font-size: 0.9em;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* 見出し */
+    h2 {
+      background: linear-gradient(to right, #d4a574 0%, #e8d4b8 100%);
+      margin: 0;
+      padding: 16px 20px;
+      font-size: 1.4em;
+      border-left: 6px solid #a67c52;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      color: #5a4a3a;
+    }
+
+    h3 {
+      color: #a67c52;
+      margin: 20px 0 10px 0;
+      font-size: 1.2em;
+      border-bottom: 2px solid #d4a574;
+      padding-bottom: 8px;
+    }
+
+    /* 情報ボックス */
+    .info-box {
+      background: #fef9f3;
+      border-left: 5px solid #d4a574;
+      padding: 14px;
+      margin: 14px 0;
+      border-radius: 6px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    .info-box h3 {
+      margin-top: 0;
+      border: none;
+      padding: 0;
+    }
+
+    .highlight-box {
+      background: linear-gradient(to right, #fef9f3 0%, #fdf5eb 100%);
+      padding: 20px;
+      margin: 14px 0;
+      border-radius: 10px;
+      border: 2px solid #d4a574;
+    }
+
+    .highlight-box ul {
+      margin: 10px 0;
+      padding-left: 26px;
+    }
+
+    .highlight-box li {
+      margin: 8px 0;
+    }
+
+    /* リンクボタン */
+    .link-button {
+      display: inline-block;
+      padding: 8px 16px;
+      margin: 6px 6px 6px 0;
+      background: #7ba8c7;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 0.9em;
+      transition: all 0.3s;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .link-button:hover {
+      background: #6a94b3;
+      transform: translateY(-1px);
+      box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+    }
+
+    .link-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    /* フッター */
+    footer {
+      background: #d4a574;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      margin-top: 0;
+    }
+
+    footer p {
+      margin: 5px 0;
+      font-size: 0.9em;
+    }
+
+    /* レスポンシブ */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 1.6em;
+      }
+      
+      .nav-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      header::before,
+      header::after {
+        font-size: 50px;
+      }
+    }
+
+    strong {
+      color: #a67c52;
+    }
+
+    .price {
+      color: #d4774a;
+      font-weight: bold;
+      font-size: 1.1em;
+      margin: 8px 0;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>⛩️ 有馬温泉 1泊2日 パワースポット巡りの旅 ♨️</h1>
+  <p>2026年2月23日(祝月)〜24日(火)</p>
+  <p>碧南市出発・車移動・パワースポット5ヶ所・温泉・絶景・グルメ</p>
+  <div class="member-info">
+    👫 メンバー:奈々・なつき・よしお | 🚗 運転:よしおメイン+交代制
+  </div>
+</header>
+
+<div class="container">
+
+<section class="intro-section">
+  <h2>📖 この旅について</h2>
+  <p>この旅のコンセプトは<strong>「パワースポット巡り×温泉×絶景の旅」</strong>です。</p>
+  <p>🌟 <strong>5つのパワースポット</strong>(良縁・商売繁盛・金運)を巡り、日本三古湯の有馬温泉で癒されます!</p>
+  <p>天候・道路状況によって柔軟に予定変更OKです!</p>
+</section>
+
+<section class="navigation-section">
+  <h2>🗂️ メニュー</h2>
+  <div class="nav-grid">
+
+    <a class="nav-card" href="arima_day1.html">
+      <div class="nav-icon">📅</div>
+      <h3>Day1 スケジュール</h3>
+      <p>碧南→伊勢神宮→おかげ横丁<br>→有馬温泉</p>
+    </a>
+
+    <a class="nav-card" href="arima_day2.html">
+      <div class="nav-icon">📅</div>
+      <h3>Day2 スケジュール</h3>
+      <p>有馬三社巡り→生田神社<br>→六甲山夕暮れ&夜景→帰路</p>
+    </a>
+
+    <a class="nav-card" href="arima_powerspots.html">
+      <div class="nav-icon">⛩️</div>
+      <h3>パワースポット5選</h3>
+      <p>良縁・商売繁盛・金運UP!<br>伊勢神宮・有馬三社・生田神社</p>
+    </a>
+
+    <a class="nav-card" href="arima_hotel.html">
+      <div class="nav-icon">🏨</div>
+      <h3>宿泊:有馬 瑞宝園</h3>
+      <p>オールインクルーシブ<br>飲み放題・カラオケ・卓球</p>
+    </a>
+
+    <a class="nav-card" href="arima_budget.html">
+      <div class="nav-icon">💰</div>
+      <h3>予算まとめ</h3>
+      <p>1人あたり約30,000円〜<br>詳細内訳</p>
+    </a>
+
+    <a class="nav-card" href="arima_gourmet.html">
+      <div class="nav-icon">🍜</div>
+      <h3>グルメ情報</h3>
+      <p>伊勢うどん・赤福<br>有馬サイダー・炭酸せんべい</p>
+    </a>
+
+    <a class="nav-card" href="arima_checklist.html">
+      <div class="nav-icon">✅</div>
+      <h3>準備チェックリスト</h3>
+      <p>予約・持ち物・車関連<br>出発前確認事項</p>
+    </a>
+
+    <a class="nav-card" href="arima_caution.html">
+      <div class="nav-icon">⚠️</div>
+      <h3>注意事項</h3>
+      <p>運転・防寒対策<br>温泉マナー・緊急連絡先</p>
+    </a>
+
+    <a class="nav-card" href="arima_photo.html">
+      <div class="nav-icon">📸</div>
+      <h3>写真スポット</h3>
+      <p>伊勢神宮・湯泉神社<br>六甲山夜景(1000万ドル!)</p>
+    </a>
+
+  </div>
+</section>
+
+<section class="quick-info">
+  <h2>⚡ クイック情報</h2>
+  
+  <div class="info-box">
+    <h3>🌟 巡るパワースポット5ヶ所</h3>
+    <p><strong>① 伊勢神宮</strong>(日本最高峰・全体運UP)</p>
+    <p><strong>② 湯泉神社</strong>(良縁・商売繁盛・健康長寿)</p>
+    <p><strong>③ 有馬天神社</strong>(商売繁盛・金運UP)</p>
+    <p><strong>④ 水天宮</strong>(家族健康・龍神パワー)</p>
+    <p><strong>⑤ 生田神社</strong>(縁結び・商売繁盛・金運)</p>
+  </div>
+  
+  <div class="info-box">
+    <h3>📍 主要スポット</h3>
+    <p><strong>Day1:</strong> 伊勢神宮(外宮・内宮) → おかげ横丁 → 有馬温泉</p>
+    <p><strong>Day2:</strong> 有馬三社巡り → 生田神社 → 六甲山ガーデンテラス(夕暮れ〜夜景)</p>
+  </div>
+
+  <div class="info-box">
+    <h3>⏰ 出発・到着時刻</h3>
+    <p><strong>出発:</strong> Day1 6:30 碧南市</p>
+    <p><strong>到着:</strong> Day2 20:00 碧南市</p>
+    <p><strong>チェックイン:</strong> 15:00〜 / <strong>チェックアウト:</strong> 11:00</p>
+  </div>
+
+  <div class="info-box">
+    <h3>💰 概算予算(1人あたり)</h3>
+    <p><strong>宿泊費(瑞宝園):</strong> 約20,000円〜27,000円</p>
+    <p><strong>交通費:</strong> 約5,000円</p>
+    <p><strong>食事・観光:</strong> 約5,000円</p>
+    <p class="price"><strong>合計:</strong> 約30,000円〜37,000円</p>
+  </div>
+
+  <div class="info-box">
+    <h3>🏨 宿泊:有馬 瑞宝園</h3>
+    <p><strong>オールインクルーシブ特典:</strong></p>
+    <p>✅ 夕食時ドリンク飲み放題(約30種類・90分)</p>
+    <p>✅ ウェルカムドリンク(アルコール含む)</p>
+    <p>✅ 夕食後のBARタイム</p>
+    <p>✅ カラオケ30分無料</p>
+    <p>✅ 卓球30分無料</p>
+    <p>✅ 湯上がりアイスキャンディー</p>
+    <p>✅ 選べる色浴衣</p>
+  </div>
+</section>
+
+<section class="important-links">
+  <h2>🔗 重要リンク</h2>
+  <div class="link-group">
+    <a href="https://www.isejingu.or.jp/" target="_blank" rel="noopener" class="link-button">伊勢神宮公式</a>
+    <a href="https://www.arima-onsen.com/" target="_blank" rel="noopener" class="link-button">有馬温泉観光協会</a>
+    <a href="https://zuihouen.net/" target="_blank" rel="noopener" class="link-button">瑞宝園公式</a>
+    <a href="https://www.jartic.or.jp/" target="_blank" rel="noopener" class="link-button">道路交通情報</a>
+  </div>
+</section>
+
+<section class="final-message">
+  <div class="highlight-box">
+    <p style="font-size:1.1em; text-align:center; margin-bottom:10px;">
+      <strong>🌟 この旅のポイント 🌟</strong>
+    </p>
+    <ul>
+      <li><strong>5つのパワースポット</strong>で良縁・商売繁盛・金運UP!</li>
+      <li><strong>日本三古湯の有馬温泉</strong>で金泉・銀泉を満喫</li>
+      <li><strong>オールインクルーシブ</strong>で飲み放題&館内施設使い放題</li>
+      <li><strong>六甲山の1000万ドルの夜景</strong>は必見!</li>
+      <li>天候・道路状況によって柔軟に予定変更OK</li>
+      <li>誰かが疲れたら無理せず休憩</li>
+      <li>写真はたくさん撮って、3人で共有</li>
+      <li>安全運転第一!</li>
+    </ul>
+    <p style="margin-top:20px; font-size:1.2em; color:#a67c52; text-align:center;">
+      <strong>素敵な旅になりますように!⛩️♨️✨</strong>
+    </p>
+  </div>
+</section>
+
+<footer>
+  <p>このしおりは<strong>案</strong>です。3人で話し合って調整してください😊</p>
+  <p>作成日: 2025年1月</p>
+</footer>
+
+</div>
+
+</body>
+</html>

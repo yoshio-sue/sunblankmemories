@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Day1 スケジュール - 有馬温泉旅行</title>
+<style>
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, "Hiragino Sans", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom, #f5e6d3 0%, #e8d4b8 100%);
+  color: #4a4a4a;
+  line-height: 1.7;
+}
+
+header {
+  background: linear-gradient(135deg, #d4a574 0%, #c89b65 100%);
+  color: #fff;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0 0 12px 0;
+  font-size: 2.2em;
+}
+
+header p {
+  margin: 6px 0;
+  font-size: 1em;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 40px;
+}
+
+section {
+  padding: 30px 20px;
+  border-bottom: 1px solid #d4a574;
+  background: #fff;
+  margin-bottom: 3px;
+}
+
+h2 {
+  background: linear-gradient(to right, #d4a574 0%, #e8d4b8 100%);
+  margin: 0;
+  padding: 16px 20px;
+  font-size: 1.4em;
+  border-left: 6px solid #a67c52;
+  color: #5a4a3a;
+}
+
+h3 {
+  color: #a67c52;
+  margin: 20px 0 10px 0;
+  font-size: 1.2em;
+  border-bottom: 2px solid #d4a574;
+  padding-bottom: 8px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+th, td {
+  padding: 12px 10px;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid #e8d4b8;
+}
+
+th {
+  background: #fef9f3;
+  font-weight: bold;
+  font-size: 0.95em;
+  color: #5a4a3a;
+}
+
+td {
+  font-size: 0.93em;
+}
+
+.time {
+  color: #d4774a;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.highlight {
+  color: #a67c52;
+  font-weight: bold;
+}
+
+.info-box {
+  background: #fef9f3;
+  border-left: 5px solid #d4a574;
+  padding: 14px;
+  margin: 14px 0;
+  border-radius: 6px;
+}
+
+.highlight-box {
+  background: linear-gradient(to right, #fef9f3 0%, #fdf5eb 100%);
+  padding: 20px;
+  margin: 14px 0;
+  border-radius: 10px;
+  border: 2px solid #d4a574;
+}
+
+.link-button {
+  display: inline-block;
+  padding: 8px 16px;
+  margin: 6px 6px 6px 0;
+  background: #7ba8c7;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 0.9em;
+}
+
+.link-button:hover {
+  background: #6a94b3;
+}
+
+.spot-info {
+  background: #f8f9fa;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border-left: 4px solid #d4a574;
+}
+
+footer {
+  background: #d4a574;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+}
+
+strong {
+  color: #a67c52;
+}
+
+.note {
+  font-size: 0.88em;
+  color: #666;
+  margin-top: 6px;
+}
+
+ul {
+  margin: 10px 0;
+  padding-left: 26px;
+}
+
+li {
+  margin: 8px 0;
+  font-size: 0.93em;
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>📅 Day1 スケジュール</h1>
+  <p>碧南市 → 伊勢神宮 → おかげ横丁 → 有馬温泉</p>
+</header>
+
+<div class="container">
+
+<section>
+  <h2>📅 Day1:碧南市 → 伊勢神宮 → 有馬温泉</h2>
+  <p class="note" style="margin-top:8px;">※日本最高峰のパワースポット・伊勢神宮参拝&名物グルメ</p>
+  
+  <table>
+    <tr>
+      <th style="width:15%">時間目安</th>
+      <th style="width:25%">場所/活動</th>
+      <th style="width:60%">詳細</th>
+    </tr>
+    <tr>
+      <td class="time">06:30</td>
+      <td><strong>🚗 碧南市 出発</strong></td>
+      <td>
+        <strong>ルート:</strong>国道23号 → 伊勢湾岸道 → 伊勢自動車道(伊勢西IC)<br>
+        <strong>所要時間:</strong>約2時間<br>
+        <span class="note">早朝出発で余裕を持った行程・コンビニで朝食調達</span>
+      </td>
+    </tr>
+    <tr>
+      <td class="time">08:45頃</td>
+      <td><span class="highlight">⛩️ 伊勢神宮 外宮</span></td>
+      <td>
+        <strong>正式名称:</strong>豊受大神宮(とようけだいじんぐう)<br>
+        <strong>ご祭神:</strong>豊受大御神(衣食住・産業の守り神)<br>
+        <strong>参拝時間:</strong>約60分(御正宮+別宮)<br>
+        <strong>参拝順序:</strong>外宮から参拝するのが古来のならわし<br>
+        <span class="note">左側通行・正宮→別宮の順で参拝</span><br>
+        <a href="https://www.isejingu.or.jp/" target="_blank" rel="noopener" class="link-button">🔗 伊勢神宮公式</a>
+      </td>
+    </tr>
+    <tr>
+      <td class="time">10:00頃</td>
+      <td><strong>🚗 移動</strong></td>
+      <td>
+        外宮から内宮へ車で約10分<br>
+        <span class="note">※バスでも可(約20分)</span>
+      </td>
+    </tr>
+    <tr>
+      <td class="time">10:15頃</td>
+      <td><span class="highlight">⛩️ 伊勢神宮 内宮</span></td>
+      <td>
+        <strong>正式名称:</strong>皇大神宮(こうたいじんぐう)<br>
+        <strong>ご祭神:</strong>天照大御神(日本人の総氏神・皇室の御祖神)<br>
+        <strong>参拝時間:</strong>約90分(御正宮+別宮)<br>
+        <strong>見どころ:</strong>宇治橋・五十鈴川御手洗場・御正宮<br>
+        <span class="note">右側通行・正宮→別宮の順で参拝</span><br>
+        <div class="info-box" style="margin-top:10px;">
+          <strong>🌟 参拝のポイント</strong><br>
+          ・外宮→内宮の順で参拝(外宮先祭)<br>
+          ・個人的な願い事は別宮で<br>
+          ・正宮では日頃の感謝を伝える<br>
+          ・写真撮影は可(一部制限あり)
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td class="time">12:00頃</td>
+      <td><strong>🍜 おかげ横丁でランチ</strong></td>
+      <td>
+        <strong>おすすめグルメ:</strong><br>
+        ・伊勢うどん(柔らかい麺×濃厚たれ)<br>
+        ・手こね寿司(鰹の漬け丼)<br>
+        ・松阪牛串<br>
+        ・赤福餅(名物!本店で食べる)<br>
+        <strong>所要時間:</strong>1〜1.5時間<br>
+        <span class="note">江戸〜明治の街並みを再現した観光スポット</span>
+      </td>
+    </tr>
+    <tr>
+      <td class="time">13:30頃</td>
+      <td><strong>🚗 有馬温泉へ移動</strong></td>
+      <td>
+        <strong>ルート:</strong>伊勢自動車道 → 東名阪道 → 名神高速 → 阪神高速<br>
+        <strong>所要時間:</strong>約3時間(SA休憩含む)<br>
+        <strong>距離:</strong>約200km<br>
+        <strong>高速料金:</strong>約6,000円(ETC休日割引)<br>
+        <span class="note">⚠️ 渋滞に注意・名神高速は混雑しやすい</span>
+      </td>
+    </tr>
+    <tr>
+      <td class="time">16:30頃</td>
+      <td><strong>🏨 有馬温泉 到着</strong></td>
+      <td>
+        温泉街を散策・チェックイン準備<br>
+        <span class="note">※チェックインは15:00〜</span>
+      </td>
+    </tr>
+    <tr>
+      <td class="time">17:00頃</td>
+      <td><strong>🏨 瑞宝園 チェックイン</strong></td>
+      <td>
+        <strong>ウェルカムドリンク:</strong>アルコール含む飲み放題<br>
+        <strong>色浴衣選び:</strong>好きな色浴衣を選べる<br>
+        <span class="note">※到着時刻を宿に事前連絡</span>
+      </td>
+    </tr>
+    <tr>
+      <td class="time">チェックイン後</td>
+      <td><strong>♨️ 温泉・入浴</strong></td>
+      <td>
+        <strong>有馬温泉の特徴:</strong><br>
+        ・<strong>金泉:</strong>鉄分・塩分を含む赤茶色の温泉(保温・殺菌効果)<br>
+        ・<strong>銀泉:</strong>無色透明のラジウム泉(美肌効果)<br>
+        <strong>瑞宝園:</strong>銀泉(ラジウム泉)・打たせ湯・ジャグジー・サウナ<br>
+        <span class="note">日本三古湯の一つ・1300年の歴史</span>
+      </td>
+    </tr>
+    <tr>
+      <td class="time">18:00頃</td>
+      <td><strong>🍺 夕食・飲み放題</strong></td>
+      <td>
+        <strong>オールインクルーシブ特典:</strong><br>
+        ・約30種類のドリンク飲み放題(90分)<br>
+        ・ビール・日本酒・焼酎・ワイン・カクテル・ソフトドリンク<br>
+        <span class="note">※翌日の運転はよしおメイン確定・ほどほどに楽しむ😊</span>
+      </td>
+    </tr>
+    <tr>
+      <td class="time">19:30以降</td>
+      <td><strong>🎤 夕食後の楽しみ</strong></td>
+      <td>
+        <strong>オールインクルーシブ特典:</strong><br>
+        ・BARタイム(夕食後もドリンク提供)<br>
+        ・カラオケ30分無料<br>
+        ・卓球30分無料<br>
+        ・湯上がりアイスキャンディー<br>
+        <strong>温泉街散策:</strong>夜の有馬を散策(徒歩圏内)<br>
+        <span class="note">小さな温泉街なので気軽に散歩できる</span>
+      </td>
+    </tr>
+    <tr>
+      <td class="time">〜24:00</td>
+      <td><strong>🏨 宿で2次会 or 就寝</strong></td>
+      <td>
+        <span class="note">翌日の観光に備えて適度に楽しむ・水分補給を忘れずに</span>
+      </td>
+    </tr>
+  </table>
+</section>
+
+<section>
+  <h2>🗺️ Day1 移動ルート詳細</h2>
+  
+  <div class="info-box">
+    <h3>🚗 区間① 碧南 → 伊勢神宮(約2時間)</h3>
+    <p><strong>ルート:</strong> 国道23号 → 伊勢湾岸道 → 伊勢自動車道(伊勢西IC)</p>
+    <p><strong>距離:</strong> 約120km</p>
+    <p><strong>高速料金:</strong> 約3,000円(ETC休日割引)</p>
+    <p><strong>注意点:</strong> 伊勢西ICから外宮まで約5分。</p>
+  </div>
+  
+  <div class="info-box">
+    <h3>🚗 区間② 伊勢 → 有馬温泉(約3時間)</h3>
+    <p><strong>ルート:</strong> 伊勢自動車道 → 東名阪道 → 名神高速 → 阪神高速</p>
+    <p><strong>距離:</strong> 約200km</p>
+    <p><strong>高速料金:</strong> 約6,000円(ETC休日割引)</p>
+    <p><strong>注意点:</strong> 名神高速は渋滞しやすい。余裕を持った行程を。</p>
+  </div>
+  
+  <div class="highlight-box">
+    <strong>⚠️ 運転の注意点</strong>
+    <ul>
+      <li>2時間ごとに休憩(SAで必ず休憩を取る)</li>
+      <li>疲れたら交代(よしおが疲れたら無理せず交代)</li>
+      <li>名神高速は渋滞しやすい(時間に余裕を持つ)</li>
+      <li>阪神高速は複雑(カーナビをしっかり確認)</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>⛩️ 伊勢神宮について</h2>
+  
+  <div class="highlight-box">
+    <strong>🌟 日本最高峰のパワースポット</strong><br>
+    伊勢神宮は日本人の総氏神である天照大御神を祀る、日本最高位の神社。
+    約2000年の歴史を持ち、全国約8万社ある神社の中でも最も格式高い存在です。
+  </div>
+  
+  <div class="spot-info">
+    <strong>📖 参拝の正しい順序</strong><br>
+    ① 外宮(豊受大神宮)を参拝<br>
+    ② 内宮(皇大神宮)を参拝<br>
+    <br>
+    <strong>理由:</strong>「外宮先祭(げくうせんさい)」という古来のならわし。
+    重要な祭りは外宮から行われるため、参拝者もこれに倣います。
+  </div>
+  
+  <div class="spot-info">
+    <strong>🙏 参拝の作法</strong><br>
+    ・鳥居をくぐる前に一礼<br>
+    ・参道は外宮は左側通行、内宮は右側通行<br>
+    ・手水舎で手と口を清める<br>
+    ・正宮では個人的な願い事ではなく、日頃の感謝を伝える<br>
+    ・個人的な願い事は別宮で<br>
+    <br>
+    <span class="note">💡 帽子は脱ぐ・私語は慎む・写真撮影は一部制限あり</span>
+  </div>
+  
+  <div class="info-box">
+    <strong>⏰ 参拝時間の目安</strong><br>
+    ・外宮:約60分(御正宮+別宮)<br>
+    ・内宮:約90分(御正宮+別宮)<br>
+    ・外宮と内宮の移動:約10分(車)〜20分(バス)<br>
+    <br>
+    <strong>合計:約3時間</strong>
+  </div>
+</section>
+
+<section>
+  <h2>🍜 おかげ横丁グルメ</h2>
+  
+  <h3>おすすめ名物</h3>
+  
+  <div class="spot-info">
+    <strong>① 伊勢うどん</strong><br>
+    柔らかい太麺に濃厚なたまり醤油ベースのたれ。
+    伊勢名物の代表格!讃岐うどんとは真逆の柔らかさ。<br>
+    <strong>予算:</strong> 600〜900円
+  </div>
+  
+  <div class="spot-info">
+    <strong>② 手こね寿司</strong><br>
+    鰹の漬けを酢飯に乗せた郷土料理。
+    漁師が船の上で手軽に食べられるように考案された。<br>
+    <strong>予算:</strong> 1,000〜1,500円
+  </div>
+  
+  <div class="spot-info">
+    <strong>③ 赤福餅(本店)</strong><br>
+    おかげ横丁内の赤福本店で食べる出来立てが絶品!
+    お土産用とは違う柔らかさ。夏は赤福氷も人気。<br>
+    <strong>予算:</strong> 230円(2個入り)
+  </div>
+  
+  <div class="spot-info">
+    <strong>④ 松阪牛串・コロッケ</strong><br>
+    食べ歩きにぴったり。本場の松阪牛を気軽に楽しめる。<br>
+    <strong>予算:</strong> 500〜1,000円
+  </div>
+  
+  <div class="info-box">
+    <strong>💡 食事のタイミング</strong><br>
+    12:00頃のランチがおすすめ。混雑を避けるなら11:30頃到着が理想。
+    食べ歩きも楽しみつつ、しっかり昼食を取りましょう。
+  </div>
+</section>
+
+<section>
+  <h2>💡 Day1 のポイント</h2>
+  
+  <div class="spot-info">
+    <strong>⏰ 時間配分</strong><br>
+    伊勢神宮参拝に約3時間、おかげ横丁で1〜1.5時間。
+    移動時間が長いため、早朝出発が重要。各スポットでの滞在時間は柔軟に調整可能。
+  </div>
+  
+  <div class="spot-info">
+    <strong>🍜 食事</strong><br>
+    朝食:コンビニで調達(車内で食べる)<br>
+    昼食:おかげ横丁で伊勢名物<br>
+    夕食:瑞宝園のバイキング+飲み放題
+  </div>
+  
+  <div class="spot-info">
+    <strong>📸 撮影スポット</strong><br>
+    外宮・内宮の鳥居、宇治橋、五十鈴川、おかげ横丁の街並み
+  </div>
+  
+  <div class="highlight-box">
+    <strong>🌟 パワースポット巡りのスタート!</strong><br>
+    Day1は日本最高峰の伊勢神宮から旅がスタート。
+    天照大御神のご神威をいただき、良縁・商売繁盛・金運アップを祈願しましょう!
+    2日目は有馬三社巡り→生田神社と続くパワースポット三昧の旅です。
+  </div>
+</section>
+
+</div>
+
+<footer>
+  <p><a href="javascript:history.back()">← トップページに戻る</a></p>
+</footer>
+
+</body>
+</html>

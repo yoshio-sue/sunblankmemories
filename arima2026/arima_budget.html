@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>予算まとめ - 有馬温泉旅行</title>
+<style>
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, "Hiragino Sans", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom, #f5e6d3 0%, #e8d4b8 100%);
+  color: #4a4a4a;
+  line-height: 1.7;
+}
+
+header {
+  background: linear-gradient(135deg, #d4a574 0%, #c89b65 100%);
+  color: #fff;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0 0 12px 0;
+  font-size: 2.2em;
+}
+
+header p {
+  margin: 6px 0;
+  font-size: 1em;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 40px;
+}
+
+section {
+  padding: 30px 20px;
+  border-bottom: 1px solid #d4a574;
+  background: #fff;
+  margin-bottom: 3px;
+}
+
+h2 {
+  background: linear-gradient(to right, #d4a574 0%, #e8d4b8 100%);
+  margin: 0;
+  padding: 16px 20px;
+  font-size: 1.4em;
+  border-left: 6px solid #a67c52;
+  color: #5a4a3a;
+}
+
+h3 {
+  color: #a67c52;
+  margin: 20px 0 10px 0;
+  font-size: 1.2em;
+  border-bottom: 2px solid #d4a574;
+  padding-bottom: 8px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+th, td {
+  padding: 12px 10px;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid #e8d4b8;
+}
+
+th {
+  background: #fef9f3;
+  font-weight: bold;
+  font-size: 0.95em;
+  color: #5a4a3a;
+}
+
+td {
+  font-size: 0.93em;
+}
+
+.price {
+  color: #d4774a;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.info-box {
+  background: #fef9f3;
+  border-left: 5px solid #d4a574;
+  padding: 14px;
+  margin: 14px 0;
+  border-radius: 6px;
+}
+
+.highlight-box {
+  background: linear-gradient(to right, #fef9f3 0%, #fdf5eb 100%);
+  padding: 20px;
+  margin: 14px 0;
+  border-radius: 10px;
+  border: 2px solid #d4a574;
+}
+
+.hotel-card {
+  background: #fff;
+  border: 2px solid #d4a574;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 14px 0;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+.spot-info {
+  background: #f8f9fa;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border-left: 4px solid #d4a574;
+}
+
+footer {
+  background: #d4a574;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+}
+
+strong {
+  color: #a67c52;
+}
+
+.note {
+  font-size: 0.88em;
+  color: #666;
+  margin-top: 6px;
+}
+
+ul {
+  margin: 10px 0;
+  padding-left: 26px;
+}
+
+li {
+  margin: 8px 0;
+  font-size: 0.93em;
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>💰 予算まとめ</h1>
+  <p>1人あたりの費用概算・詳細内訳</p>
+</header>
+
+<div class="container">
+
+<section>
+  <h2>💰 予算まとめ(1人あたり概算)</h2>
+  
+  <table>
+    <tr>
+      <th>項目</th>
+      <th>金額</th>
+      <th>備考</th>
+    </tr>
+    <tr>
+      <td><strong>宿泊費(瑞宝園)</strong></td>
+      <td class="price">20,000〜27,000円</td>
+      <td>オールインクルーシブ・2食+飲み放題込み</td>
+    </tr>
+    <tr>
+      <td><strong>高速代</strong></td>
+      <td class="price">約4,000円</td>
+      <td>往復・ETC休日割引適用</td>
+    </tr>
+    <tr>
+      <td><strong>ガソリン代</strong></td>
+      <td class="price">約1,500円</td>
+      <td>往復約400km・燃費15km/L想定</td>
+    </tr>
+    <tr>
+      <td><strong>昼食(2回)</strong></td>
+      <td class="price">約2,500円</td>
+      <td>1日目昼(おかげ横丁)・2日目昼(有馬温泉街)</td>
+    </tr>
+    <tr>
+      <td><strong>軽食・おやつ</strong></td>
+      <td class="price">約1,000円</td>
+      <td>2日目神戸市内・SA</td>
+    </tr>
+    <tr>
+      <td><strong>観光・その他</strong></td>
+      <td class="price">約2,000円</td>
+      <td>六甲山通行料・お土産・食べ歩き</td>
+    </tr>
+    <tr style="background:#fef9f3;">
+      <td><strong>合計</strong></td>
+      <td class="price" style="font-size:1.15em;">31,000〜38,000円</td>
+      <td><strong>※宿泊プランにより変動</strong></td>
+    </tr>
+  </table>
+  
+  <div class="info-box" style="margin-top:20px;">
+    <strong>💡 ポイント</strong><br>
+    ・草津温泉旅行(35,000〜62,000円)より<strong>お得!</strong><br>
+    ・距離が近いので交通費が安い(往復400km vs 草津750km)<br>
+    ・オールインクルーシブで館内の追加料金ほぼなし<br>
+    ・パワースポット5ヶ所巡り+1000万ドルの夜景も楽しめる!
+  </div>
+</section>
+
+<section>
+  <h2>🏨 総予算の詳細</h2>
+  
+  <div class="hotel-card">
+    <h3 style="border:none; padding:0; margin-top:0;">瑞宝園プラン(オールインクルーシブ)</h3>
+    
+    <table>
+      <tr>
+        <td>宿泊費(瑞宝園)</td>
+        <td class="price">20,000〜27,000円</td>
+      </tr>
+      <tr>
+        <td>交通費(高速+ガソリン)</td>
+        <td class="price">5,500円</td>
+      </tr>
+      <tr>
+        <td>食事・観光</td>
+        <td class="price">5,500円</td>
+      </tr>
+      <tr style="background:#fef9f3;">
+        <td><strong>総予算</strong></td>
+        <td class="price" style="font-size:1.2em;">31,000〜38,000円</td>
+      </tr>
+    </table>
+    
+    <div class="info-box" style="margin-top:15px;">
+      <strong>✨ このプランの魅力</strong><br>
+      ・<strong>オールインクルーシブ</strong>で追加料金なし<br>
+      ・飲み放題・カラオケ・卓球が無料<br>
+      ・有馬温泉の銀泉を満喫<br>
+      ・パワースポット5ヶ所巡り<br>
+      ・六甲山1000万ドルの夜景<br>
+      <br>
+      <strong>コスパ最高の旅!</strong>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>💡 3人でシェアする費用</h2>
+  
+  <div class="info-box">
+    <strong>🚗 交通費の分担</strong><br>
+    <br>
+    <strong>高速代:</strong> 約12,000円 ÷ 3人 = <span class="price">約4,000円/人</span><br>
+    <strong>ガソリン代:</strong> 約4,500円 ÷ 3人 = <span class="price">約1,500円/人</span><br>
+    <strong>合計:</strong> <span class="price">約5,500円/人</span><br>
+    <br>
+    <span class="note">※高速代・ガソリン代は3人で割り勘想定</span>
+  </div>
+  
+  <div class="info-box">
+    <strong>💳 支払い方法の提案</strong><br>
+    <br>
+    <strong>各自払い:</strong><br>
+    ・宿泊費(ホテルで各自精算)<br>
+    ・個人の食事・お土産<br>
+    <br>
+    <strong>まとめて精算:</strong><br>
+    ・高速代(よしおが立替 → 後で割り勘)<br>
+    ・ガソリン代(給油時にその場で割り勘)<br>
+    <br>
+    <span class="note">※事前に支払い方法を決めておくとスムーズ</span>
+  </div>
+</section>
+
+<section>
+  <h2>📊 費用内訳の詳細</h2>
+  
+  <h3>🚗 交通費詳細</h3>
+  
+  <div class="info-box">
+    <strong>高速道路料金(往復)</strong><br>
+    <br>
+    <strong>Day1:</strong> 碧南 → 伊勢 → 有馬温泉<br>
+    ・碧南〜伊勢:約3,000円<br>
+    ・伊勢〜有馬:約6,000円<br>
+    <br>
+    <strong>Day2:</strong> 有馬温泉 → 碧南<br>
+    ・有馬〜碧南:約6,000円<br>
+    <br>
+    <strong>その他:</strong><br>
+    ・六甲山表六甲ドライブウェイ:780円<br>
+    <br>
+    <strong>合計:</strong> <span class="price">約15,780円</span> → ETC休日割引適用後 <span class="price">約12,000円</span><br>
+    <strong>1人あたり:</strong> <span class="price">約4,000円</span>
+  </div>
+  
+  <div class="info-box">
+    <strong>⚠️ ETC休日割引について</strong><br>
+    <br>
+    <strong>適用条件:</strong><br>
+    ・土日祝日にETCで高速道路を利用<br>
+    ・普通車・軽自動車が対象<br>
+    ・約30%割引<br>
+    <br>
+    <strong>2026年2月23日(祝月):</strong> ✅ 休日割引適用<br>
+    <strong>2026年2月24日(火):</strong> ❌ 平日(割引なし)<br>
+    <br>
+    <span class="note">※行きは割引適用・帰りは平日料金。上記金額は割引適用後の概算。</span><br>
+    <span class="note">※大都市近郊区間(阪神高速など)は割引対象外。</span>
+  </div>
+  
+  <h3>⛽ ガソリン代詳細</h3>
+  <div class="info-box">
+    <strong>走行距離:</strong> 約400km(碧南〜伊勢〜有馬〜碧南)<br>
+    <strong>燃費:</strong> 15km/L想定<br>
+    <strong>必要ガソリン:</strong> 約27L<br>
+    <strong>ガソリン単価:</strong> 165円/L想定<br>
+    <strong>総額:</strong> 27L × 165円 = <span class="price">約4,455円</span><br>
+    <strong>1人あたり:</strong> <span class="price">約1,485円</span><br>
+    <br>
+    <span class="note">※上記は概算。実際の燃費や給油単価により変動します。</span>
+  </div>
+  
+  <h3>🍜 食事代詳細</h3>
+  <table>
+    <tr>
+      <th>食事</th>
+      <th>場所</th>
+      <th>予算目安</th>
+    </tr>
+    <tr>
+      <td>1日目 朝食</td>
+      <td>コンビニ</td>
+      <td class="price">500円</td>
+    </tr>
+    <tr>
+      <td>1日目 昼食</td>
+      <td>おかげ横丁</td>
+      <td class="price">1,200〜1,500円</td>
+    </tr>
+    <tr>
+      <td>1日目 夕食</td>
+      <td>瑞宝園</td>
+      <td class="price">宿泊費込み</td>
+    </tr>
+    <tr>
+      <td>1日目 食べ歩き</td>
+      <td>おかげ横丁・有馬温泉街</td>
+      <td class="price">500〜1,000円</td>
+    </tr>
+    <tr>
+      <td>2日目 朝食</td>
+      <td>瑞宝園</td>
+      <td class="price">宿泊費込み</td>
+    </tr>
+    <tr>
+      <td>2日目 昼食</td>
+      <td>有馬温泉街</td>
+      <td class="price">800〜1,200円</td>
+    </tr>
+    <tr>
+      <td>2日目 軽食</td>
+      <td>神戸市内(南京町等)</td>
+      <td class="price">500〜1,000円</td>
+    </tr>
+  </table>
+  
+  <h3>🎫 その他費用</h3>
+  <div class="info-box">
+    <strong>六甲山関連:</strong><br>
+    ・表六甲ドライブウェイ通行料:780円(普通車)<br>
+    <br>
+    <strong>お土産:</strong><br>
+    ・赤福餅:800円〜(おかげ横丁)<br>
+    ・有馬サイダー:200円〜<br>
+    ・炭酸せんべい:500円〜<br>
+    ・温泉まんじゅう:600円〜<br>
+    <br>
+    <strong>食べ歩き:</strong><br>
+    ・伊勢うどん:600〜900円<br>
+    ・松阪牛串:500〜1,000円<br>
+    ・神戸牛コロッケ:300〜500円<br>
+    <br>
+    <strong>1人あたり予算:</strong> <span class="price">約2,000円</span>
+  </div>
+</section>
+
+<section>
+  <h2>💡 節約のポイント</h2>
+  
+  <div class="spot-info">
+    <strong>🚗 交通費を抑える</strong><br>
+    ・ETC休日割引を活用(祝日の行きは30%OFF)<br>
+    ・ガソリンは出発前に満タンに(高速道路のSAは高い)<br>
+    ・事前に高速道路の料金を確認<br>
+    ・燃費の良い運転を心がける
+  </div>
+  
+  <div class="spot-info">
+    <strong>🍜 食事代を抑える</strong><br>
+    ・朝食はコンビニで調達<br>
+    ・昼食は定食・うどん(1,000〜1,500円程度)<br>
+    ・食べ歩きは計画的に(予算を決めておく)<br>
+    ・瑞宝園は飲み放題込みなので館内で存分に楽しむ
+  </div>
+  
+  <div class="spot-info">
+    <strong>🏨 宿泊費を抑える</strong><br>
+    ・早期予約割引を利用<br>
+    ・オールインクルーシブなので追加料金なし<br>
+    ・カラオケ・卓球も無料で楽しめる<br>
+    ・館内の特典を最大限活用
+  </div>
+  
+  <div class="spot-info">
+    <strong>🛍️ お土産代を抑える</strong><br>
+    ・必要な分だけ購入<br>
+    ・会社用のお土産は個包装のものを選ぶ<br>
+    ・有馬サイダー・炭酸せんべいはお手頃価格<br>
+    ・赤福餅は日持ちしないので帰る前に購入
+  </div>
+</section>
+
+<section>
+  <h2>🎯 まとめ:この旅の予算感</h2>
+  
+  <div class="highlight-box">
+    <p style="font-size:1.1em; text-align:center; margin-bottom:15px;">
+      <strong>🌟 1人あたり 約31,000円〜38,000円 🌟</strong>
+    </p>
+    
+    <h4>この金額で楽しめること:</h4>
+    <ul>
+      <li>✅ 日本最高峰のパワースポット・伊勢神宮参拝</li>
+      <li>✅ おかげ横丁で伊勢名物グルメ</li>
+      <li>✅ 有馬温泉の銀泉を満喫</li>
+      <li>✅ オールインクルーシブで飲み放題</li>
+      <li>✅ カラオケ・卓球も無料</li>
+      <li>✅ 有馬三社巡り(良縁・商売繁盛・金運)</li>
+      <li>✅ 生田神社(縁結び・金運)</li>
+      <li>✅ 六甲山1000万ドルの夜景</li>
+    </ul>
+    
+    <p style="margin-top:20px; text-align:center; font-size:1.1em;">
+      <strong>パワースポット5ヶ所+温泉+絶景+グルメ</strong><br>
+      <strong>すべて込みでこの価格!</strong>
+    </p>
+  </div>
+  
+  <div class="info-box">
+    <strong>💰 草津温泉プランとの比較</strong><br>
+    <br>
+    <table style="margin:0;">
+      <tr>
+        <th>項目</th>
+        <th>有馬温泉</th>
+        <th>草津温泉(参考)</th>
+      </tr>
+      <tr>
+        <td>予算</td>
+        <td class="price">31,000〜38,000円</td>
+        <td>35,000〜62,000円</td>
+      </tr>
+      <tr>
+        <td>距離</td>
+        <td>往復約400km</td>
+        <td>往復約750km</td>
+      </tr>
+      <tr>
+        <td>運転時間</td>
+        <td>片道約3〜4時間</td>
+        <td>片道約5〜6時間</td>
+      </tr>
+      <tr>
+        <td>パワースポット</td>
+        <td>5ヶ所</td>
+        <td>2ヶ所</td>
+      </tr>
+    </table>
+    <br>
+    <strong>→ 有馬温泉の方がお得で観光も充実!</strong>
+  </div>
+</section>
+
+<section>
+  <h2>📝 予算管理のコツ</h2>
+  
+  <div class="info-box">
+    <strong>💡 出発前に準備</strong><br>
+    ・各自の予算を決めておく(31,000〜38,000円程度)<br>
+    ・高速代・ガソリン代の割り勘方法を確認<br>
+    ・オールインクルーシブなので館内での出費は少ない<br>
+    ・お土産・食べ歩き用に現金を準備(5,000円程度)
+  </div>
+  
+  <div class="info-box">
+    <strong>💳 支払いの管理</strong><br>
+    ・高速代:よしおが立替 → 後で割り勘<br>
+    ・ガソリン代:給油時にその場で割り勘<br>
+    ・宿泊費:各自で精算<br>
+    ・食事:基本各自払い<br>
+    <br>
+    スマホの割り勘アプリ(PayPay等)を活用すると便利!
+  </div>
+</section>
+
+</div>
+
+<footer>
+  <p><a href="javascript:history.back()">← トップページに戻る</a></p>
+</footer>
+
+</body>
+</html>

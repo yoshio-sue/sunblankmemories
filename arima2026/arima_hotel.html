@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>宿泊情報 - 有馬温泉旅行</title>
+<style>
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, "Hiragino Sans", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom, #f5e6d3 0%, #e8d4b8 100%);
+  color: #4a4a4a;
+  line-height: 1.7;
+}
+
+header {
+  background: linear-gradient(135deg, #d4a574 0%, #c89b65 100%);
+  color: #fff;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0 0 12px 0;
+  font-size: 2.2em;
+}
+
+header p {
+  margin: 6px 0;
+  font-size: 1em;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 40px;
+}
+
+section {
+  padding: 30px 20px;
+  border-bottom: 1px solid #d4a574;
+  background: #fff;
+  margin-bottom: 3px;
+}
+
+h2 {
+  background: linear-gradient(to right, #d4a574 0%, #e8d4b8 100%);
+  margin: 0;
+  padding: 16px 20px;
+  font-size: 1.4em;
+  border-left: 6px solid #a67c52;
+  color: #5a4a3a;
+}
+
+h3 {
+  color: #a67c52;
+  margin: 20px 0 10px 0;
+  font-size: 1.2em;
+  border-bottom: 2px solid #d4a574;
+  padding-bottom: 8px;
+}
+
+h4 {
+  color: #a67c52;
+  margin: 15px 0 8px 0;
+  font-size: 1.1em;
+}
+
+.hotel-card {
+  background: #fff;
+  border: 2px solid #d4a574;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 14px 0;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+.info-box {
+  background: #fef9f3;
+  border-left: 5px solid #d4a574;
+  padding: 14px;
+  margin: 14px 0;
+  border-radius: 6px;
+}
+
+.highlight-box {
+  background: linear-gradient(to right, #fef9f3 0%, #fdf5eb 100%);
+  padding: 20px;
+  margin: 14px 0;
+  border-radius: 10px;
+  border: 2px solid #d4a574;
+}
+
+.link-button {
+  display: inline-block;
+  padding: 8px 16px;
+  margin: 6px 6px 6px 0;
+  background: #7ba8c7;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 0.9em;
+}
+
+.link-button:hover {
+  background: #6a94b3;
+}
+
+.spot-info {
+  background: #f8f9fa;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border-left: 4px solid #d4a574;
+}
+
+.price {
+  color: #d4774a;
+  font-weight: bold;
+  font-size: 1.1em;
+  margin: 8px 0;
+}
+
+footer {
+  background: #d4a574;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+}
+
+strong {
+  color: #a67c52;
+}
+
+.note {
+  font-size: 0.88em;
+  color: #666;
+  margin-top: 6px;
+}
+
+ul {
+  margin: 10px 0;
+  padding-left: 26px;
+}
+
+li {
+  margin: 8px 0;
+  font-size: 0.93em;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+th, td {
+  padding: 12px 10px;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid #e8d4b8;
+}
+
+th {
+  background: #fef9f3;
+  font-weight: bold;
+  color: #5a4a3a;
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>🏨 宿泊情報</h1>
+  <p>有馬温泉 瑞宝園 - オールインクルーシブの宿</p>
+</header>
+
+<div class="container">
+
+<section>
+  <h2>🏨 有馬温泉 瑞宝園</h2>
+  
+  <div class="hotel-card">
+    <h3 style="border:none; padding:0; margin-top:0;">有馬 瑞宝園(ありま ずいほうえん)</h3>
+    
+    <div class="highlight-box">
+      <p style="font-size:1.1em; text-align:center; margin:0;">
+        <strong>🌟 オールインクルーシブで追加料金なし! 🌟</strong>
+      </p>
+    </div>
+    
+    <p class="price" style="font-size:1.2em; text-align:center;">予算目安:1人 約20,000円〜27,000円/泊(2名1室)</p>
+    
+    <div class="info-box">
+      <strong>📍 基本情報</strong><br>
+      <strong>住所:</strong> 兵庫県神戸市北区有馬町1751<br>
+      <strong>チェックイン:</strong> 15:00〜18:00<br>
+      <strong>チェックアウト:</strong> 11:00<br>
+      <strong>総客室数:</strong> 26室<br>
+      <strong>駐車場:</strong> 無料地下駐車場30台(13:00〜翌12:00)<br>
+      <strong>送迎:</strong> 有馬温泉駅より無料送迎あり(要予約)
+    </div>
+    
+    <div class="info-box">
+      <strong>🚗 アクセス</strong><br>
+      <strong>電車:</strong> 神戸電鉄 有馬温泉駅より車で約5分(徒歩15〜20分)<br>
+      <strong>車:</strong> <br>
+      ・中国自動車道 西宮北ICより約15分<br>
+      ・阪神高速 西宮山口南ICより約10分<br>
+      <strong>無料送迎:</strong> 有馬温泉駅から15:00〜17:40まで20分おき(要予約)
+    </div>
+    
+    <a href="https://zuihouen.net/" target="_blank" rel="noopener" class="link-button">🔗 瑞宝園公式サイト</a>
+    <a href="https://www.google.com/maps/search/有馬温泉+瑞宝園/" target="_blank" rel="noopener" class="link-button">📍 Google Map</a>
+  </div>
+</section>
+
+<section>
+  <h2>🎁 オールインクルーシブ特典</h2>
+  
+  <div class="highlight-box">
+    <p style="font-size:1.05em; margin-bottom:15px;">
+      <strong>「まるごとおもてなし®」</strong>で追加料金を気にせず楽しめる!
+    </p>
+    
+    <h4>✅ 7つの無料特典</h4>
+    
+    <div class="spot-info">
+      <strong>① ウェルカムドリンク(アルコール含む)</strong><br>
+      到着時からアルコールも楽しめる!<br>
+      <span class="note">※15:00〜チェックイン時</span>
+    </div>
+    
+    <div class="spot-info">
+      <strong>② 選べる色浴衣</strong><br>
+      好きな色の浴衣を選んで温泉街散策もおしゃれに!<br>
+      <span class="note">※女性に人気のサービス</span>
+    </div>
+    
+    <div class="spot-info">
+      <strong>③ 夕食時ドリンク飲み放題(90分)</strong><br>
+      <strong>約30種類のドリンクが飲み放題!</strong><br>
+      ・ビール(生ビール・瓶ビール)<br>
+      ・日本酒(冷酒・熱燗)<br>
+      ・焼酎(芋・麦)<br>
+      ・ワイン(赤・白)<br>
+      ・ウイスキー・梅酒<br>
+      ・カクテル各種<br>
+      ・ソフトドリンク各種<br>
+      <span class="note">※これが一番の魅力!追加料金なしで好きなだけ飲める!</span>
+    </div>
+    
+    <div class="spot-info">
+      <strong>④ 夕食後のBARタイム</strong><br>
+      夕食後もラウンジでドリンクサービス!<br>
+      <span class="note">※ゆっくり二次会気分が楽しめる</span>
+    </div>
+    
+    <div class="spot-info">
+      <strong>⑤ カラオケ30分無料</strong><br>
+      3人でカラオケも楽しめる!<br>
+      <span class="note">※15:00〜23:00・チェックイン時に予約</span>
+    </div>
+    
+    <div class="spot-info">
+      <strong>⑥ 卓球30分無料</strong><br>
+      温泉と卓球は定番の組み合わせ!<br>
+      <span class="note">※15:00〜23:00・チェックイン時に予約</span>
+    </div>
+    
+    <div class="spot-info">
+      <strong>⑦ 湯上がりアイスキャンディー</strong><br>
+      温泉上がりの冷たいアイスが最高!<br>
+      <span class="note">※湯上り処で自由に</span>
+    </div>
+  </div>
+  
+  <div class="info-box">
+    <strong>💡 オールインクルーシブのメリット</strong><br>
+    ・追加料金を気にせず飲み放題<br>
+    ・館内施設(カラオケ・卓球)も無料<br>
+    ・お財布を気にせず楽しめる<br>
+    ・コスパ最高!
+  </div>
+</section>
+
+<section>
+  <h2>♨️ 温泉施設</h2>
+  
+  <div class="hotel-card">
+    <h3 style="border:none; padding:0; margin-top:0;">有馬の銀泉(ラジウム泉)</h3>
+    
+    <div class="info-box">
+      <strong>泉質:</strong> 単純ラドン泉(銀泉)<br>
+      <strong>効能:</strong> 神経痛、筋肉痛、関節痛、五十肩、冷え性、疲労回復、健康増進、痛風、動脈硬化症、高血圧症など<br>
+      <strong>特徴:</strong> 無色透明の美肌の湯・リラックス効果が高い
+    </div>
+    
+    <h4>大浴場(畳敷き)</h4>
+    <div class="spot-info">
+      <strong>瑞宝園の特徴:大浴場が畳敷き!</strong><br>
+      <br>
+      ・肌触りが柔らかく足元が滑りにくい<br>
+      ・ご年配の方やお体の不自由な方にも優しい<br>
+      ・温泉の温もりが足裏から伝わる<br>
+      ・他ではなかなか体験できない独特の心地よさ<br>
+      <br>
+      <strong>施設:</strong> 内湯・打たせ湯・気泡浴・サウナ
+    </div>
+    
+    <h4>露天風呂</h4>
+    <div class="spot-info">
+      <strong>東屋風の露天風呂</strong><br>
+      有馬の自然を感じながらゆったり入浴。<br>
+      冬の雪見風呂も風情がある。<br>
+      <br>
+      <span class="note">※男湯・女湯ともに大浴場・露天風呂あり</span>
+    </div>
+    
+    <div class="info-box">
+      <strong>💡 入浴のポイント</strong><br>
+      ・チェックイン後、夕食前に一風呂<br>
+      ・夕食後にもう一度<br>
+      ・翌朝の朝風呂(空いていておすすめ)<br>
+      ・何度でも入れる!
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>🍽️ お食事</h2>
+  
+  <div class="hotel-card">
+    <h3 style="border:none; padding:0; margin-top:0;">料理長自慢の会席料理</h3>
+    
+    <h4>夕食</h4>
+    <div class="spot-info">
+      <strong>季節の会席料理</strong><br>
+      旬の食材を盛り込んだ本格会席。<br>
+      神戸牛・明石の海の幸・地元野菜など。<br>
+      <br>
+      <strong>＋ドリンク飲み放題(90分)</strong><br>
+      ビール・日本酒・焼酎・ワイン・カクテル・ソフトドリンク約30種類!<br>
+      <br>
+      <span class="note">※レストランまたは個室で提供(プランによる)</span>
+    </div>
+    
+    <h4>朝食</h4>
+    <div class="spot-info">
+      <strong>和朝食</strong><br>
+      炊きたてご飯・焼き魚・温泉卵など。<br>
+      朝からしっかり食べて観光に出発!<br>
+      <br>
+      <span class="note">※レストランで提供</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>🛏️ 客室</h2>
+  
+  <div class="hotel-card">
+    <h3 style="border:none; padding:0; margin-top:0;">全26室のこじんまりした宿</h3>
+    
+    <div class="info-box">
+      <strong>客室タイプ</strong><br>
+      ・和室(8畳〜10畳)<br>
+      ・和洋室<br>
+      ・ダブルルーム<br>
+      <br>
+      <strong>客室設備:</strong> テレビ・冷蔵庫・金庫・浴衣・タオル・アメニティ<br>
+      <strong>Wi-Fi:</strong> 全客室で無料Wi-Fi利用可<br>
+      <br>
+      <span class="note">※今回は2部屋(男女別)を予約</span>
+    </div>
+    
+    <div class="spot-info">
+      <strong>💡 部屋割り</strong><br>
+      ・奈々・なつき → 1部屋<br>
+      ・よしお → 1部屋<br>
+      <br>
+      各自ゆっくり休める配置!
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>🎯 瑞宝園を選んだ理由</h2>
+  
+  <div class="highlight-box">
+    <h4>✨ 5つの魅力</h4>
+    
+    <div class="spot-info">
+      <strong>① オールインクルーシブ</strong><br>
+      追加料金を気にせず飲み放題!館内施設も使い放題!<br>
+      お財布を気にせず楽しめるのが最大の魅力。
+    </div>
+    
+    <div class="spot-info">
+      <strong>② 飲み放題が充実</strong><br>
+      ビール・日本酒・焼酎・ワイン・カクテル約30種類!<br>
+      90分飲み放題+夕食後のBARタイムで心ゆくまで楽しめる。
+    </div>
+    
+    <div class="spot-info">
+      <strong>③ 館内アクティビティ</strong><br>
+      カラオケ・卓球が無料!<br>
+      温泉だけでなく、3人でワイワイ楽しめる。
+    </div>
+    
+    <div class="spot-info">
+      <strong>④ 大浴場が畳敷き</strong><br>
+      他にはない独特の心地よさ!<br>
+      足元が滑りにくく安全&温もりが伝わる。
+    </div>
+    
+    <div class="spot-info">
+      <strong>⑤ コスパ最高</strong><br>
+      1人約20,000円〜27,000円で、これだけのサービス!<br>
+      有馬温泉では破格のコストパフォーマンス。
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>📝 予約について</h2>
+  
+  <div class="info-box">
+    <h3>予約時の確認事項</h3>
+    <ul>
+      <li><strong>客室:</strong> 2部屋(男女別)</li>
+      <li><strong>プラン:</strong> オールインクルーシブプラン</li>
+      <li><strong>日程:</strong> 2026年2月23日(祝月)〜24日(火)</li>
+      <li><strong>チェックイン:</strong> 15:00〜18:00の間に到着予定</li>
+      <li><strong>送迎:</strong> 必要に応じて予約(有馬温泉駅から)</li>
+      <li><strong>食事:</strong> 夕食・朝食付き</li>
+      <li><strong>駐車場:</strong> 地下駐車場利用</li>
+    </ul>
+  </div>
+  
+  <div class="highlight-box">
+    <strong>⚠️ 予約は早めに!</strong><br>
+    2月の連休(祝日)は有馬温泉の繁忙期です。<br>
+    <strong>遅くとも1ヶ月前(2026年1月23日まで)</strong>には予約を完了させましょう!<br>
+    <br>
+    <strong>予約方法:</strong><br>
+    ・公式サイト(https://zuihouen.net/)<br>
+    ・楽天トラベル・じゃらん・JTBなどの予約サイト<br>
+    ・電話予約: 078-903-3800
+  </div>
+  
+  <div class="info-box">
+    <strong>💰 予算目安(1人あたり)</strong><br>
+    <strong>宿泊費:</strong> 約20,000円〜27,000円/泊(2名1室)<br>
+    <br>
+    <span class="note">※シーズン・プランにより変動。早期予約割引がある場合も。</span><br>
+    <span class="note">※オールインクルーシブなので、館内での追加料金はほぼなし!</span>
+  </div>
+</section>
+
+<section>
+  <h2>💡 宿泊のポイント</h2>
+  
+  <div class="spot-info">
+    <strong>⏰ 当日のスケジュール</strong><br>
+    <br>
+    <strong>15:00〜17:00</strong> チェックイン・ウェルカムドリンク・色浴衣選び<br>
+    <strong>17:00〜18:00</strong> 一風呂(夕食前)<br>
+    <strong>18:00〜20:00</strong> 夕食・飲み放題(90分)<br>
+    <strong>20:00〜</strong> 温泉街散策 or カラオケ・卓球<br>
+    <strong>21:00〜</strong> 夕食後のBARタイム・もう一風呂<br>
+    <strong>〜24:00</strong> 就寝<br>
+    <br>
+    翌朝も朝風呂を楽しんで、<strong>11:00チェックアウト</strong>
+  </div>
+  
+  <div class="info-box">
+    <strong>🍺 飲み放題の楽しみ方</strong><br>
+    ・夕食時は90分間好きなだけ飲める<br>
+    ・翌日よしおがメイン運転なので「ほどほど」に<br>
+    ・水分補給を忘れずに(寝る前に水を1L以上)<br>
+    ・二日酔い対策(ウコン・ヘパリーゼ等)も準備
+  </div>
+  
+  <div class="highlight-box">
+    <p style="text-align:center; font-size:1.1em; margin:0;">
+      <strong>オールインクルーシブで気兼ねなく楽しもう!🍻♨️</strong>
+    </p>
+  </div>
+</section>
+
+</div>
+
+<footer>
+  <p><a href="javascript:history.back()">← トップページに戻る</a></p>
+</footer>
+
+</body>
+</html>

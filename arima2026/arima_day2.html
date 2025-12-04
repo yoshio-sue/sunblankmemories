@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Day2 スケジュール - 有馬温泉旅行</title>
+<style>
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, "Hiragino Sans", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom, #f5e6d3 0%, #e8d4b8 100%);
+  color: #4a4a4a;
+  line-height: 1.7;
+}
+
+header {
+  background: linear-gradient(135deg, #d4a574 0%, #c89b65 100%);
+  color: #fff;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0 0 12px 0;
+  font-size: 2.2em;
+}
+
+header p {
+  margin: 6px 0;
+  font-size: 1em;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 40px;
+}
+
+section {
+  padding: 30px 20px;
+  border-bottom: 1px solid #d4a574;
+  background: #fff;
+  margin-bottom: 3px;
+}
+
+h2 {
+  background: linear-gradient(to right, #d4a574 0%, #e8d4b8 100%);
+  margin: 0;
+  padding: 16px 20px;
+  font-size: 1.4em;
+  border-left: 6px solid #a67c52;
+  color: #5a4a3a;
+}
+
+h3 {
+  color: #a67c52;
+  margin: 20px 0 10px 0;
+  font-size: 1.2em;
+  border-bottom: 2px solid #d4a574;
+  padding-bottom: 8px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+th, td {
+  padding: 12px 10px;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid #e8d4b8;
+}
+
+th {
+  background: #fef9f3;
+  font-weight: bold;
+  font-size: 0.95em;
+  color: #5a4a3a;
+}
+
+td {
+  font-size: 0.93em;
+}
+
+.time {
+  color: #d4774a;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.highlight {
+  color: #a67c52;
+  font-weight: bold;
+}
+
+.info-box {
+  background: #fef9f3;
+  border-left: 5px solid #d4a574;
+  padding: 14px;
+  margin: 14px 0;
+  border-radius: 6px;
+}
+
+.highlight-box {
+  background: linear-gradient(to right, #fef9f3 0%, #fdf5eb 100%);
+  padding: 20px;
+  margin: 14px 0;
+  border-radius: 10px;
+  border: 2px solid #d4a574;
+}
+
+.link-button {
+  display: inline-block;
+  padding: 8px 16px;
+  margin: 6px 6px 6px 0;
+  background: #7ba8c7;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 0.9em;
+}
+
+.link-button:hover {
+  background: #6a94b3;
+}
+
+.spot-info {
+  background: #f8f9fa;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border-left: 4px solid #d4a574;
+}
+
+footer {
+  background: #d4a574;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+}
+
+strong {
+  color: #a67c52;
+}
+
+.note {
+  font-size: 0.88em;
+  color: #666;
+  margin-top: 6px;
+}
+
+ul {
+  margin: 10px 0;
+  padding-left: 26px;
+}
+
+li {
+  margin: 8px 0;
+  font-size: 0.93em;
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>📅 Day2 スケジュール</h1>
+  <p>有馬三社巡り → 生田神社 → 六甲山夕暮れ&夜景 → 碧南市</p>
+</header>
+
+<div class="container">
+
+<section>
+  <h2>📅 Day2:パワースポット巡り&絶景の旅</h2>
+  <p class="note" style="margin-top:8px;">※有馬三社巡り・生田神社・六甲山1000万ドルの夜景!</p>
+  
+  <table>
+    <tr>
+      <th style="width:15%">時間目安</th>
+      <th style="width:25%">場所/活動</th>
+      <th style="width:60%">詳細</th>
+    </tr>
+    <tr>
+      <td class="time">08:00</td>
+      <td><strong>🍚 朝食</strong></td>
+      <td>宿で朝食<br><span class="note">しっかり食べて1日の活力を</span></td>
+    </tr>
+    <tr>
+      <td class="time">朝食後</td>
+      <td><strong>♨️ 朝風呂</strong></td>
+      <td>朝の温泉でもう一度リラックス<br><span class="note">銀泉でさっぱり・朝風呂は空いている</span></td>
+    </tr>
+    <tr>
+      <td class="time">10:00</td>
+      <td><strong>🏨 チェックアウト</strong></td>
+      <td>荷物を車に積んで出発準備<br><span class="note">※チェックアウト時刻:11:00</span></td>
+    </tr>
+    <tr>
+      <td class="time">10:00-11:00</td>
+      <td><span class="highlight">⛩️ 有馬三社巡り</span></td>
+      <td>
+        <strong>① 湯泉神社(とうせんじんじゃ)</strong><br>
+        ・良縁・商売繁盛・子宝・健康長寿<br>
+        ・有馬温泉の守護神<br>
+        ・温泉街から徒歩8分・階段あり<br>
+        <br>
+        <strong>② 有馬天神社</strong><br>
+        ・商売繁盛・金運UP・学問成就<br>
+        ・境内に天神泉源(金泉が噴出)<br>
+        ・湯泉神社から徒歩5分<br>
+        <br>
+        <strong>③ 水天宮</strong><br>
+        ・家族健康・安産・水難除け<br>
+        ・龍神パワーの聖地<br>
+        ・有馬天神社から徒歩6分<br>
+        <br>
+        <span class="note">💡 三社は数百m圏内・徒歩で巡れる・御朱印は湯泉神社でまとめて授与</span><br>
+        <a href="https://tousen.or.jp/" target="_blank" rel="noopener" class="link-button">🔗 湯泉神社公式</a>
+      </td>
+    </tr>
+    <tr>
+      <td class="time">11:15頃</td>
+      <td><strong>🍜 有馬温泉街でランチ</strong></td>
+      <td>
+        <strong>おすすめ:</strong><br>
+        ・明石焼き風たこ焼き<br>
+        ・神戸牛コロッケ<br>
+        ・有馬サイダー(炭酸入り天然水)<br>
+        ・炭酸せんべい(お土産にも)<br>
+        <span class="note">温泉街は小さいのでさっと食べて出発</span>
+      </td>
+    </tr>
+    <tr>
+      <td class="time">12:00頃</td>
+      <td><strong>🚗 生田神社へ移動</strong></td>
+      <td>
+        <strong>ルート:</strong>有馬温泉 → 阪神高速 → 三宮<br>
+        <strong>所要時間:</strong>約30分<br>
+        <strong>距離:</strong>約15km<br>
+        <span class="note">神戸市街地へ下る</span>
+      </td>
+    </tr>
+    <tr>
+      <td class="time">12:30-13:30</td>
+      <td><span class="highlight">⛩️ 生田神社</span></td>
+      <td>
+        <strong>ご利益:</strong>縁結び・恋愛成就・商売繁盛・金運UP・健康長寿<br>
+        <strong>ご祭神:</strong>稚日女尊(わかひるめのみこと)<br>
+        <strong>歴史:</strong>1800年以上の歴史を持つ古社<br>
+        <strong>見どころ:</strong><br>
+        ・本殿での参拝<br>
+        ・生田の森(樹齢500年以上の御神木)<br>
+        ・多彩なお守り(金運守・勝守など)<br>
+        <br>
+        <strong>アクセス:</strong>三宮駅から徒歩10分・駐車場あり<br>
+        <span class="note">💡 神戸の総鎮守・縁結びで有名</span><br>
+        <a href="https://ikutajinja.or.jp/" target="_blank" rel="noopener" class="link-button">🔗 生田神社公式</a>
+      </td>
+    </tr>
+    <tr>
+      <td class="time">13:45頃</td>
+      <td><strong>🍜 神戸市内で軽食</strong></td>
+      <td>
+        <strong>おすすめ:</strong><br>
+        ・南京町で中華(豚まん・小籠包)<br>
+        ・元町商店街でカフェ<br>
+        ・神戸スイーツ<br>
+        <strong>所要時間:</strong>30〜45分<br>
+        <span class="note">※軽めに・六甲山で夜景を楽しむため</span>
+      </td>
+    </tr>
+    <tr>
+      <td class="time">14:30頃</td>
+      <td><strong>🚗 六甲山へ移動</strong></td>
+      <td>
+        <strong>ルート:</strong>三宮 → 表六甲ドライブウェイ → 六甲山<br>
+        <strong>所要時間:</strong>約30分<br>
+        <strong>通行料:</strong>普通車 780円<br>
+        <span class="note">山道をドライブ・景色が良い</span>
+      </td>
+    </tr>
+    <tr>
+      <td class="time">15:00-18:00</td>
+      <td><span class="highlight">🌄 六甲山ガーデンテラス</span></td>
+      <td>
+        <strong>標高約880m・1000万ドルの夜景!</strong><br>
+        <br>
+        <strong>15:00 到着・カフェでゆっくり</strong><br>
+        ・見晴らしの塔<br>
+        ・展望カフェでコーヒー&スイーツ<br>
+        ・おしゃれなショップ散策<br>
+        <br>
+        <strong>17:00頃 夕暮れ開始</strong><br>
+        ・空がオレンジ〜紫に変化<br>
+        ・マジックアワーの絶景<br>
+        ・📸 夕暮れタイムの写真撮影<br>
+        <br>
+        <strong>17:30-18:00 夜景タイム</strong><br>
+        ・明石海峡〜大阪平野〜関西国際空港<br>
+        ・日本夜景100選・日本夜景遺産<br>
+        ・1000万ドルの夜景を満喫!<br>
+        <br>
+        <span class="note">💡 2月下旬の日没は17:30頃・夕暮れ〜夜景の両方が楽しめる!</span><br>
+        <a href="https://www.rokkosan.com/gt/" target="_blank" rel="noopener" class="link-button">🔗 六甲ガーデンテラス公式</a>
+      </td>
+    </tr>
+    <tr>
+      <td class="time">18:00頃</td>
+      <td><strong>🚗 帰路開始</strong></td>
+      <td>
+        <strong>ルート:</strong>六甲山 → 阪神高速 → 名神高速 → 伊勢湾岸道 → 碧南<br>
+        <strong>所要時間:</strong>約2時間<br>
+        <strong>距離:</strong>約200km<br>
+        <strong>高速料金:</strong>約6,000円(ETC休日割引)<br>
+        <span class="note">適宜SAで休憩・無理のない運転を・よしお頑張れ!</span>
+      </td>
+    </tr>
+    <tr>
+      <td class="time">20:00</td>
+      <td><strong>🏠 碧南市 到着</strong></td>
+      <td>
+        お疲れ様でした!素敵な旅になりましたか?<br>
+        <span class="note">奈々・なつきは24時就寝で翌日の仕事も安心!<br>よしお、長距離運転お疲れ様でした!</span>
+      </td>
+    </tr>
+  </table>
+</section>
+
+<section>
+  <h2>⛩️ 有馬三社巡りについて</h2>
+  
+  <div class="highlight-box">
+    <strong>🌟 有馬温泉パワースポットトライアングル</strong><br>
+    湯泉神社・有馬天神社・水天宮の三社を地図上で結ぶと三角形になり、
+    「有馬温泉パワースポットトライアングル」と呼ばれています。<br>
+    <br>
+    この三社を巡ることで、穢れを払い、徳を得て健やかな加護を授かることができると言われています。
+  </div>
+  
+  <div class="spot-info">
+    <strong>① 湯泉神社(とうせんじんじゃ)【本社】</strong><br>
+    <br>
+    <strong>ご利益:</strong> 良縁・商売繁盛・子宝・子授け・健康長寿・厄除け・交通安全<br>
+    <strong>特徴:</strong> 有馬温泉の守護神・温泉を発見した神様を祀る<br>
+    <strong>見どころ:</strong> 長い石段を登った先の本殿・子授けのお守り「玉鉾さま」「阿福さま」<br>
+    <strong>アクセス:</strong> 温泉街から徒歩8分・階段約100段<br>
+    <br>
+    <span class="note">💡 三社の御朱印はここでまとめて授与(授与所9:00〜17:00)</span>
+  </div>
+  
+  <div class="spot-info">
+    <strong>② 有馬天神社【別宮】</strong><br>
+    <br>
+    <strong>ご利益:</strong> 商売繁盛・金運UP・学問成就・厄除け<br>
+    <strong>特徴:</strong> 学問の神・菅原道真公を祀る・境内に天神泉源(金泉)がある<br>
+    <strong>見どころ:</strong> 境内で噴き出す100度近い金泉・事業成功のパワースポット<br>
+    <strong>アクセス:</strong> 湯泉神社から徒歩5分・温泉街の中心<br>
+    <br>
+    <span class="note">💡 境内に温泉が噴出する神社は全国的にも珍しい!</span>
+  </div>
+  
+  <div class="spot-info">
+    <strong>③ 水天宮【摂社】</strong><br>
+    <br>
+    <strong>ご利益:</strong> 家族健康・安産・病気治癒・水難除け<br>
+    <strong>特徴:</strong> 龍の気が満ちる聖地・大己貴命と少彦名命が降臨した場所<br>
+    <strong>見どころ:</strong> 社殿背面の井戸から湧く清水・静かな森の中の神秘的な雰囲気<br>
+    <strong>アクセス:</strong> 有馬天神社から徒歩6分・少しわかりにくい路地<br>
+    <br>
+    <span class="note">💡 静かなエネルギー「静」を感じる・立つだけで心が浄化される</span>
+  </div>
+  
+  <div class="info-box">
+    <strong>🙏 参拝の順序</strong><br>
+    ① 湯泉神社(本社) → ② 有馬天神社(別宮) → ③ 水天宮(摂社)<br>
+    <br>
+    この順で巡るのが一般的です。所要時間は約1時間。<br>
+    御朱印は湯泉神社で三社分まとめて授与されます。
+  </div>
+</section>
+
+<section>
+  <h2>⛩️ 生田神社について</h2>
+  
+  <div class="highlight-box">
+    <strong>🌸 神戸の総鎮守・1800年の歴史</strong><br>
+    生田神社は1800年以上の歴史を持つ古社で、縁結び・恋愛成就のご利益で有名。
+    商売繁盛や金運アップにもご利益があり、多彩なお守りが人気です。
+  </div>
+  
+  <div class="spot-info">
+    <strong>ご利益:</strong> 縁結び・恋愛成就・商売繁盛・金運UP・健康長寿・勝運<br>
+    <strong>ご祭神:</strong> 稚日女尊(わかひるめのみこと)・機織の神<br>
+    <strong>見どころ:</strong><br>
+    ・本殿(朱塗りの美しい社殿)<br>
+    ・生田の森(樹齢500年以上の御神木・パワースポット)<br>
+    ・多彩なお守り(金運守・勝守・縁結守など)<br>
+    <br>
+    <strong>アクセス:</strong> 三宮駅から徒歩10分・駐車場あり(1時間500円)<br>
+    <br>
+    <span class="note">💡 「神戸」の地名は生田神社の「神封戸(かんべ)」が由来</span>
+  </div>
+  
+  <div class="info-box">
+    <strong>🌳 生田の森</strong><br>
+    境内奥にある「生田の森」は、樹齢500年以上の御神木がある神秘的な森。
+    静かなエネルギーに満ちたパワースポットとして有名です。
+    源平合戦の舞台でもあり、歴史的な意義も深い場所です。
+  </div>
+</section>
+
+<section>
+  <h2>🌆 六甲山ガーデンテラスについて</h2>
+  
+  <div class="highlight-box">
+    <strong>🌟 1000万ドルの夜景!</strong><br>
+    標高約880mに位置する六甲山ガーデンテラスは、
+    明石海峡から大阪平野、関西国際空港まで広がる大パノラマの眺望が楽しめます。
+    日本夜景100選・日本夜景遺産に認定された絶景スポットです。
+  </div>
+  
+  <div class="spot-info">
+    <strong>📍 見どころ</strong><br>
+    <br>
+    <strong>① 見晴らしの塔</strong><br>
+    標高888mの展望台。360度の大パノラマ。<br>
+    <br>
+    <strong>② 自然体感展望台 六甲枝垂れ</strong><br>
+    ヒノキの優しい香りと枝葉のフレーム越しに降り注ぐ光。<br>
+    <br>
+    <strong>③ 展望カフェ</strong><br>
+    絶景を眺めながらコーヒー&スイーツ。<br>
+    <br>
+    <strong>④ おしゃれなショップ</strong><br>
+    雑貨・アクセサリー・お土産が充実。
+  </div>
+  
+  <div class="info-box">
+    <strong>⏰ 夕暮れ〜夜景の楽しみ方</strong><br>
+    <br>
+    <strong>15:00 到着</strong><br>
+    カフェでゆっくり・ショップ散策・昼間の景色を楽しむ<br>
+    <br>
+    <strong>17:00頃 夕暮れ開始</strong><br>
+    空がオレンジ〜紫〜青に変化するマジックアワー・最高の撮影タイム<br>
+    <br>
+    <strong>17:30頃 日没</strong><br>
+    街の灯りが徐々に灯る・夕暮れと夜景の共演<br>
+    <br>
+    <strong>18:00 完全な夜景</strong><br>
+    1000万ドルの夜景を満喫!神戸〜大阪の街明かりが広がる<br>
+    <br>
+    <span class="note">💡 2月下旬の日没は17:30頃・3時間滞在で夕暮れ〜夜景の両方が楽しめる!</span>
+  </div>
+</section>
+
+<section>
+  <h2>🗺️ Day2 移動ルート詳細</h2>
+  
+  <div class="info-box">
+    <h3>🚗 区間① 有馬温泉 → 生田神社(約30分)</h3>
+    <p><strong>ルート:</strong> 阪神高速7号北神戸線</p>
+    <p><strong>距離:</strong> 約15km</p>
+    <p><strong>通行料:</strong> 約500円</p>
+    <p><strong>注意点:</strong> 山道を下る。市街地に入るとやや混雑。</p>
+  </div>
+  
+  <div class="info-box">
+    <h3>🚗 区間② 生田神社 → 六甲山(約30分)</h3>
+    <p><strong>ルート:</strong> 表六甲ドライブウェイ</p>
+    <p><strong>距離:</strong> 約15km</p>
+    <p><strong>通行料:</strong> 普通車 780円</p>
+    <p><strong>注意点:</strong> 山道を登る。カーブが多い。景色が良い。</p>
+  </div>
+  
+  <div class="info-box">
+    <h3>🚗 区間③ 六甲山 → 碧南(約2時間)</h3>
+    <p><strong>ルート:</strong> 阪神高速 → 名神高速 → 伊勢湾岸道</p>
+    <p><strong>距離:</strong> 約200km</p>
+    <p><strong>高速料金:</strong> 約6,000円(ETC休日割引)</p>
+    <p><strong>注意点:</strong> よしおの運転時間が長い。SAで必ず休憩。眠ければ仮眠を。</p>
+  </div>
+</section>
+
+<section>
+  <h2>💡 Day2 のポイント</h2>
+  
+  <div class="spot-info">
+    <strong>⏰ 時間配分</strong><br>
+    有馬三社巡り(1時間) → 生田神社(1時間) → 六甲山(3時間)。
+    六甲山で夕暮れ〜夜景をゆっくり楽しむのが最大のポイント!
+  </div>
+  
+  <div class="spot-info">
+    <strong>🍜 食事</strong><br>
+    朝食:宿で和食<br>
+    昼食:有馬温泉街で軽食<br>
+    軽食:神戸市内で中華・カフェ<br>
+    夕食:SA or 帰宅後
+  </div>
+  
+  <div class="spot-info">
+    <strong>📸 撮影スポット</strong><br>
+    湯泉神社・有馬天神社・水天宮、生田神社・生田の森、六甲山夕暮れ〜夜景
+  </div>
+  
+  <div class="highlight-box">
+    <strong>🌟 パワースポット巡りの完結!</strong><br>
+    Day2は有馬三社巡り→生田神社と、合計4つのパワースポットを巡ります。
+    良縁・商売繁盛・金運アップのご利益をたっぷりいただきましょう!<br>
+    <br>
+    そして最後は六甲山の1000万ドルの夜景で旅のフィナーレ。
+    夕暮れから夜景への変化を楽しむ、忘れられない思い出になるはずです!
+  </div>
+</section>
+
+</div>
+
+<footer>
+  <p><a href="javascript:history.back()">← トップページに戻る</a></p>
+</footer>
+
+</body>
+</html>

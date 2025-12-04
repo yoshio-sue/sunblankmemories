@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>パワースポット詳細 - 有馬温泉旅行</title>
+<style>
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, "Hiragino Sans", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom, #f5e6d3 0%, #e8d4b8 100%);
+  color: #4a4a4a;
+  line-height: 1.7;
+}
+
+header {
+  background: linear-gradient(135deg, #d4a574 0%, #c89b65 100%);
+  color: #fff;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0 0 12px 0;
+  font-size: 2.2em;
+}
+
+header p {
+  margin: 6px 0;
+  font-size: 1em;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 40px;
+}
+
+section {
+  padding: 30px 20px;
+  border-bottom: 1px solid #d4a574;
+  background: #fff;
+  margin-bottom: 3px;
+}
+
+h2 {
+  background: linear-gradient(to right, #d4a574 0%, #e8d4b8 100%);
+  margin: 0;
+  padding: 16px 20px;
+  font-size: 1.4em;
+  border-left: 6px solid #a67c52;
+  color: #5a4a3a;
+}
+
+h3 {
+  color: #a67c52;
+  margin: 20px 0 10px 0;
+  font-size: 1.2em;
+  border-bottom: 2px solid #d4a574;
+  padding-bottom: 8px;
+}
+
+h4 {
+  color: #a67c52;
+  margin: 15px 0 8px 0;
+  font-size: 1.1em;
+}
+
+.powerspot-card {
+  background: linear-gradient(to bottom, #fff 0%, #fef9f3 100%);
+  border: 3px solid #d4a574;
+  border-radius: 12px;
+  padding: 24px;
+  margin: 20px 0;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.powerspot-card h3 {
+  margin-top: 0;
+  border: none;
+  padding: 0;
+  font-size: 1.4em;
+  color: #a67c52;
+}
+
+.benefit-badge {
+  display: inline-block;
+  background: #d4a574;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  margin: 4px;
+  font-size: 0.9em;
+  font-weight: bold;
+}
+
+.info-box {
+  background: #fef9f3;
+  border-left: 5px solid #d4a574;
+  padding: 14px;
+  margin: 14px 0;
+  border-radius: 6px;
+}
+
+.highlight-box {
+  background: linear-gradient(to right, #fef9f3 0%, #fdf5eb 100%);
+  padding: 20px;
+  margin: 14px 0;
+  border-radius: 10px;
+  border: 2px solid #d4a574;
+}
+
+.link-button {
+  display: inline-block;
+  padding: 8px 16px;
+  margin: 6px 6px 6px 0;
+  background: #7ba8c7;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 0.9em;
+}
+
+.link-button:hover {
+  background: #6a94b3;
+}
+
+.spot-info {
+  background: #f8f9fa;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border-left: 4px solid #d4a574;
+}
+
+footer {
+  background: #d4a574;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+}
+
+strong {
+  color: #a67c52;
+}
+
+.note {
+  font-size: 0.88em;
+  color: #666;
+  margin-top: 6px;
+}
+
+ul {
+  margin: 10px 0;
+  padding-left: 26px;
+}
+
+li {
+  margin: 8px 0;
+  font-size: 0.93em;
+}
+
+.day-badge {
+  display: inline-block;
+  background: #7ba8c7;
+  color: white;
+  padding: 4px 10px;
+  border-radius: 15px;
+  font-size: 0.85em;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 15px 0;
+}
+
+th, td {
+  padding: 12px 10px;
+  text-align: left;
+  border-bottom: 1px solid #e8d4b8;
+}
+
+th {
+  background: #fef9f3;
+  font-weight: bold;
+  color: #5a4a3a;
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>⛩️ パワースポット詳細</h1>
+  <p>良縁・商売繁盛・金運アップの5大聖地</p>
+</header>
+
+<div class="container">
+
+<section>
+  <h2>🌟 この旅で巡るパワースポット</h2>
+  
+  <div class="highlight-box">
+    <p style="font-size:1.1em; text-align:center; margin-bottom:15px;">
+      <strong>全行程パワースポット巡りの旅!</strong>
+    </p>
+    
+    <div style="text-align:center;">
+      <p><strong>Day1:</strong> 伊勢神宮(日本最高峰)</p>
+      <p><strong>Day2:</strong> 有馬三社巡り(湯泉神社・有馬天神社・水天宮) + 生田神社</p>
+    </div>
+    
+    <p style="margin-top:20px; text-align:center;">
+      <strong>合計5ヶ所のパワースポットで</strong><br>
+      <strong>良縁・商売繁盛・金運・健康長寿のご利益を!</strong>
+    </p>
+  </div>
+</section>
+
+<section>
+  <h2>⛩️ Day1:伊勢神宮</h2>
+  
+  <div class="powerspot-card">
+    <div class="day-badge">Day1 午前</div>
+    <h3>⛩️ 伊勢神宮(いせじんぐう)</h3>
+    
+    <div style="margin:15px 0;">
+      <span class="benefit-badge">全体運UP</span>
+      <span class="benefit-badge">家内安全</span>
+      <span class="benefit-badge">商売繁盛</span>
+      <span class="benefit-badge">厄除け</span>
+      <span class="benefit-badge">開運招福</span>
+    </div>
+    
+    <div class="highlight-box">
+      <p style="font-size:1.05em; margin:0;">
+        <strong>🌟 日本最高峰のパワースポット!</strong>
+      </p>
+    </div>
+    
+    <div class="info-box">
+      <strong>📍 基本情報</strong><br>
+      <strong>所在地:</strong> 三重県伊勢市<br>
+      <strong>ご祭神:</strong> <br>
+      ・外宮:豊受大御神(衣食住・産業の守り神)<br>
+      ・内宮:天照大御神(日本人の総氏神)<br>
+      <strong>創建:</strong> 約2000年前<br>
+      <strong>格式:</strong> 全国約8万社の神社の最高位<br>
+      <strong>参拝時間:</strong> 5:00〜18:00(1月〜4月、9月)<br>
+      <strong>参拝料:</strong> 無料<br>
+      <strong>駐車場:</strong> 外宮・内宮ともに無料駐車場あり
+    </div>
+    
+    <h4>🙏 参拝のポイント</h4>
+    <div class="spot-info">
+      <strong>① 外宮→内宮の順で参拝</strong><br>
+      「外宮先祭(げくうせんさい)」という古来のならわし。<br>
+      <br>
+      <strong>② 正宮では感謝を、別宮で願い事を</strong><br>
+      正宮:日頃の感謝を伝える<br>
+      別宮:個人的な願い事をする<br>
+      <br>
+      <strong>③ 参道の歩き方</strong><br>
+      外宮:左側通行 / 内宮:右側通行<br>
+      真ん中は神様の通り道なので避ける
+    </div>
+    
+    <h4>✨ パワースポットとしての魅力</h4>
+    <div class="highlight-box">
+      <ul>
+        <li><strong>日本人の総氏神</strong>を祀る最高位の神社</li>
+        <li><strong>全体運が上がる</strong>と言われる</li>
+        <li>参拝するだけで<strong>心が浄化</strong>される</li>
+        <li>20年に一度の<strong>式年遷宮</strong>で常に新しいエネルギー</li>
+      </ul>
+    </div>
+    
+    <a href="https://www.isejingu.or.jp/" target="_blank" rel="noopener" class="link-button">🔗 伊勢神宮公式</a>
+    <a href="https://www.google.com/maps/search/伊勢神宮/" target="_blank" rel="noopener" class="link-button">📍 Google Map</a>
+  </div>
+</section>
+
+<section>
+  <h2>⛩️ Day2:有馬三社巡り</h2>
+  
+  <div class="powerspot-card">
+    <div class="day-badge">Day2 午前</div>
+    <h3>⛩️ ① 湯泉神社(とうせんじんじゃ)</h3>
+    
+    <div style="margin:15px 0;">
+      <span class="benefit-badge">良縁</span>
+      <span class="benefit-badge">商売繁盛</span>
+      <span class="benefit-badge">子宝</span>
+      <span class="benefit-badge">健康長寿</span>
+    </div>
+    
+    <div class="info-box">
+      <strong>📍 基本情報</strong><br>
+      <strong>所在地:</strong> 兵庫県神戸市北区有馬町1908<br>
+      <strong>特徴:</strong> 有馬温泉の守護神・有馬三社の本社<br>
+      <strong>御朱印:</strong> 三社分まとめて授与(9:00〜17:00)
+    </div>
+    
+    <h4>✨ パワースポットとしての魅力</h4>
+    <div class="highlight-box">
+      <ul>
+        <li><strong>縁結びのご利益</strong>(恋愛・仕事・人間関係)</li>
+        <li><strong>子授け</strong>のお守り「玉鉾さま」「阿福さま」</li>
+        <li>100段の石段を登った先の<strong>神聖な空間</strong></li>
+      </ul>
+    </div>
+    
+    <a href="https://tousen.or.jp/" target="_blank" rel="noopener" class="link-button">🔗 公式サイト</a>
+  </div>
+  
+  <div class="powerspot-card">
+    <div class="day-badge">Day2 午前</div>
+    <h3>⛩️ ② 有馬天神社</h3>
+    
+    <div style="margin:15px 0;">
+      <span class="benefit-badge">商売繁盛</span>
+      <span class="benefit-badge">金運UP</span>
+      <span class="benefit-badge">学問成就</span>
+    </div>
+    
+    <div class="info-box">
+      <strong>📍 基本情報</strong><br>
+      <strong>ご祭神:</strong> 菅原道真公(学問の神)<br>
+      <strong>特徴:</strong> 境内に天神泉源(金泉)が湧出
+    </div>
+    
+    <h4>✨ パワースポットとしての魅力</h4>
+    <div class="highlight-box">
+      <ul>
+        <li><strong>商売繁盛・金運UP</strong>のご利益</li>
+        <li>境内で噴き出す<strong>100度近い金泉</strong></li>
+        <li>事業成功・財運上昇を願う参拝者が多い</li>
+      </ul>
+    </div>
+  </div>
+  
+  <div class="powerspot-card">
+    <div class="day-badge">Day2 午前</div>
+    <h3>⛩️ ③ 水天宮</h3>
+    
+    <div style="margin:15px 0;">
+      <span class="benefit-badge">家族健康</span>
+      <span class="benefit-badge">安産</span>
+      <span class="benefit-badge">龍神パワー</span>
+    </div>
+    
+    <div class="info-box">
+      <strong>📍 基本情報</strong><br>
+      <strong>特徴:</strong> 龍の気が満ちる聖地・静かな森の中の神秘的な空間
+    </div>
+    
+    <h4>✨ パワースポットとしての魅力</h4>
+    <div class="highlight-box">
+      <ul>
+        <li><strong>龍神とのつながり</strong>が語られる</li>
+        <li>社殿背面の井戸から湧く<strong>清水</strong></li>
+        <li>立つだけで<strong>心が浄化</strong>される</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>⛩️ Day2:生田神社</h2>
+  
+  <div class="powerspot-card">
+    <div class="day-badge">Day2 午後</div>
+    <h3>⛩️ 生田神社(いくたじんじゃ)</h3>
+    
+    <div style="margin:15px 0;">
+      <span class="benefit-badge">縁結び</span>
+      <span class="benefit-badge">恋愛成就</span>
+      <span class="benefit-badge">商売繁盛</span>
+      <span class="benefit-badge">金運UP</span>
+    </div>
+    
+    <div class="highlight-box">
+      <p style="font-size:1.05em; margin:0;">
+        <strong>🌸 神戸の総鎮守・1800年の歴史!</strong>
+      </p>
+    </div>
+    
+    <div class="info-box">
+      <strong>📍 基本情報</strong><br>
+      <strong>所在地:</strong> 兵庫県神戸市中央区下山手通1-2-1<br>
+      <strong>ご祭神:</strong> 稚日女尊(機織の神)<br>
+      <strong>創建:</strong> 201年(1800年以上の歴史)<br>
+      <strong>アクセス:</strong> 三宮駅から徒歩10分
+    </div>
+    
+    <h4>✨ パワースポットとしての魅力</h4>
+    <div class="highlight-box">
+      <ul>
+        <li><strong>縁結び・恋愛成就</strong>で全国的に有名</li>
+        <li><strong>商売繁盛・金運アップ</strong>のご利益も</li>
+        <li>「<strong>生田の森</strong>」は樹齢500年以上の御神木</li>
+        <li>多彩なお守り(金運守・勝守など)</li>
+      </ul>
+    </div>
+    
+    <a href="https://ikutajinja.or.jp/" target="_blank" rel="noopener" class="link-button">🔗 公式サイト</a>
+    <a href="https://www.google.com/maps/search/生田神社/" target="_blank" rel="noopener" class="link-button">📍 Google Map</a>
+  </div>
+</section>
+
+<section>
+  <h2>💡 パワースポット巡りのコツ</h2>
+  
+  <div class="spot-info">
+    <strong>① 参拝の作法を守る</strong><br>
+    ・鳥居をくぐる前に一礼<br>
+    ・手水舎で手と口を清める<br>
+    ・二拝二拍手一拝<br>
+    ・帽子は脱ぐ・私語は慎む
+  </div>
+  
+  <div class="spot-info">
+    <strong>② 心を込めて参拝する</strong><br>
+    ・まずは日頃の感謝を伝える<br>
+    ・願い事は具体的に<br>
+    ・自分の名前と住所を心の中で伝える
+  </div>
+  
+  <div class="spot-info">
+    <strong>③ 御朱印を集める</strong><br>
+    ・御朱印帳を持参すると記念になる<br>
+    ・有馬三社は湯泉神社でまとめて授与<br>
+    ・御朱印は神様との縁の証
+  </div>
+  
+  <div class="highlight-box">
+    <p style="text-align:center; font-size:1.1em; margin:0;">
+      <strong>🌟 素敵なご縁がありますように! 🌟</strong>
+    </p>
+  </div>
+</section>
+
+</div>
+
+<footer>
+  <p><a href="javascript:history.back()">← トップページに戻る</a></p>
+</footer>
+
+</body>
+</html>

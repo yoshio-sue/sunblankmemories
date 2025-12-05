@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>グルメ情報 - 有馬温泉旅行</title>
+<style>
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, "Hiragino Sans", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom, #f5e6d3 0%, #e8d4b8 100%);
+  color: #4a4a4a;
+  line-height: 1.7;
+}
+
+header {
+  background: linear-gradient(135deg, #d4a574 0%, #c89b65 100%);
+  color: #fff;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0 0 12px 0;
+  font-size: 2.2em;
+}
+
+header p {
+  margin: 6px 0;
+  font-size: 1em;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 40px;
+}
+
+section {
+  padding: 30px 20px;
+  border-bottom: 1px solid #d4a574;
+  background: #fff;
+  margin-bottom: 3px;
+}
+
+h2 {
+  background: linear-gradient(to right, #d4a574 0%, #e8d4b8 100%);
+  margin: 0;
+  padding: 16px 20px;
+  font-size: 1.4em;
+  border-left: 6px solid #a67c52;
+  color: #5a4a3a;
+}
+
+h3 {
+  color: #a67c52;
+  margin: 20px 0 10px 0;
+  font-size: 1.2em;
+  border-bottom: 2px solid #d4a574;
+  padding-bottom: 8px;
+}
+
+h4 {
+  color: #a67c52;
+  margin: 15px 0 8px 0;
+  font-size: 1.1em;
+}
+
+.info-box {
+  background: #fef9f3;
+  border-left: 5px solid #d4a574;
+  padding: 14px;
+  margin: 14px 0;
+  border-radius: 6px;
+}
+
+.highlight-box {
+  background: linear-gradient(to right, #fef9f3 0%, #fdf5eb 100%);
+  padding: 20px;
+  margin: 14px 0;
+  border-radius: 10px;
+  border: 2px solid #d4a574;
+}
+
+.spot-info {
+  background: #f8f9fa;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border-left: 4px solid #d4a574;
+}
+
+.gourmet-card {
+  background: linear-gradient(to bottom, #fff 0%, #fef9f3 100%);
+  border: 2px solid #d4a574;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 14px 0;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+.day-badge {
+  display: inline-block;
+  background: #7ba8c7;
+  color: white;
+  padding: 4px 10px;
+  border-radius: 15px;
+  font-size: 0.85em;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.price {
+  color: #d4774a;
+  font-weight: bold;
+  font-size: 1.05em;
+}
+
+footer {
+  background: #d4a574;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+}
+
+strong {
+  color: #a67c52;
+}
+
+.note {
+  font-size: 0.88em;
+  color: #666;
+  margin-top: 6px;
+}
+
+ul {
+  margin: 10px 0;
+  padding-left: 26px;
+}
+
+li {
+  margin: 8px 0;
+  font-size: 0.93em;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 15px 0;
+}
+
+th, td {
+  padding: 12px 10px;
+  text-align: left;
+  border-bottom: 1px solid #e8d4b8;
+}
+
+th {
+  background: #fef9f3;
+  font-weight: bold;
+  color: #5a4a3a;
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>🍜 グルメ情報</h1>
+  <p>エリア別おすすめレストラン・食べ歩き</p>
+</header>
+
+<div class="container">
+
+<section>
+  <h2>🗺️ エリア別グルメガイド</h2>
+  
+  <div class="highlight-box">
+    <p style="font-size:1.05em; text-align:center; margin-bottom:10px;">
+      <strong>この旅で楽しむグルメ</strong>
+    </p>
+    <p style="text-align:center;">
+      <strong>Day1:</strong> おかげ横丁(伊勢うどん・手こね寿司・赤福)<br>
+      <strong>Day2:</strong> 有馬温泉(炭酸せんべい・有馬サイダー)
+    </p>
+  </div>
+</section>
+
+<section>
+  <h2>🍜 Day1:おかげ横丁グルメ</h2>
+  
+  <div class="gourmet-card">
+    <div class="day-badge">Day1 昼食</div>
+    <h3>① 伊勢うどん</h3>
+    
+    <div class="info-box">
+      <strong>特徴:</strong><br>
+      ずんぐりと太い麺に、たまり醤油を使った濃褐色のタレをかけて食べる「伊勢うどん」は伊勢名物。讃岐うどんとは真逆の柔らかい食感が特徴。
+    </div>
+    
+    <div class="spot-info">
+      <strong>おすすめ店:ふくすけ(おかげ横丁)</strong><br>
+      職人による手打ち麺も数量限定で用意しており、自家製ダレによく絡んだ太麺の食感とともに松阪牛肉、めかぶ、とろろ、たまご、大きな海老天ぷらなど、お好みの組み合わせで楽しめます<br>
+      <strong>予算:</strong> <span class="price">600〜900円</span><br>
+      <strong>営業時間:</strong> 9:30〜17:00<br>
+      <span class="note">※鬼瓦の福助が目印</span>
+    </div>
+  </div>
+  
+  <div class="gourmet-card">
+    <div class="day-badge">Day1 昼食</div>
+    <h3>② 手こね寿司</h3>
+    
+    <div class="info-box">
+      <strong>特徴:</strong><br>
+      てこね寿司は元々、漁師が漁の合間に獲れたての魚を手で混ぜ合わせて食べたのが始まりとされています。鰹の漬けを酢飯に乗せた郷土料理。
+    </div>
+    
+    <div class="spot-info">
+      <strong>おすすめ店:手こね茶屋(本店)</strong><br>
+      伊勢うどんと手こね寿司のセットがおすすめ!<br>
+      <strong>予算:</strong> <span class="price">1,000〜1,500円</span><br>
+      <span class="note">※本店は五十鈴川を見ながら食事可能</span>
+    </div>
+  </div>
+  
+  <div class="gourmet-card">
+    <div class="day-badge">Day1 デザート</div>
+    <h3>③ 赤福餅(本店)</h3>
+    
+    <div class="highlight-box">
+      <p style="margin:0;"><strong>🌟 おかげ横丁に来たら必食!</strong></p>
+    </div>
+    
+    <div class="info-box">
+      <strong>特徴:</strong><br>
+      朱塗りのかまどから湯気が立ち昇り、地元三重県産の番茶を焙じる香ばしい薫りが広がる店内では、餅入れさんと呼ぶ女性職人が繊細な指先で、赤福餅の三筋の清流を一つ一つ真心こめて形づくります
+    </div>
+    
+    <div class="spot-info">
+      <strong>赤福本店</strong><br>
+      <strong>店内で食べる赤福:</strong> 出来立てが最高!<br>
+      ・<strong>冬季:</strong> 赤福ぜんざい 520円<br>
+      ・<strong>夏季:</strong> 赤福氷 520円<br>
+      <br>
+      <strong>お土産用:</strong> 8個入り 760円〜<br>
+      <strong>営業時間:</strong> 朝5:00〜17:00<br>
+      <span class="note">※五十鈴川沿いの縁側で景色を楽しみながら</span>
+    </div>
+  </div>
+  
+  <div class="gourmet-card">
+    <div class="day-badge">Day1 食べ歩き</div>
+    <h3>④ 松阪牛串・コロッケ</h3>
+    
+    <div class="spot-info">
+      <strong>豚捨(ぶたすて)</strong><br>
+      明治42年創業の老舗和牛専門店。<br>
+      <strong>名物:</strong> 黒毛和牛コロッケ<br>
+      <strong>特徴:</strong> じゃがいものほくほく感と衣のサクサク食感<br>
+      <strong>予算:</strong> <span class="price">300〜500円</span><br>
+      <span class="note">※店頭でソースを自由にかけられる</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>♨️ Day2:有馬温泉グルメ</h2>
+  
+  <div class="gourmet-card">
+    <div class="day-badge">Day2 名物</div>
+    <h3>① 炭酸せんべい</h3>
+    
+    <div class="highlight-box">
+      <p style="margin:0;"><strong>🌟 有馬温泉名物!パリッとサクサク!</strong></p>
+    </div>
+    
+    <div class="info-box">
+      <strong>特徴:</strong><br>
+      明治の頃、有馬温泉に湧き出る炭酸泉をせんべい作りに使用したことが始まりとされており、炭酸水を用いることで、パリッとした軽い食感のおせんべいに焼きあがります<br>
+      バター、卵、添加物を一切使用せず薄く、パリッとした食感で素朴なお味の中にも独特の風味があります
+    </div>
+    
+    <div class="spot-info">
+      <strong>湯の花堂本舗 太閤通り店</strong><br>
+      <strong>名物:</strong> なま炭酸せんべい(賞味期限5秒!)<br>
+      職人が直火でていねいに一枚ずつ焼き上げた昔ながらの炭酸せんべいを、焼型から剥がしたての軟らかい状態で召し上がっていただけます<br>
+      <strong>予算:</strong> <span class="price">500円〜800円</span>(箱入り)<br>
+      <strong>体験:</strong> 焼きたてを店頭で購入可能<br>
+      <span class="note">※ふにゃふにゃ→パリパリへの変化を楽しめる!</span>
+    </div>
+    
+    <div class="spot-info">
+      <strong>三津森本舗</strong><br>
+      有馬温泉のメインストリート・湯本坂にある老舗。<br>
+      <strong>名物:</strong> 炭酸煎餅フレンチトースト 600円<br>
+      <strong>特徴:</strong> 溶き卵に浸した炭酸せんべいを重ね焼き<br>
+      <span class="note">※MITSUMORI CAFEで提供</span>
+    </div>
+  </div>
+  
+  <div class="gourmet-card">
+    <div class="day-badge">Day2 ドリンク</div>
+    <h3>② 有馬サイダー</h3>
+    
+    <div class="info-box">
+      <strong>歴史:</strong><br>
+      1908年に炭酸水に甘味料や香料を加えた『有馬サイダー』が生まれました。日本におけるサイダー発祥の地!
+    </div>
+    
+    <div class="spot-info">
+      <strong>ありまサイダーてっぽう水</strong><br>
+      当時の源泉は炭酸の濃度が非常に高く、瓶の栓が鉄砲のようにポーンと飛んでいくほどだったという話しもあるんですよ<br>
+      <strong>特徴:</strong> がつんと刺激のある炭酸<br>
+      <strong>予算:</strong> <span class="price">200円〜</span><br>
+      <span class="note">※温泉街のお土産屋で購入可能</span>
+    </div>
+  </div>
+  
+  <div class="gourmet-card">
+    <div class="day-badge">Day2 食べ歩き</div>
+    <h3>③ 神戸牛コロッケ</h3>
+    
+    <div class="spot-info">
+      <strong>竹中肉店</strong><br>
+      <strong>特徴:</strong> 神戸牛を使った贅沢なコロッケ<br>
+      <strong>予算:</strong> <span class="price">300〜500円</span><br>
+      <strong>営業時間:</strong> 10:00〜17:00<br>
+      <span class="note">※温泉街散策のお供に最適</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>🍽️ 食事タイムライン</h2>
+  
+  <table>
+    <tr>
+      <th style="width:25%;">食事</th>
+      <th style="width:30%;">場所</th>
+      <th style="width:25%;">内容</th>
+      <th style="width:20%;">予算</th>
+    </tr>
+    <tr>
+      <td><strong>Day1 朝食</strong></td>
+      <td>コンビニ</td>
+      <td>おにぎり・サンドイッチ</td>
+      <td class="price">500円</td>
+    </tr>
+    <tr>
+      <td><strong>Day1 昼食</strong></td>
+      <td>おかげ横丁</td>
+      <td>伊勢うどん・手こね寿司</td>
+      <td class="price">1,200〜1,500円</td>
+    </tr>
+    <tr>
+      <td><strong>Day1 デザート</strong></td>
+      <td>赤福本店</td>
+      <td>赤福餅・ぜんざい</td>
+      <td class="price">500円</td>
+    </tr>
+    <tr>
+      <td><strong>Day1 食べ歩き</strong></td>
+      <td>おかげ横丁</td>
+      <td>松阪牛串・コロッケ</td>
+      <td class="price">500〜1,000円</td>
+    </tr>
+    <tr>
+      <td><strong>Day1 夕食</strong></td>
+      <td>瑞宝園</td>
+      <td>会席料理+飲み放題</td>
+      <td class="price">宿泊費込み</td>
+    </tr>
+    <tr>
+      <td><strong>Day2 朝食</strong></td>
+      <td>瑞宝園</td>
+      <td>和朝食</td>
+      <td class="price">宿泊費込み</td>
+    </tr>
+    <tr>
+      <td><strong>Day2 昼食</strong></td>
+      <td>有馬温泉街</td>
+      <td>軽食</td>
+      <td class="price">800〜1,200円</td>
+    </tr>
+    <tr>
+      <td><strong>Day2 食べ歩き</strong></td>
+      <td>有馬温泉街</td>
+      <td>炭酸せんべい・コロッケ</td>
+      <td class="price">500〜800円</td>
+    </tr>
+    <tr>
+      <td><strong>Day2 軽食</strong></td>
+      <td>神戸(南京町)</td>
+      <td>中華(豚まん・小籠包)</td>
+      <td class="price">500〜1,000円</td>
+    </tr>
+  </table>
+</section>
+
+<section>
+  <h2>🛍️ お土産グルメ</h2>
+  
+  <div class="gourmet-card">
+    <h3>伊勢エリア</h3>
+    
+    <div class="spot-info">
+      <strong>① 赤福餅</strong><br>
+      <strong>日持ち:</strong> 冬季3日間・夏季2日間<br>
+      <strong>価格:</strong> 8個入り760円〜<br>
+      <span class="note">※日持ちしないので帰る前に購入推奨</span>
+    </div>
+    
+    <div class="spot-info">
+      <strong>② 伊勢うどん(乾麺)</strong><br>
+      <strong>日持ち:</strong> 数ヶ月<br>
+      <strong>価格:</strong> 500円〜<br>
+      <span class="note">※自宅で伊勢うどんを再現できる</span>
+    </div>
+  </div>
+  
+  <div class="gourmet-card">
+    <h3>有馬温泉エリア</h3>
+    
+    <div class="spot-info">
+      <strong>① 炭酸せんべい</strong><br>
+      <strong>日持ち:</strong> 数ヶ月<br>
+      <strong>価格:</strong> 500円〜1,000円<br>
+      <span class="note">※軽くてかさばらないのでお土産に最適</span>
+    </div>
+    
+    <div class="spot-info">
+      <strong>② 有馬サイダー</strong><br>
+      <strong>日持ち:</strong> 長期保存可<br>
+      <strong>価格:</strong> 200円〜<br>
+      <span class="note">※レトロなラベルが可愛い</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>💡 グルメを楽しむコツ</h2>
+  
+  <div class="spot-info">
+    <strong>⏰ 食事のタイミング</strong><br>
+    ・昼食:11:30〜12:30頃(混雑前がおすすめ)<br>
+    ・食べ歩き:散策しながら少しずつ<br>
+    ・お土産:帰る直前に購入(日持ち対策)
+  </div>
+  
+  <div class="spot-info">
+    <strong>📸 写真撮影</strong><br>
+    グルメも旅の思い出!食べる前に写真撮影を。<br>
+    特に赤福餅や炭酸せんべいは見た目も美しい。
+  </div>
+  
+  <div class="spot-info">
+    <strong>💰 予算管理</strong><br>
+    ・昼食:1,000〜1,500円<br>
+    ・食べ歩き:500〜1,000円<br>
+    ・お土産:1,000〜2,000円<br>
+    <strong>合計:</strong> 1人あたり約2,500〜4,500円
+  </div>
+  
+  <div class="highlight-box">
+    <p style="text-align:center; font-size:1.1em; margin:0;">
+      <strong>🍜 地元の味を堪能しよう! 🍜</strong>
+    </p>
+  </div>
+</section>
+
+</div>
+
+<footer>
+  <p><a href="javascript:history.back()">← トップページに戻る</a></p>
+</footer>
+
+</body>
+</html>

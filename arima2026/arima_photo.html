@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>写真スポット - 有馬温泉旅行</title>
+<style>
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, "Hiragino Sans", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom, #f5e6d3 0%, #e8d4b8 100%);
+  color: #4a4a4a;
+  line-height: 1.7;
+}
+
+header {
+  background: linear-gradient(135deg, #d4a574 0%, #c89b65 100%);
+  color: #fff;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0 0 12px 0;
+  font-size: 2.2em;
+}
+
+header p {
+  margin: 6px 0;
+  font-size: 1em;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 40px;
+}
+
+section {
+  padding: 30px 20px;
+  border-bottom: 1px solid #d4a574;
+  background: #fff;
+  margin-bottom: 3px;
+}
+
+h2 {
+  background: linear-gradient(to right, #d4a574 0%, #e8d4b8 100%);
+  margin: 0;
+  padding: 16px 20px;
+  font-size: 1.4em;
+  border-left: 6px solid #a67c52;
+  color: #5a4a3a;
+}
+
+h3 {
+  color: #a67c52;
+  margin: 20px 0 10px 0;
+  font-size: 1.2em;
+  border-bottom: 2px solid #d4a574;
+  padding-bottom: 8px;
+}
+
+h4 {
+  color: #a67c52;
+  margin: 15px 0 8px 0;
+  font-size: 1.1em;
+}
+
+.photo-card {
+  background: linear-gradient(to bottom, #fff 0%, #fef9f3 100%);
+  border: 2px solid #d4a574;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 20px 0;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+.photo-card h4 {
+  margin-top: 0;
+  color: #a67c52;
+  font-size: 1.2em;
+}
+
+.day-badge {
+  display: inline-block;
+  background: #7ba8c7;
+  color: white;
+  padding: 4px 10px;
+  border-radius: 15px;
+  font-size: 0.85em;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.difficulty {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 15px;
+  font-size: 0.85em;
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+.easy { background: #90EE90; color: #2d5016; }
+.medium { background: #FFD700; color: #7d6608; }
+.hard { background: #FF6B6B; color: #8b0000; }
+
+.info-box {
+  background: #fef9f3;
+  border-left: 5px solid #d4a574;
+  padding: 14px;
+  margin: 14px 0;
+  border-radius: 6px;
+}
+
+.highlight-box {
+  background: linear-gradient(to right, #fef9f3 0%, #fdf5eb 100%);
+  padding: 20px;
+  margin: 14px 0;
+  border-radius: 10px;
+  border: 2px solid #d4a574;
+}
+
+.spot-info {
+  background: #f8f9fa;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border-left: 4px solid #d4a574;
+}
+
+footer {
+  background: #d4a574;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+}
+
+strong {
+  color: #a67c52;
+}
+
+.note {
+  font-size: 0.88em;
+  color: #666;
+  margin-top: 6px;
+}
+
+ul {
+  margin: 10px 0;
+  padding-left: 26px;
+}
+
+li {
+  margin: 8px 0;
+  font-size: 0.93em;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 15px 0;
+}
+
+th, td {
+  padding: 12px 10px;
+  text-align: left;
+  border-bottom: 1px solid #e8d4b8;
+}
+
+th {
+  background: #fef9f3;
+  font-weight: bold;
+  color: #5a4a3a;
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>📸 写真スポットまとめ</h1>
+  <p>絶景撮影ポイント・思い出に残る写真を!</p>
+</header>
+
+<div class="container">
+
+<section>
+  <h2>📸 この旅で訪れる写真スポット</h2>
+  
+  <div class="highlight-box">
+    <p style="font-size:1.05em; text-align:center; margin-bottom:15px;">
+      <strong>全10ヶ所の撮影ポイント!</strong>
+    </p>
+    
+    <div style="text-align:center;">
+      <p><strong>Day1:</strong> 伊勢神宮(外宮・内宮)・おかげ横丁</p>
+      <p><strong>Day2:</strong> 有馬三社・生田神社・六甲山夕暮れ&夜景</p>
+    </div>
+    
+    <p style="margin-top:20px; text-align:center;">
+      <strong>パワースポット×絶景×グルメ</strong><br>
+      <strong>すべて撮影して思い出に残そう!</strong>
+    </p>
+  </div>
+</section>
+
+<section>
+  <h2>🌅 Day1 写真スポット</h2>
+  
+  <div class="photo-card">
+    <div class="day-badge">Day1 午前</div>
+    <span class="difficulty easy">★☆☆ 初級</span>
+    <h4>📍 1. 伊勢神宮 外宮</h4>
+    
+    <div class="spot-info">
+      <strong>撮影ポイント:</strong><br>
+      ・鳥居(入口の大鳥居)<br>
+      ・参道(左側通行を意識した構図)<br>
+      ・御正宮(正面から荘厳な建物を)<br>
+      ・多賀宮(石段と社殿)<br>
+      <br>
+      <strong>所要時間:</strong> 約60分<br>
+      <strong>撮影のコツ:</strong><br>
+      午前中は光が良い。参道は人が少ないタイミングを狙う。<br>
+      <span class="note">※御正宮の内部は撮影禁止。外観のみ。</span>
+    </div>
+  </div>
+  
+  <div class="photo-card">
+    <div class="day-badge">Day1 午前</div>
+    <span class="difficulty easy">★☆☆ 初級</span>
+    <h4>📍 2. 伊勢神宮 内宮</h4>
+    
+    <div class="spot-info">
+      <strong>撮影ポイント:</strong><br>
+      ・<strong>宇治橋(必見!)</strong>:神域への入口・五十鈴川に架かる美しい橋<br>
+      ・五十鈴川御手洗場:清らかな川で手を清める様子<br>
+      ・参道:木漏れ日が美しい<br>
+      ・御正宮:荘厳な建物(外観のみ)<br>
+      <br>
+      <strong>所要時間:</strong> 約90分<br>
+      <strong>撮影のコツ:</strong><br>
+      宇治橋は必ず撮影!橋の中央から川を見下ろす構図がおすすめ。<br>
+      五十鈴川での手水は動画でも撮ると良い思い出に。<br>
+      <span class="note">※御正宮の内部は撮影禁止。</span>
+    </div>
+  </div>
+  
+  <div class="photo-card">
+    <div class="day-badge">Day1 昼</div>
+    <span class="difficulty easy">★☆☆ 初級</span>
+    <h4>📍 3. おかげ横丁</h4>
+    
+    <div class="spot-info">
+      <strong>撮影ポイント:</strong><br>
+      ・江戸〜明治の街並み<br>
+      ・赤福本店(五十鈴川沿いの縁側)<br>
+      ・食べ歩きグルメ(伊勢うどん・赤福餅)<br>
+      ・提灯や看板などレトロな雰囲気<br>
+      <br>
+      <strong>撮影のコツ:</strong><br>
+      グルメは食べる前に撮影!赤福餅の美しい三筋も忘れずに。<br>
+      街並みは縦構図で撮ると雰囲気が出る。
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>🌄 Day2 写真スポット</h2>
+  
+  <div class="photo-card">
+    <div class="day-badge">Day2 午前</div>
+    <span class="difficulty medium">★★☆ 中級</span>
+    <h4>📍 4. 湯泉神社</h4>
+    
+    <div class="spot-info">
+      <strong>撮影ポイント:</strong><br>
+      ・100段の石段(下から見上げる構図)<br>
+      ・本殿(静かな森の中の神聖な雰囲気)<br>
+      ・境内からの温泉街の眺め<br>
+      <br>
+      <strong>撮影のコツ:</strong><br>
+      石段は下から見上げて撮ると迫力が出る。<br>
+      本殿は朝の光が美しい。静かな雰囲気を活かして。
+    </div>
+  </div>
+  
+  <div class="photo-card">
+    <div class="day-badge">Day2 午前</div>
+    <span class="difficulty easy">★☆☆ 初級</span>
+    <h4>📍 5. 有馬天神社</h4>
+    
+    <div class="spot-info">
+      <strong>撮影ポイント:</strong><br>
+      ・本殿<br>
+      ・<strong>天神泉源(必見!)</strong>:境内で噴出する金泉(約100度)<br>
+      ・湯けむりが立ち上る様子<br>
+      <br>
+      <strong>撮影のコツ:</strong><br>
+      天神泉源の湯けむりは動画でも撮影推奨!<br>
+      温泉街の活気ある雰囲気も一緒に。
+    </div>
+  </div>
+  
+  <div class="photo-card">
+    <div class="day-badge">Day2 午前</div>
+    <span class="difficulty easy">★☆☆ 初級</span>
+    <h4>📍 6. 水天宮</h4>
+    
+    <div class="spot-info">
+      <strong>撮影ポイント:</strong><br>
+      ・小さな社殿(神秘的な雰囲気)<br>
+      ・静かな森の中の癒しの空間<br>
+      ・社殿背面の井戸<br>
+      <br>
+      <strong>撮影のコツ:</strong><br>
+      静かで神秘的な雰囲気を活かして。<br>
+      木漏れ日が美しいタイミングを狙う。
+    </div>
+  </div>
+  
+  <div class="photo-card">
+    <div class="day-badge">Day2 午後</div>
+    <span class="difficulty easy">★☆☆ 初級</span>
+    <h4>📍 7. 生田神社</h4>
+    
+    <div class="spot-info">
+      <strong>撮影ポイント:</strong><br>
+      ・朱塗りの美しい本殿<br>
+      ・<strong>生田の森(必見!)</strong>:樹齢500年以上の御神木<br>
+      ・鳥居と参道<br>
+      <br>
+      <strong>撮影のコツ:</strong><br>
+      本殿は正面から荘厳さを。<br>
+      生田の森は神秘的な雰囲気を活かして。<br>
+      大きな御神木は縦構図で撮ると迫力が出る。
+    </div>
+  </div>
+  
+  <div class="photo-card">
+    <div class="day-badge">Day2 午後</div>
+    <span class="difficulty hard">★★★ 上級</span>
+    <h4>📍 8. 六甲山ガーデンテラス(夕暮れ〜夜景)</h4>
+    
+    <div class="highlight-box">
+      <p style="margin:0; font-size:1.05em;">
+        <strong>🌟 この旅最大の撮影スポット!</strong>
+      </p>
+    </div>
+    
+    <div class="spot-info">
+      <strong>撮影ポイント:</strong><br>
+      ・<strong>15:00-17:00:</strong> 昼間の大パノラマ(明石海峡〜大阪平野)<br>
+      ・<strong>17:00-17:30:</strong> マジックアワー(夕暮れのグラデーション)<br>
+      ・<strong>17:30-18:00:</strong> 夜景(1000万ドルの夜景!)<br>
+      <br>
+      <strong>撮影のコツ:</strong><br>
+      <br>
+      <strong>昼間(15:00-17:00):</strong><br>
+      ・展望台からの大パノラマを広角で<br>
+      ・見晴らしの塔からの眺望<br>
+      ・カフェから窓越しの景色も素敵<br>
+      <br>
+      <strong>マジックアワー(17:00-17:30):</strong><br>
+      ・空がオレンジ〜紫〜青に変化<br>
+      ・最高の撮影タイム!<br>
+      ・シルエット撮影もおすすめ<br>
+      <br>
+      <strong>夜景(17:30-18:00):</strong><br>
+      ・スマホは夜景モードで<br>
+      ・手すりに置いて固定すると手ブレ防止<br>
+      ・三脚があればベスト<br>
+      ・街の灯りが広がる絶景を!<br>
+      <br>
+      <span class="note">💡 3つの時間帯すべて撮影推奨!それぞれ全く違う表情を見せます。</span>
+    </div>
+    
+    <div class="info-box">
+      <strong>⚠️ 夜景撮影の注意</strong><br>
+      ・寒いので防寒対策必須<br>
+      ・モバイルバッテリー持参(寒いとバッテリー減りが早い)<br>
+      ・手袋は指が出せるタイプが便利<br>
+      ・夜景モードで撮影(シャッターボタンを押したら動かない)
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>📱 撮影のコツ・注意点</h2>
+  
+  <h3>📷 スマホ撮影のコツ</h3>
+  
+  <div class="spot-info">
+    <strong>基本テクニック</strong><br>
+    ・<strong>グリッド表示ON:</strong> 設定でグリッドを表示すると構図が決めやすい<br>
+    ・<strong>HDRモード:</strong> 明暗差が大きい場面でON(神社の鳥居など)<br>
+    ・<strong>夜景モード:</strong> 夜の撮影で使用(六甲山の夜景)<br>
+    ・<strong>ポートレートモード:</strong> 人物撮影で背景ぼかし<br>
+    ・<strong>タップフォーカス:</strong> 撮りたい部分をタップしてピント合わせ
+  </div>
+  
+  <div class="spot-info">
+    <strong>構図のポイント</strong><br>
+    ・<strong>三分割法:</strong> 画面を9分割して、交点に被写体を配置<br>
+    ・<strong>縦横両方:</strong> 縦構図と横構図を両方撮っておく<br>
+    ・<strong>高低差:</strong> しゃがんだり、高い位置から撮ったり角度を変える<br>
+    ・<strong>余白:</strong> 被写体の周りに適度な余白を残す
+  </div>
+  
+  <h3>🌡️ 冬の撮影注意点</h3>
+  
+  <div class="info-box">
+    <strong>バッテリー対策</strong><br>
+    2月は寒いのでスマホのバッテリーが急激に減ります!<br>
+    <br>
+    ・<strong>モバイルバッテリー必須</strong><br>
+    ・<strong>ポケットで温める</strong>(使わない時は体温で温度保持)<br>
+    ・<strong>予備バッテリー</strong>(カメラの場合)
+  </div>
+  
+  <div class="info-box">
+    <strong>結露対策</strong><br>
+    寒い外から暖かい室内に入ると、レンズが曇ります。<br>
+    <br>
+    ・<strong>しばらく待つ</strong>(5〜10分で自然に曇りが取れる)<br>
+    ・<strong>ビニール袋</strong>に入れてから室内へ(温度差を緩和)
+  </div>
+  
+  <h3>🧤 手袋問題</h3>
+  
+  <div class="spot-info">
+    <strong>スマホ対応手袋がおすすめ</strong><br>
+    特に六甲山の夜景撮影は極寒!素手だと手がかじかんでシャッターが押せません。<br>
+    <br>
+    ・<strong>スマホ対応手袋</strong>を使用<br>
+    ・または<strong>指先だけ出せる手袋</strong><br>
+    ・<strong>カイロを持参</strong>して手を温める
+  </div>
+  
+  <h3>📸 撮影マナー</h3>
+  
+  <ul>
+    <li><strong>他の観光客の邪魔をしない</strong></li>
+    <li><strong>立ち入り禁止区域に入らない</strong></li>
+    <li><strong>神社の御正宮内部は撮影禁止</strong>(外観のみ)</li>
+    <li><strong>参拝者の邪魔にならないように</strong></li>
+    <li><strong>フラッシュ禁止の場所では使わない</strong></li>
+  </ul>
+</section>
+
+<section>
+  <h2>🎯 写真スポット一覧表</h2>
+  
+  <table>
+    <tr>
+      <th>スポット</th>
+      <th>日時</th>
+      <th>撮影対象</th>
+      <th>難易度</th>
+    </tr>
+    <tr>
+      <td>伊勢神宮 外宮</td>
+      <td>Day1 08:45</td>
+      <td>鳥居・参道・御正宮</td>
+      <td>★☆☆</td>
+    </tr>
+    <tr>
+      <td>伊勢神宮 内宮</td>
+      <td>Day1 10:15</td>
+      <td>宇治橋・五十鈴川・御正宮</td>
+      <td>★☆☆</td>
+    </tr>
+    <tr>
+      <td>おかげ横丁</td>
+      <td>Day1 12:00</td>
+      <td>街並み・グルメ</td>
+      <td>★☆☆</td>
+    </tr>
+    <tr>
+      <td>湯泉神社</td>
+      <td>Day2 10:00</td>
+      <td>石段・本殿</td>
+      <td>★★☆</td>
+    </tr>
+    <tr>
+      <td>有馬天神社</td>
+      <td>Day2 10:30</td>
+      <td>天神泉源・湯けむり</td>
+      <td>★☆☆</td>
+    </tr>
+    <tr>
+      <td>水天宮</td>
+      <td>Day2 10:45</td>
+      <td>社殿・森の雰囲気</td>
+      <td>★☆☆</td>
+    </tr>
+    <tr>
+      <td>生田神社</td>
+      <td>Day2 12:30</td>
+      <td>本殿・生田の森</td>
+      <td>★☆☆</td>
+    </tr>
+    <tr>
+      <td>六甲山(昼)</td>
+      <td>Day2 15:00</td>
+      <td>大パノラマ</td>
+      <td>★★☆</td>
+    </tr>
+    <tr>
+      <td>六甲山(夕暮れ)</td>
+      <td>Day2 17:00</td>
+      <td>マジックアワー</td>
+      <td>★★★</td>
+    </tr>
+    <tr>
+      <td>六甲山(夜景)</td>
+      <td>Day2 17:30</td>
+      <td>1000万ドルの夜景</td>
+      <td>★★★</td>
+    </tr>
+  </table>
+  
+  <p class="note">※難易度: 撮影の難しさ(手ブレ・暗さ・構図等)を3段階で表示</p>
+</section>
+
+<section>
+  <h2>📤 写真の共有</h2>
+  
+  <div class="highlight-box">
+    <strong>3人で思い出を共有!</strong><br>
+    旅行後、撮った写真を3人で共有しましょう。<br>
+    <br>
+    <strong>共有方法:</strong><br>
+    ・Google フォト(共有アルバム作成)<br>
+    ・LINE アルバム<br>
+    ・AirDrop(iPhone同士)<br>
+    ・Dropbox / OneDrive<br>
+    <br>
+    各自が撮った写真を集めると、いろんな角度・表情の写真が楽しめます!
+  </div>
+  
+  <div class="info-box">
+    <strong>💡 おすすめの整理方法</strong><br>
+    ・<strong>日付・場所別</strong>にフォルダ分け<br>
+    ・<strong>ベストショット</strong>を選んでアルバム作成<br>
+    ・<strong>SNS投稿用</strong>と<strong>思い出保存用</strong>を分ける<br>
+    <br>
+    後で見返した時に楽しめるように整理しておくと良いですね!
+  </div>
+</section>
+
+<section>
+  <h2>💡 最後に</h2>
+  
+  <div class="highlight-box">
+    <p style="text-align:center; font-size:1.1em;">
+      <strong>📸 写真撮影を楽しもう!</strong>
+    </p>
+    <p>
+      写真は旅の思い出を残す大切な手段。<br>
+      でも、写真を撮ることに夢中になりすぎて、目の前の景色を楽しむことを忘れないように。<br>
+      <br>
+      <strong>まずは目で見て、心で感じて、そして写真に残す。</strong><br>
+      <br>
+      3人で楽しい思い出をたくさん作ってください!📸✨
+    </p>
+  </div>
+</section>
+
+</div>
+
+<footer>
+  <p><a href="javascript:history.back()">← トップページに戻る</a></p>
+</footer>
+
+</body>
+</html>

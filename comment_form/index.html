@@ -32,9 +32,19 @@ p {
   margin-bottom: 20px;
   font-size: 16px;
 }
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #006edc;
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
 iframe {
   width: 100%;
-  height: 650px; /* 質問数に応じて調整可能 */
+  height: 600px;
   border: none;
 }
 </style>
@@ -46,11 +56,14 @@ iframe {
 </header>
 
 <main>
-  <p>旅やイベントの感想を自由に書いてください。必要なら写真も添付できます。</p>
+  <p>ここでは仲間のコメントを一覧で閲覧できます。新しいコメントを書きたい場合は下のボタンからフォームへ。</p>
 
-  <!-- Googleフォーム埋め込み -->
-  <iframe src="https://forms.gle/96RLshYgUETBUF6L7?embedded=true"
-          marginheight="0" marginwidth="0">読み込んでいます…</iframe>
+  <!-- フォームへのリンク -->
+  <a class="button" href="https://forms.gle/96RLshYgUETBUF6L7" target="_blank">コメントを書く</a>
+
+  <!-- 回答一覧（埋め込みスプレッドシート） -->
+  <h2>💬 コメント一覧</h2>
+  <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQHa6AdvwKeTlZHMDM24iOVd8xxXAmqTMM0OEwoJlLJKvavaEiP8NUanLtJfwYnHgPnm4tlC1WylGa2/pubhtml?widget=true&amp;headers=false"></iframe>
 </main>
 
 </body>

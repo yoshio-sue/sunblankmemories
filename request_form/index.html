@@ -32,9 +32,19 @@ p {
   margin-bottom: 20px;
   font-size: 16px;
 }
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #006edc;
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
 iframe {
   width: 100%;
-  height: 650px; /* 質問数に応じて調整可能 */
+  height: 600px;
   border: none;
 }
 </style>
@@ -46,11 +56,14 @@ iframe {
 </header>
 
 <main>
-  <p>次にやりたいことを仲間に提案してください！希望日程やアイデアも自由に書けます。</p>
+  <p>ここでは仲間のリクエストを一覧で閲覧できます。新しい提案をしたい場合は下のボタンからフォームへ。</p>
 
-  <!-- Googleフォーム埋め込み -->
-  <iframe src="https://forms.gle/hWerapFN6uY5Mnd86?embedded=true"
-          marginheight="0" marginwidth="0">読み込んでいます…</iframe>
+  <!-- フォームへのリンク -->
+  <a class="button" href="https://forms.gle/hWerapFN6uY5Mnd86" target="_blank">リクエストを書く</a>
+
+  <!-- 回答一覧（埋め込みスプレッドシート） -->
+  <h2>📋 リクエスト一覧</h2>
+  <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ-sySRvVPf5hHCF2ejR1jxAk3MMOlwY58vH9CZWimVGjyAb-TuPrceFLSvxifJ8qVG3_UKlCKuVn91/pubhtml?widget=true&amp;headers=false"></iframe>
 </main>
 
 </body>

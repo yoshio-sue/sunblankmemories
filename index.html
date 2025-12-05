@@ -3,12 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SUNBLANK｜仲間の旅しおり集</title>
+<title>SUNBLANK｜memories</title>
 
 <style>
-/* --------------------
-   全体レイアウト
--------------------- */
 body {
   font-family: "Segoe UI", sans-serif;
   margin: 0;
@@ -25,14 +22,24 @@ header {
 }
 
 .container {
-  max-width: 900px;
+  max-width: 1000px;
   margin: 30px auto;
   padding: 0 15px;
 }
 
-/* --------------------
-   イベント一覧（青）
--------------------- */
+/* 見出し帯 */
+.section-title {
+  background: #004a99;
+  color: #fff;
+  padding: 12px;
+  text-align: left;
+  margin: 40px 0 20px;
+  border-radius: 6px;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+/* イベント一覧 */
 .events {
   display: grid;
   grid-template-columns: 1fr;
@@ -68,87 +75,109 @@ header {
   text-align: center;
 }
 
-/* --------------------
-   思い出写真集（オレンジ固定）
--------------------- */
-.memory-area {
-  text-align: center;
-  margin-top: 40px;
+/* 記録カード */
+.record-area {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 25px;
   margin-bottom: 60px;
 }
 
-.memory-btn {
-  display: inline-block;
-  background: #ff8a00;
-  color: #fff;
-  padding: 15px 30px;
+.record-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  text-align: center;
+  padding: 20px;
+  transition: transform .2s ease;
+}
+
+.record-card:hover {
+  transform: scale(1.03);
+}
+
+.record-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  object-fit: cover;
+}
+
+.record-card h3 {
+  margin: 10px 0;
   font-size: 20px;
-  border-radius: 10px;
+  color: #333;
+}
+
+.card-link {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background: #006edc;
+  color: #fff;
+  border-radius: 6px;
   text-decoration: none;
   font-weight: bold;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
-  transition: background .2s ease, transform .2s ease;
 }
 
-.memory-btn:hover {
-  background: #ff9900;
-  transform: scale(1.04);
-}
-
-/* --------------------
-   スマホ〜タブレット対応
--------------------- */
+/* レスポンシブ */
 @media (min-width: 600px) {
-  .events {
-    grid-template-columns: 1fr 1fr;
-  }
+  .events { grid-template-columns: 1fr 1fr; }
+  .record-area { grid-template-columns: 1fr 1fr; }
 }
 
 @media (min-width: 900px) {
-  .events {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
+  .events { grid-template-columns: 1fr 1fr 1fr; }
+  .record-area { grid-template-columns: 1fr 1fr 1fr; }
 }
 </style>
-
 </head>
 <body>
 
 <header>
-  <h1>SUNBLANK｜仲間の旅行（案）一覧</h1>
+  <h1>SUNBLANK｜memories</h1>
 </header>
 
 <main class="container">
 
-  <!-- ▼ イベント一覧（自由に増減OK） -->
+  <!-- ▼ 旅の計画 -->
+  <h2 class="section-title">旅の計画</h2>
   <section class="events">
-
-    <!-- イベント1 -->
     <a href="kusatsu2026/index.html" class="event">
       <img src="kusatsu2026/thumb.jpg" alt="草津温泉">
       <span>草津温泉旅行（案）</span>
     </a>
-
-    <!-- イベント2 -->
     <a href="arima2026/index.html" class="event">
       <img src="arima2026/thumb.jpg" alt="有馬温泉">
       <span>有馬温泉旅行</span>
     </a>
-
-    <!-- イベント3 -->
     <a href="event_xxx/index.html" class="event">
       <img src="event_xxx/thumb.jpg" alt="ぶどうの丘">
       <span>山梨県ぶどうの丘旅</span>
     </a>
-  
-
   </section>
 
-  <!-- ▼ 思い出写真集（固定ボタン） -->
-  <section class="memory-area">
-    <a href="memory_photos/index.html" class="memory-btn">
-      思い出写真集
-    </a>
+  <!-- ▼ イベントの記録 -->
+  <h2 class="section-title">イベントの記録</h2>
+  <section class="record-area">
+    <div class="record-card">
+      <img src="images/request_icon.png" alt="イベントリクエスト">
+      <h3>イベントリクエスト</h3>
+      <a href="request_form/index.html" class="card-link">リクエストする</a>
+    </div>
+
+    <div class="record-card">
+      <img src="images/comment_icon.png" alt="思い出コメント">
+      <h3>思い出コメント</h3>
+      <a href="comment_form/index.html" class="card-link">コメントを書く</a>
+    </div>
+
+    <div class="record-card">
+      <img src="images/album_icon.png" alt="思い出アルバム">
+      <h3>思い出アルバム</h3>
+      <a href="memory_photos/index.html" class="card-link">アルバムを見る</a>
+    </div>
   </section>
 
 </main>

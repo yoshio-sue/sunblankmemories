@@ -83,15 +83,18 @@ header {
   margin-bottom: 60px;
 }
 
-.record-card {
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
-  text-align: center;
-  padding: 20px;
-  transition: transform .2s ease;
+.record-area {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 25px;
+  margin-bottom: 60px;
 }
 
+@media (min-width: 900px) {
+  .record-area {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
 .record-card:hover {
   transform: scale(1.03);
 }
@@ -161,24 +164,24 @@ header {
   <!-- ▼ イベントの記録 -->
   <h2 class="section-title">イベントの記録</h2>
   <section class="record-area">
-    <div class="record-card">
-      <img src="images/request_icon.png" alt="イベントリクエスト">
-      <h3>イベントリクエスト</h3>
-      <a href="request_form/index.html" class="card-link">リクエストする</a>
-    </div>
+  <div class="record-card">
+    <img src="images/comment_icon.png" alt="思い出コメント">
+    <h3>思い出コメント</h3>
+    <a href="comment_form/index.html" class="card-link">コメントを書く</a>
+  </div>
 
-    <div class="record-card">
-      <img src="images/comment_icon.png" alt="思い出コメント">
-      <h3>思い出コメント</h3>
-      <a href="comment_form/index.html" class="card-link">コメントを書く</a>
-    </div>
+  <div class="record-card">
+    <img src="images/album_icon.png" alt="思い出アルバム">
+    <h3>思い出アルバム</h3>
+    <a href="memory_photos/index.html" class="card-link">アルバムを見る</a>
+  </div>
 
-    <div class="record-card">
-      <img src="images/album_icon.png" alt="思い出アルバム">
-      <h3>思い出アルバム</h3>
-      <a href="memory_photos/index.html" class="card-link">アルバムを見る</a>
-    </div>
-  </section>
+  <div class="record-card">
+    <img src="images/request_icon.png" alt="イベントリクエスト">
+    <h3>イベントリクエスト</h3>
+    <a href="request_form/index.html" class="card-link">リクエストする</a>
+  </div>
+</section>
 
 </main>
 

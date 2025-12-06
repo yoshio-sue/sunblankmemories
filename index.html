@@ -30,7 +30,7 @@
     </a>
     <a href="arima2026/index.html" class="event">
       <img src="arima2026/thumb.jpg" alt="有馬温泉">
-      <span>有馬温泉旅行(案）</span>
+      <span>有馬温泉旅行（案）</span>
     </a>
     <a href="katsunuma2026/index.html" class="event">
       <img src="katsunuma2026/thumb.jpg" alt="ぶどうの丘">
@@ -38,39 +38,32 @@
     </a>
   </section>
 
-  <!-- ▼ 思い出アルバム -->
-  <h2 class="section-title">思い出アルバム</h2>
-  <section class="album grid-auto" id="album-grid"></section>
-
-  <!-- ▼ 思い出コメント -->
-  <h2 class="section-title">思い出コメント</h2>
-  <section class="card">
-    <form id="memories-form" onsubmit="event.preventDefault(); postMessage('memories');">
-      <label for="memories-name">名前:</label>
-      <input id="memories-name" required>
-      <label for="memories-text">コメント:</label>
-      <textarea id="memories-text" required></textarea>
-      <label for="memories-file">画像:</label>
-      <input type="file" id="memories-file">
-      <button type="submit" class="submit-btn">投稿</button>
-    </form>
-    <ul id="memories-list"></ul>
+  <!-- ▼ コンテンツ（アルバム・投稿・リクエスト一覧・投稿） -->
+  <h2 class="section-title">コンテンツ</h2>
+  <section class="grid-4">
+    <!-- アルバム 大 -->
+    <a href="album/index.html" class="card-large">
+      <img src="images/album-thumb.jpg" alt="アルバム">
+      <p>思い出アルバム</p>
+    </a>
+    <!-- アルバム投稿 小 -->
+    <a href="comment/index.html" class="card-small">
+      <p>思い出投稿</p>
+    </a>
+    <!-- リクエスト 大 -->
+    <a href="request/index.html" class="card-large">
+      <img src="images/request-thumb.jpg" alt="リクエスト">
+      <p>リクエスト一覧</p>
+    </a>
+    <!-- リクエスト投稿 小 -->
+    <a href="request/index.html" class="card-small">
+      <p>リクエスト投稿</p>
+    </a>
   </section>
 
-  <!-- ▼ イベントリクエスト -->
-  <h2 class="section-title">イベントリクエスト</h2>
-  <section class="card">
-    <form id="requests-form" onsubmit="event.preventDefault(); postMessage('requests');">
-      <label for="requests-name">名前:</label>
-      <input id="requests-name" required>
-      <label for="requests-text">リクエスト:</label>
-      <textarea id="requests-text" required></textarea>
-      <label for="requests-file">画像:</label>
-      <input type="file" id="requests-file">
-      <button type="submit" class="submit-btn">投稿</button>
-    </form>
-    <ul id="requests-list"></ul>
-  </section>
+  <!-- ▼ リクエスト一覧 -->
+  <h2 class="section-title">リクエスト一覧</h2>
+  <section class="grid-2" id="requests-list"></section>
 
 </main>
 

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SUNBLANK｜イベントリクエスト</title>
+<link rel="stylesheet" href="../css/common.css">
+</head>
+<body>
+
+<header>
+  <h1>SUNBLANK｜イベントリクエスト</h1>
+</header>
+<nav>
+  <ul>
+    <li><a href="../album/index.html">アルバム</a></li>
+    <li><a href="../comment/index.html">コメント</a></li>
+    <li><a href="../request/index.html" class="nav-active">リクエスト</a></li>
+    <li><a href="../index.html">トップへ戻る</a></li>
+  </ul>
+</nav>
+
+<main class="container">
+  <h2 class="section-title">リクエスト投稿</h2>
+  <form id="requests-form" onsubmit="event.preventDefault(); postRequest();">
+    <label for="requests-name">名前:</label>
+    <div style="display:flex; gap:8px; align-items:center;">
+      <select id="requests-name" required>
+        <option value="">選択してください</option>
+        <option value="よしお">よしお</option>
+        <option value="奈々">奈々</option>
+        <option value="なつき">なつき</option>
+      </select>
+      <button type="button" class="add-btn" onclick="addMember()">＋名前追加</button>
+    </div>
+    <label for="requests-text">リクエスト内容:</label>
+    <textarea id="requests-text" required></textarea>
+    <label for="requests-file">画像:</label>
+    <input type="file" id="requests-file">
+    <button type="submit" class="submit-btn">投稿</button>
+  </form>
+
+  <h2 class="section-title">リクエスト一覧</h2>
+  <section class="grid-2" id="requests-list"></section>
+</main>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+import { getFirestore, collection, addDoc, serverTimestamp, query, orderBy, onSnapshot, doc, updateDoc, deleteDoc } 
+  from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
+import { getStorage, ref, uploadBytes, getDownloadURL } 
+  from "https://www.gstatic.com/firebasejs/11.0.1/firebase-storage.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyAMynBwvGhlGbEi6UCHrZjYHNedf9pqXJQ",
+  authDomain: "sunblank-memories.firebaseapp.com",
+  projectId: "sunblank-memories",
+  storageBucket: "sunblank-memories.appspot.com",
+  messagingSenderId: "916551819188",
+  appId: "1:916551819188:web:741bfd8c4534b511e35ce1"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+const storage = getStorage(app);
+
+// 投稿処理
+async function postRequest() {
+  const name=document.getElementById("requests-name").value;
+  const text=document.getElementById("requests-text").value;
+  const file=document.getElementById("requests-file").files[0];
+  let imageUrl="";
+  if(file){
+    const storageRef=ref(storage,"requests/"+file.name);
+    await uploadBytes(storageRef,file);
+    imageUrl=await getDownloadURL(storageRef);
+  }
+  await addDoc(collection(db,"requests"),{ name,text,imageUrl,createdAt:serverTimestamp(), status:"考え中…" });
+  document.getElementById("requests-form").reset();
+}
+
+// 一覧表示
+function loadRequests(){
+  const q=query(collection(db,"requests"),orderBy("createdAt","desc"));
+  onSnapshot(q,(snapshot)=>{
+    const grid=document.getElementById("requests-list");
+    grid.innerHTML="";
+    snapshot.forEach((docSnap)=>{
+      const data=docSnap.data();
+      const card=document.createElement("div");
+      card.className="card"; // 共通CSSの.cardを利用
+
+      // 投稿日時を取得
+      let dateText = "";
+      if (data.createdAt) {
+        const date = data.createdAt.toDate();
+        dateText = date.toLocaleString("ja-JP");
+      }
+
+      card.innerHTML=`
+        <strong>${data.name}</strong>
+        <p>${data.text}</p>
+        ${data.imageUrl?`<img src="${data.imageUrl}">`:""}
+        <p>状態: ${data.status||"未設定"}</p>
+        ${dateText ? `<small>投稿日時: ${dateText}</small>` : ""}
+        <button onclick="updateStatus('${docSnap.id}','叶った！')">叶った！</button>
+        <button onclick="updateStatus('${docSnap.id}','準備中！')">準備中！</button>
+        <button onclick="updateStatus('${docSnap.id}','考え中…')">考え中…</button>
+        <button onclick="updateStatus('${docSnap.id}','また今度！')">また今度！</button>
+        <button onclick="deleteRequest('${docSnap.id}')">削除</button>
+      `;
+      grid.appendChild(card);
+    });
+  });
+}
+
+// ステータス更新
+async function updateStatus(id,status){ const ref=doc(db,"requests",id); await updateDoc(ref,{status}); }
+// 削除
+async function deleteRequest(id){ const ref=doc(db,"requests",id); await deleteDoc(ref); }
+// 名前追加
+function addMember(){
+  const newName=prompt("追加する名前を入力してください:");
+  if(newName){
+    const select=document.getElementById("requests-name");
+    const option=document.createElement("option");
+    option.value=newName; option.textContent=newName;
+    select.appendChild(option); select.value=newName;
+  }
+}
+
+loadRequests();
+</script>
+
+</body>
+</html>

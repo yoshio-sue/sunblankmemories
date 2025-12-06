@@ -1,0 +1,440 @@
+/* 基本スタイル */
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, "Hiragino Sans", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom, #faf5f0 0%, #f5e8e0 100%);
+  color: #4a4a4a;
+  line-height: 1.7;
+}
+
+/* ヘッダー */
+header {
+  background: linear-gradient(135deg, #8b4789 0%, #6b3568 100%);
+  color: #fff;
+  padding: 40px 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+header::before {
+  content: '🍇';
+  position: absolute;
+  font-size: 80px;
+  opacity: 0.2;
+  left: 20px;
+  top: 20px;
+}
+
+header::after {
+  content: '🍷';
+  position: absolute;
+  font-size: 80px;
+  opacity: 0.2;
+  right: 20px;
+  top: 20px;
+}
+
+header h1 {
+  margin: 0 0 12px 0;
+  font-size: 2.2em;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  position: relative;
+  z-index: 1;
+}
+
+header p {
+  margin: 6px 0;
+  font-size: 1em;
+  opacity: 0.95;
+}
+
+.member-info {
+  background: rgba(255,255,255,0.25);
+  padding: 12px 16px;
+  border-radius: 12px;
+  margin-top: 16px;
+  font-size: 0.95em;
+  display: inline-block;
+}
+
+/* コンテナ */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 40px;
+}
+
+/* セクション */
+section {
+  padding: 30px 20px;
+  border-bottom: 1px solid #b47ba8;
+  background: #fff;
+  margin-bottom: 3px;
+}
+
+.intro-section {
+  text-align: center;
+  background: linear-gradient(to bottom, #fff 0%, #fef9f8 100%);
+}
+
+.intro-section p {
+  font-size: 1.05em;
+  margin: 10px 0;
+}
+
+/* ナビゲーショングリッド */
+.navigation-section {
+  background: #fff;
+}
+
+.nav-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.nav-card {
+  background: linear-gradient(to bottom, #fff 0%, #fef9f8 100%);
+  border: 2px solid #b47ba8;
+  border-radius: 12px;
+  padding: 24px;
+  text-decoration: none;
+  color: #4a4a4a;
+  transition: all 0.3s;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.nav-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  border-color: #8b4789;
+}
+
+.nav-icon {
+  font-size: 3em;
+  margin-bottom: 12px;
+}
+
+.nav-card h3 {
+  color: #8b4789;
+  margin: 12px 0 8px 0;
+  font-size: 1.3em;
+  border: none;
+  padding: 0;
+}
+
+.nav-card p {
+  font-size: 0.9em;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* 見出し */
+h2 {
+  background: linear-gradient(to right, #b47ba8 0%, #d4a8c8 100%);
+  margin: 0;
+  padding: 16px 20px;
+  font-size: 1.4em;
+  border-left: 6px solid #8b4789;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  color: #4a3548;
+}
+
+h3 {
+  color: #8b4789;
+  margin: 20px 0 10px 0;
+  font-size: 1.2em;
+  border-bottom: 2px solid #b47ba8;
+  padding-bottom: 8px;
+}
+
+/* 情報ボックス */
+.info-box {
+  background: #fef9f8;
+  border-left: 5px solid #b47ba8;
+  padding: 14px;
+  margin: 14px 0;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.info-box h3 {
+  margin-top: 0;
+  border: none;
+  padding: 0;
+}
+
+.highlight-box {
+  background: linear-gradient(to right, #fef9f8 0%, #fdf5f6 100%);
+  padding: 20px;
+  margin: 14px 0;
+  border-radius: 10px;
+  border: 2px solid #b47ba8;
+}
+
+.highlight-box ul {
+  margin: 10px 0;
+  padding-left: 26px;
+}
+
+.highlight-box li {
+  margin: 8px 0;
+}
+
+/* リンクボタン */
+.link-button {
+  display: inline-block;
+  padding: 8px 16px;
+  margin: 6px 6px 6px 0;
+  background: #8b4789;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 0.9em;
+  transition: all 0.3s;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.link-button:hover {
+  background: #6b3568;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+}
+
+.link-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+/* テーブル */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+th, td {
+  padding: 12px 10px;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid #d4a8c8;
+}
+
+th {
+  background: #fef9f8;
+  font-weight: bold;
+  font-size: 0.95em;
+  color: #4a3548;
+}
+
+td {
+  font-size: 0.93em;
+}
+
+.time {
+  color: #c7548b;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.highlight {
+  color: #8b4789;
+  font-weight: bold;
+}
+
+.price {
+  color: #c7548b;
+  font-weight: bold;
+  font-size: 1.1em;
+  margin: 8px 0;
+}
+
+/* 注意書き */
+.note {
+  font-size: 0.88em;
+  color: #666;
+  margin-top: 6px;
+  line-height: 1.5;
+}
+
+/* リスト */
+ul, ol {
+  margin: 10px 0;
+  padding-left: 26px;
+}
+
+li {
+  margin: 8px 0;
+  font-size: 0.93em;
+}
+
+strong {
+  color: #8b4789;
+}
+
+/* 画像グリッド */
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+  margin: 12px 0;
+}
+
+.image-card {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.image-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  display: block;
+}
+
+.image-card .caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(139, 71, 137, 0.85);
+  color: white;
+  padding: 8px;
+  font-size: 0.85em;
+  text-align: center;
+}
+
+/* ホテル・ワイナリーカード */
+.hotel-card, .winery-card {
+  background: #fff;
+  border: 2px solid #b47ba8;
+  border-radius: 12px;
+  padding: 16px;
+  margin: 14px 0;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+
+.hotel-card:hover, .winery-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+}
+
+.hotel-card h4, .winery-card h4 {
+  margin: 0 0 10px 0;
+  color: #8b4789;
+  font-size: 1.2em;
+}
+
+/* スポット情報 */
+.spot-info {
+  background: #f8f9fa;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border-left: 4px solid #b47ba8;
+}
+
+/* 警告ボックス */
+.warning-box {
+  background: #fff5f5;
+  border: 2px solid #e74c3c;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 14px 0;
+}
+
+.warning-box strong {
+  color: #e74c3c;
+}
+
+/* フッター */
+footer {
+  background: #8b4789;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  margin-top: 0;
+}
+
+footer p {
+  margin: 5px 0;
+  font-size: 0.9em;
+}
+
+footer a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* レスポンシブ */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 1.6em;
+  }
+  
+  .nav-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .image-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  header::before,
+  header::after {
+    font-size: 50px;
+  }
+}
+
+/* ナビゲーションバー(サブページ用) */
+.sub-nav {
+  background: #6b3568;
+  padding: 12px 20px;
+  text-align: center;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.sub-nav a {
+  color: white;
+  text-decoration: none;
+  padding: 8px 16px;
+  margin: 0 5px;
+  border-radius: 5px;
+  transition: background 0.3s;
+  display: inline-block;
+}
+
+.sub-nav a:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+.sub-nav .home-link {
+  background: rgba(255,255,255,0.15);
+  font-weight: bold;
+}
+
+/* クイック情報セクション */
+.quick-info {
+  background: linear-gradient(to bottom, #fff 0%, #fef9f8 100%);
+}
+
+/* 重要リンクセクション */
+.important-links {
+  background: #fef9f8;
+}
+
+/* 最終メッセージ */
+.final-message {
+  background: linear-gradient(to bottom, #fff 0%, #fef9f8 100%);
+  text-align: center;
+}

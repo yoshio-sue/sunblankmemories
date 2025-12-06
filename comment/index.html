@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SUNBLANK｜思い出コメント</title>
+<link rel="stylesheet" href="../css/common.css">
+</head>
+<body>
+
+<header>
+  <h1>SUNBLANK｜思い出コメント</h1>
+</header>
+<nav>
+  <ul>
+    <li><a href="../album/index.html">アルバム</a></li>
+    <li><a href="../comment/index.html" class="nav-active">コメント</a></li>
+    <li><a href="../request/index.html">リクエスト</a></li>
+    <li><a href="../index.html">トップへ戻る</a></li>
+  </ul>
+</nav>
+
+<main class="container">
+  <h2 class="section-title">コメント投稿</h2>
+  <form id="memories-form" onsubmit="event.preventDefault(); postComment();">
+    <label for="memories-name">名前:</label>
+    <div style="display:flex; gap:8px; align-items:center;">
+      <select id="memories-name" required>
+        <option value="">選択してください</option>
+        <option value="よしお">よしお</option>
+        <option value="奈々">奈々</option>
+        <option value="なつき">なつき</option>
+      </select>
+      <button type="button" class="add-btn" onclick="addMember()">＋名前追加</button>
+    </div>
+    <label for="memories-text">コメント:</label>
+    <textarea id="memories-text" required></textarea>
+    <label for="memories-file">画像:</label>
+    <input type="file" id="memories-file">
+    <button type="submit" class="submit-btn">投稿</button>
+  </form>
+
+  <h2 class="section-title">コメント一覧</h2>
+  <section class="grid-2" id="memories-list"></section>
+</main>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+import { getFirestore, collection, addDoc, serverTimestamp, query, orderBy, onSnapshot } 
+  from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
+import { getStorage, ref, uploadBytes, getDownloadURL } 
+  from "https://www.gstatic.com/firebasejs/11.0.1/firebase-storage.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyAMynBwvGhlGbEi6UCHrZjYHNedf9pqXJQ",
+  authDomain: "sunblank-memories.firebaseapp.com",
+  projectId: "sunblank-memories",
+  storageBucket: "sunblank-memories.appspot.com",
+  messagingSenderId: "916551819188",
+  appId: "1:916551819188:web:741bfd8c4534b511e35ce1"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+const storage = getStorage(app);
+
+async function postComment() {
+  const name = document.getElementById("memories-name").value;
+  const text = document.getElementById("memories-text").value;
+  const file = document.getElementById("memories-file").files[0];
+  let imageUrl = "";
+  if(file){
+    const storageRef = ref(storage,"memories/"+file.name);
+    await uploadBytes(storageRef,file);
+    imageUrl = await getDownloadURL(storageRef);
+  }
+  await addDoc(collection(db,"memories"),{ name,text,imageUrl,createdAt:serverTimestamp() });
+  document.getElementById("memories-form").reset();
+}
+
+function loadComments(){
+  const q = query(collection(db,"memories"),orderBy("createdAt","desc"));
+  onSnapshot(q,(snapshot)=>{
+    const grid=document.getElementById("memories-list");
+    grid.innerHTML="";
+    snapshot.forEach((doc)=>{
+      const data=doc.data();
+      const card=document.createElement("div");
+      card.className="card"; // 共通CSSの.cardを利用
+
+      // 投稿日時を取得
+      let dateText = "";
+      if (data.createdAt) {
+        const date = data.createdAt.toDate();
+        dateText = date.toLocaleString("ja-JP");
+      }
+
+      card.innerHTML=`
+        <strong>${data.name}</strong>
+        <p>${data.text}</p>
+        ${data.imageUrl ? `<img src="${data.imageUrl}">` : ""}
+        ${dateText ? `<small>投稿日時: ${dateText}</small>` : ""}
+      `;
+      grid.appendChild(card);
+    });
+  });
+}
+
+function addMember(){
+  const newName=prompt("追加する名前を入力してください:");
+  if(newName){
+    const select=document.getElementById("memories-name");
+    const option=document.createElement("option");
+    option.value=newName; option.textContent=newName;
+    select.appendChild(option); select.value=newName;
+  }
+}
+
+loadComments();
+</script>
+
+</body>
+</html>

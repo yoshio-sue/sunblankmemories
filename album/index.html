@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SUNBLANK｜思い出アルバム</title>
+<link rel="stylesheet" href="../css/common.css">
+</head>
+<body>
+
+<header>
+  <h1>SUNBLANK｜思い出アルバム</h1>
+</header>
+<nav>
+  <ul>
+    <li><a href="../album/index.html" class="nav-active">アルバム</a></li>
+    <li><a href="../comment/index.html">コメント</a></li>
+    <li><a href="../request/index.html">リクエスト</a></li>
+    <li><a href="../index.html">トップへ戻る</a></li>
+  </ul>
+</nav>
+
+<main class="container">
+  <h2 class="section-title">アルバム一覧</h2>
+  <section class="album grid-auto" id="album-list"></section>
+</main>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+import { getFirestore, collection, query, orderBy, onSnapshot } 
+  from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyAMynBwvGhlGbEi6UCHrZjYHNedf9pqXJQ",
+  authDomain: "sunblank-memories.firebaseapp.com",
+  projectId: "sunblank-memories",
+  storageBucket: "sunblank-memories.appspot.com",
+  messagingSenderId: "916551819188",
+  appId: "1:916551819188:web:741bfd8c4534b511e35ce1"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+// アルバム一覧表示
+function loadAlbum(){
+  const q = query(collection(db,"memories"), orderBy("createdAt","desc"));
+  onSnapshot(q,(snapshot)=>{
+    const grid = document.getElementById("album-list");
+    grid.innerHTML = "";
+    snapshot.forEach((docSnap)=>{
+      const data = docSnap.data();
+      const card = document.createElement("div");
+      card.className = "card"; // 共通CSSの.cardを利用
+
+      // 投稿日時を取得（FirestoreのTimestampをDateに変換）
+      let dateText = "";
+      if (data.createdAt) {
+        const date = data.createdAt.toDate();
+        dateText = date.toLocaleString("ja-JP"); // 日本時間で表示
+      }
+
+      card.innerHTML = `
+        <strong>${data.name}</strong>
+        <p>${data.text}</p>
+        ${data.imageUrl ? `<img src="${data.imageUrl}">` : ""}
+        ${dateText ? `<small>投稿日時: ${dateText}</small>` : ""}
+      `;
+      grid.appendChild(card);
+    });
+  });
+}
+loadAlbum();
+</script>
+
+</body>
+</html>

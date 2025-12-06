@@ -4,143 +4,20 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SUNBLANK｜memories</title>
-
-<style>
-body {
-  font-family: "Segoe UI", sans-serif;
-  margin: 0;
-  padding: 0;
-  background: #f7f7f7;
-  -webkit-font-smoothing: antialiased;
-}
-
-header {
-  background: #004a99;
-  color: #fff;
-  text-align: center;
-  padding: 20px 10px;
-}
-
-.container {
-  max-width: 1000px;
-  margin: 30px auto;
-  padding: 0 15px;
-}
-
-/* 見出し帯 */
-.section-title {
-  background: #004a99;
-  color: #fff;
-  padding: 12px;
-  text-align: left;
-  margin: 40px 0 20px;
-  border-radius: 6px;
-  font-size: 22px;
-  font-weight: bold;
-}
-
-/* イベント一覧 */
-.events {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 22px;
-  margin-bottom: 50px;
-}
-
-.event {
-  background: #fff;
-  border-radius: 12px;
-  overflow: hidden;
-  text-decoration: none;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
-  transition: transform .2s ease;
-}
-
-.event:hover {
-  transform: scale(1.03);
-}
-
-.event img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-.event span {
-  display: block;
-  padding: 15px;
-  background: #006edc;
-  color: #fff;
-  font-size: 18px;
-  text-align: center;
-}
-
-/* 記録カード */
-.record-area {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 25px;
-  margin-bottom: 60px;
-}
-
-.record-area {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 25px;
-  margin-bottom: 60px;
-}
-
-@media (min-width: 900px) {
-  .record-area {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-}
-.record-card:hover {
-  transform: scale(1.03);
-}
-
-.record-card img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  margin-bottom: 15px;
-  object-fit: cover;
-}
-
-.record-card h3 {
-  margin: 10px 0;
-  font-size: 20px;
-  color: #333;
-}
-
-.card-link {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 10px 20px;
-  background: #006edc;
-  color: #fff;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-/* レスポンシブ */
-@media (min-width: 600px) {
-  .events { grid-template-columns: 1fr 1fr; }
-  .record-area { grid-template-columns: 1fr 1fr; }
-}
-
-@media (min-width: 900px) {
-  .events { grid-template-columns: 1fr 1fr 1fr; }
-  .record-area { grid-template-columns: 1fr 1fr 1fr; }
-}
-</style>
+<link rel="stylesheet" href="css/common.css">
 </head>
 <body>
 
 <header>
   <h1>SUNBLANK｜memories</h1>
 </header>
+<nav>
+  <ul>
+    <li><a href="album/index.html">アルバム</a></li>
+    <li><a href="comment/index.html">コメント</a></li>
+    <li><a href="request/index.html">リクエスト</a></li>
+  </ul>
+</nav>
 
 <main class="container">
 
@@ -155,35 +32,113 @@ header {
       <img src="arima2026/thumb.jpg" alt="有馬温泉">
       <span>有馬温泉旅行(案）</span>
     </a>
-    <a href="yamanashi2026/index.html" class="event">
-      <img src="event_xxx/thumb.jpg" alt="ぶどうの丘">
-      <span>山梨県ぶどうの丘旅（案）</span>
+    <a href="katsunuma2026/index.html" class="event">
+      <img src="katsunuma2026/thumb.jpg" alt="ぶどうの丘">
+      <span>山梨県勝沼市ぶどうの丘旅（案）</span>
     </a>
   </section>
 
-  <!-- ▼ イベントの記録 -->
-  <h2 class="section-title">イベントの記録</h2>
-  <section class="record-area">
-  <div class="record-card">
-    <img src="images/comment_icon.png" alt="思い出コメント">
-    <h3>思い出コメント</h3>
-    <a href="comment_form/index.html" class="card-link">コメントを書く</a>
-  </div>
+  <!-- ▼ 思い出アルバム -->
+  <h2 class="section-title">思い出アルバム</h2>
+  <section class="album grid-auto" id="album-grid"></section>
 
-  <div class="record-card">
-    <img src="images/album_icon.png" alt="思い出アルバム">
-    <h3>思い出アルバム</h3>
-    <a href="memory_photos/index.html" class="card-link">アルバムを見る</a>
-  </div>
+  <!-- ▼ 思い出コメント -->
+  <h2 class="section-title">思い出コメント</h2>
+  <section class="card">
+    <form id="memories-form" onsubmit="event.preventDefault(); postMessage('memories');">
+      <label for="memories-name">名前:</label>
+      <input id="memories-name" required>
+      <label for="memories-text">コメント:</label>
+      <textarea id="memories-text" required></textarea>
+      <label for="memories-file">画像:</label>
+      <input type="file" id="memories-file">
+      <button type="submit" class="submit-btn">投稿</button>
+    </form>
+    <ul id="memories-list"></ul>
+  </section>
 
-  <div class="record-card">
-    <img src="images/request_icon.png" alt="イベントリクエスト">
-    <h3>イベントリクエスト</h3>
-    <a href="request_form/index.html" class="card-link">リクエストする</a>
-  </div>
-</section>
+  <!-- ▼ イベントリクエスト -->
+  <h2 class="section-title">イベントリクエスト</h2>
+  <section class="card">
+    <form id="requests-form" onsubmit="event.preventDefault(); postMessage('requests');">
+      <label for="requests-name">名前:</label>
+      <input id="requests-name" required>
+      <label for="requests-text">リクエスト:</label>
+      <textarea id="requests-text" required></textarea>
+      <label for="requests-file">画像:</label>
+      <input type="file" id="requests-file">
+      <button type="submit" class="submit-btn">投稿</button>
+    </form>
+    <ul id="requests-list"></ul>
+  </section>
 
 </main>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+import { getFirestore, collection, addDoc, serverTimestamp, query, orderBy, onSnapshot } 
+  from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
+import { getStorage, ref, uploadBytes, getDownloadURL } 
+  from "https://www.gstatic.com/firebasejs/11.0.1/firebase-storage.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyAMynBwvGhlGbEi6UCHrZjYHNedf9pqXJQ",
+  authDomain: "sunblank-memories.firebaseapp.com",
+  projectId: "sunblank-memories",
+  storageBucket: "sunblank-memories.appspot.com",
+  messagingSenderId: "916551819188",
+  appId: "1:916551819188:web:741bfd8c4534b511e35ce1"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+const storage = getStorage(app);
+
+async function postMessage(type) {
+  const name = document.getElementById(type + "-name").value;
+  const text = document.getElementById(type + "-text").value;
+  const file = document.getElementById(type + "-file").files[0];
+  let imageUrl = "";
+
+  if (file) {
+    const storageRef = ref(storage, type + "/" + file.name);
+    await uploadBytes(storageRef, file);
+    imageUrl = await getDownloadURL(storageRef);
+  }
+
+  await addDoc(collection(db, type), {
+    name, text, imageUrl, createdAt: serverTimestamp()
+  });
+
+  document.getElementById(type + "-form").reset();
+}
+
+function listenMessages(type, listId, isAlbum=false) {
+  const q = query(collection(db, type), orderBy("createdAt","desc"));
+  onSnapshot(q, (snapshot) => {
+    const list = document.getElementById(listId);
+    list.innerHTML = "";
+    snapshot.forEach((doc) => {
+      const data = doc.data();
+      if(isAlbum && data.imageUrl){
+        const img = document.createElement("img");
+        img.src = data.imageUrl;
+        list.appendChild(img);
+      } else {
+        const li = document.createElement("li");
+        li.innerHTML = `<strong>${data.name}</strong>: ${data.text}
+          ${data.imageUrl ? `<br><img src="${data.imageUrl}">` : ""}`;
+        list.appendChild(li);
+      }
+    });
+  });
+}
+
+// 起動時に監視開始
+listenMessages("memories","memories-list");
+listenMessages("requests","requests-list");
+listenMessages("memories","album-grid",true); // アルバム用
+</script>
 
 </body>
 </html>

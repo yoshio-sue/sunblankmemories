@@ -38,99 +38,94 @@
     </a>
   </section>
 
-  <!-- ▼ コンテンツ（アルバム・投稿・リクエスト一覧・投稿） -->
+  <!-- ▼ コンテンツ -->
   <h2 class="section-title">コンテンツ</h2>
-  <section class="grid-4">
-    <!-- アルバム 大 -->
-    <a href="album/index.html" class="card-large">
+  <section class="grid-2-1-2">
+    <!-- 左：アルバムカード -->
+    <a href="album/index.html" class="card-large album">
       <img src="images/album-thumb.jpg" alt="アルバム">
       <p>思い出アルバム</p>
     </a>
-    <!-- アルバム投稿 小 -->
-    <a href="comment/index.html" class="card-small">
-      <p>思い出投稿</p>
-    </a>
-    <!-- リクエスト 大 -->
-    <a href="request/index.html" class="card-large">
-      <img src="images/request-thumb.jpg" alt="リクエスト">
-      <p>リクエスト一覧</p>
-    </a>
-    <!-- リクエスト投稿 小 -->
-    <a href="request/index.html" class="card-small">
-      <p>リクエスト投稿</p>
-    </a>
+
+    <!-- 右：リクエスト掲示板 -->
+    <div class="card-large request">
+      <p class="board-title">リクエスト掲示板</p>
+      <section class="request-board" id="requests-list"></section>
+    </div>
   </section>
 
-  <!-- ▼ リクエスト一覧 -->
-  <h2 class="section-title">リクエスト一覧</h2>
-  <section class="grid-2" id="requests-list"></section>
+  <!-- ▼ 投稿ボタン -->
+  <section class="grid-2">
+    <a href="comment/index.html" class="card-small">
+      <p>思い出を投稿</p>
+    </a>
+    <a href="request/index.html" class="card-small">
+      <p>リクエストを投稿</p>
+    </a>
+  </section>
 
 </main>
 
 <script type="module">
-import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
-import { getFirestore, collection, addDoc, serverTimestamp, query, orderBy, onSnapshot } 
-  from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
-import { getStorage, ref, uploadBytes, getDownloadURL } 
-  from "https://www.gstatic.com/firebasejs/11.0.1/firebase-storage.js";
+  // Firebase SDKの読み込み
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+  import { getFirestore, collection, addDoc, query, orderBy, onSnapshot, updateDoc, doc, serverTimestamp } 
+    from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
-const firebaseConfig = {
-  apiKey: "AIzaSyAMynBwvGhlGbEi6UCHrZjYHNedf9pqXJQ",
-  authDomain: "sunblank-memories.firebaseapp.com",
-  projectId: "sunblank-memories",
-  storageBucket: "sunblank-memories.appspot.com",
-  messagingSenderId: "916551819188",
-  appId: "1:916551819188:web:741bfd8c4534b511e35ce1"
-};
+  // Firebase設定（既存の設定を流用）
+  const firebaseConfig = {
+    apiKey: "YOUR_API_KEY",
+    authDomain: "YOUR_PROJECT.firebaseapp.com",
+    projectId: "YOUR_PROJECT_ID",
+    storageBucket: "YOUR_PROJECT.appspot.com",
+    messagingSenderId: "YOUR_SENDER_ID",
+    appId: "YOUR_APP_ID"
+  };
 
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
-const storage = getStorage(app);
+  // 初期化
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
 
-async function postMessage(type) {
-  const name = document.getElementById(type + "-name").value;
-  const text = document.getElementById(type + "-text").value;
-  const file = document.getElementById(type + "-file").files[0];
-  let imageUrl = "";
+  // ▼ リクエスト一覧のリアルタイム表示
+  const requestsList = document.getElementById("requests-list");
+  const q = query(collection(db, "requests"), orderBy("createdAt", "desc"));
 
-  if (file) {
-    const storageRef = ref(storage, type + "/" + file.name);
-    await uploadBytes(storageRef, file);
-    imageUrl = await getDownloadURL(storageRef);
-  }
-
-  await addDoc(collection(db, type), {
-    name, text, imageUrl, createdAt: serverTimestamp()
-  });
-
-  document.getElementById(type + "-form").reset();
-}
-
-function listenMessages(type, listId, isAlbum=false) {
-  const q = query(collection(db, type), orderBy("createdAt","desc"));
   onSnapshot(q, (snapshot) => {
-    const list = document.getElementById(listId);
-    list.innerHTML = "";
-    snapshot.forEach((doc) => {
-      const data = doc.data();
-      if(isAlbum && data.imageUrl){
-        const img = document.createElement("img");
-        img.src = data.imageUrl;
-        list.appendChild(img);
-      } else {
-        const li = document.createElement("li");
-        li.innerHTML = `<strong>${data.name}</strong>: ${data.text}
-          ${data.imageUrl ? `<br><img src="${data.imageUrl}">` : ""}`;
-        list.appendChild(li);
-      }
+    requestsList.innerHTML = "";
+    snapshot.forEach((docSnap) => {
+      const data = docSnap.data();
+      const card = document.createElement("div");
+      card.className = "card";
+
+      card.innerHTML = `
+        <p><strong>${data.name}</strong>：${data.text}</p>
+        <p>状態：${data.status || "考え中…"}</p>
+        <div class="status-buttons">
+          <button onclick="updateStatus('${docSnap.id}','叶った！')">叶った！</button>
+          <button onclick="updateStatus('${docSnap.id}','準備中！')">準備中！</button>
+          <button onclick="updateStatus('${docSnap.id}','考え中…')">考え中…</button>
+          <button onclick="updateStatus('${docSnap.id}','また今度！')">また今度！</button>
+        </div>
+      `;
+      requestsList.appendChild(card);
     });
   });
-}
 
-// 起動時に監視開始
-listenMessages("memories","memories-list");
-listenMessages("requests","requests-list");
-listenMessages("memories","album-grid",true); // アルバム用
+  // ▼ ステータス更新関数
+  window.updateStatus = async (id, status) => {
+    const ref = doc(db, "requests", id);
+    await updateDoc(ref, { status });
+  };
+
+  // ▼ 投稿処理（必要ならフォームから呼び出し）
+  window.addRequest = async (name, text) => {
+    await addDoc(collection(db, "requests"), {
+      name,
+      text,
+      createdAt: serverTimestamp(),
+      status: "考え中…"
+    });
+  };
 </script>
 
 </body>

@@ -1,4 +1,4 @@
-/* ベース */
+ /* ベース */
 html, body {
   margin: 0;
   padding: 0;
@@ -36,9 +36,7 @@ nav ul li a {
 nav ul li a:hover {
   text-decoration: underline;
 }
-.nav-active {
-  text-decoration: underline;
-}
+.nav-active { text-decoration: underline; }
 
 /* レイアウト */
 .container {
@@ -59,42 +57,28 @@ nav ul li a:hover {
 }
 
 /* 共通カード */
-.card {
-  background: #fff;
+.card-large, .card-small {
   border-radius: 12px;
   padding: 15px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.12);
   text-align: center;
   transition: transform .2s ease;
 }
-.card:hover { transform: scale(1.03); }
-.card img {
+.card-large {
+  background: #fff;
+}
+.card-large:hover { transform: scale(1.02); }
+.card-large img {
   max-width: 100%;
   border-radius: 6px;
   margin-bottom: 10px;
 }
-
-/* グリッド */
-.grid-2 {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 15px;
+.card-small {
+  background: #f4f6f7;
+  font-weight: bold;
+  cursor: pointer;
 }
-.grid-3 {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 15px;
-}
-.grid-4 {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
-}
-@media (max-width: 768px) {
-  .grid-2 { grid-template-columns: 1fr; }
-  .grid-3 { grid-template-columns: 1fr; }
-  .grid-4 { grid-template-columns: 1fr 1fr; }
-}
+.card-small:hover { background: #e0e0e0; }
 
 /* 旅の計画カード */
 .events {
@@ -121,30 +105,38 @@ nav ul li a:hover {
   text-align: center;
 }
 
-/* 大カード */
-.card-large {
-  background: #fff;
-  border-radius: 12px;
-  padding: 15px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
-  text-align: center;
-  transition: transform .2s ease;
+/* 1:2 レイアウト */
+.grid-2-1-2 {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 1rem;
 }
-.card-large:hover { transform: scale(1.03); }
-.card-large img {
-  max-width: 100%;
-  border-radius: 6px;
-  margin-bottom: 10px;
+@media (max-width: 768px) {
+  .grid-2-1-2 { grid-template-columns: 1fr; }
 }
 
-/* 小カード */
-.card-small {
-  background: #f4f6f7;
-  border-radius: 8px;
-  padding: 12px;
-  text-align: center;
+/* 掲示板カード */
+.board-title {
+  font-size: 20px;
   font-weight: bold;
-  cursor: pointer;
-  transition: background .2s ease;
+  margin-bottom: 10px;
 }
-.card-small:hover { background: #e0e0e0; }
+.request-board {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+@media (max-width: 768px) {
+  .request-board { grid-template-columns: 1fr; }
+}
+
+/* 下部投稿ボタン */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 20px;
+}
+@media (max-width: 768px) {
+  .grid-2 { grid-template-columns: 1fr; }
+}

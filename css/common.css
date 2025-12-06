@@ -1,0 +1,185 @@
+/* ベース */
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #f7f7f7;
+  font-family: "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ヘッダー */
+header {
+  background: #004a99;
+  color: #fff;
+  text-align: center;
+  padding: 20px 10px;
+}
+
+/* ナビバー */
+nav {
+  background: #003366;
+  padding: 10px;
+}
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap; /* リンクが増えたとき折返し可能 */
+}
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+nav ul li a:hover {
+  text-decoration: underline;
+}
+/* 現在ページのリンク強調 */
+.nav-active {
+  text-decoration: underline;
+}
+
+/* アクセシビリティ: フォーカス可視化 */
+a:focus, button:focus {
+  outline: 3px solid #99c2ff;
+  outline-offset: 2px;
+}
+
+/* レイアウト */
+.container {
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 0 15px;
+}
+
+/* セクションタイトル */
+.section-title {
+  background: #004a99;
+  color: #fff;
+  padding: 12px;
+  text-align: left;
+  margin: 20px 0;
+  border-radius: 6px;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+/* 共通カード */
+.card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  margin-bottom: 30px;
+}
+
+/* グリッド */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+.grid-auto {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+}
+/* 小画面では1カラムに */
+@media (max-width: 640px) {
+  .grid-2 { grid-template-columns: 1fr; }
+}
+
+/* フォーム */
+form select, form input, form textarea {
+  width: 100%;
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+label {
+  display: block;
+  margin-top: 0.6rem;
+  font-weight: 600;
+}
+
+/* ボタン（補助／メイン） */
+.add-btn {
+  background: #ccc;
+  color: #333;
+  font-size: 0.9rem;
+  padding: 0.4rem 0.8rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.add-btn:hover { background: #bbb; }
+
+.submit-btn {
+  background: #3498db;
+  color: #fff;
+  font-size: 1rem;
+  padding: 0.7rem 1.2rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 12px;
+  width: 100%;
+}
+.submit-btn:hover { background: #2980b9; }
+/* 無効状態 */
+.submit-btn:disabled {
+  background: #9cc5e6;
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+
+/* リスト */
+ul { list-style: none; padding: 0; }
+li {
+  background: #f4f6f7;
+  margin: 0.5rem 0;
+  padding: 0.8rem;
+  border-radius: 6px;
+}
+li img {
+  margin-top: 0.5rem;
+  max-width: 200px;
+  border-radius: 4px;
+}
+
+/* アルバム画像 */
+.album img {
+  width: 100%;
+  border-radius: 6px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+
+/* イベントカード（トップページ） */
+.event {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  transition: transform .2s ease;
+}
+.event:hover { transform: scale(1.03); }
+.event img { width: 100%; height: auto; display: block; }
+.event span {
+  display: block;
+  padding: 15px;
+  background: #006edc;
+  color: #fff;
+  font-size: 18px;
+  text-align: center;
+}
+
+/* モーション配慮 */
+@media (prefers-reduced-motion: reduce) {
+  .event { transition: none; }
+  .event:hover { transform: none; }
+}

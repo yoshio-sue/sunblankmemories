@@ -1,187 +1,44 @@
-/* ベース */
-html, body {
-  margin: 0;
-  padding: 0;
-  background: #f7f7f7;
-  font-family: "Segoe UI", sans-serif;
-}
-
-/* ヘッダー */
-header {
-  background: #004a99;
-  color: #fff;
-  text-align: center;
-  padding: 20px 10px;
-}
-
-/* ナビバー */
-nav {
-  background: #003366;
-  padding: 10px;
-}
-nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-nav ul li a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: bold;
-}
-nav ul li a:hover {
-  text-decoration: underline;
-}
-.nav-active { text-decoration: underline; }
-
-/* レイアウト */
-.container {
-  max-width: 1000px;
-  margin: 30px auto;
-  padding: 0 15px;
-}
-
-/* セクションタイトル */
-.section-title {
-  background: #004a99;
-  color: #fff;
+/* 基本カード */
+.card {
+  border: 1px solid #ddd;
+  border-radius: 6px;
   padding: 12px;
-  margin: 20px 0;
-  border-radius: 6px;
-  font-size: 22px;
-  font-weight: bold;
-}
-
-/* 共通カード */
-.card-large, .card-small {
-  border-radius: 12px;
-  padding: 15px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
-  text-align: center;
-  transition: transform .2s ease;
-}
-.card-large {
+  margin: 8px 0;
   background: #fff;
 }
-.card-large:hover { transform: scale(1.02); }
-.card-large img {
-  max-width: 100%;
+
+/* 操作バー */
+.card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+/* ボタン共通 */
+.btn {
+  min-width: 100px;
+  padding: 8px 12px;
+  font-size: 14px;
   border-radius: 6px;
-  margin-bottom: 10px;
-}
-.card-small {
-  background: #f4f6f7;
-  font-weight: bold;
-  cursor: pointer;
-}
-.card-small:hover { background: #e0e0e0; }
-
-/* 旅の計画カード */
-.events {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1rem;
-}
-.event {
-  background: #fff;
-  border-radius: 12px;
-  overflow: hidden;
-  text-decoration: none;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
-  transition: transform .2s ease;
-}
-.event:hover { transform: scale(1.03); }
-.event img { width: 100%; height: auto; display: block; }
-.event span {
-  display: block;
-  padding: 15px;
-  background: #006edc;
-  color: #fff;
-  font-size: 18px;
-  text-align: center;
-}
-
-/* 1:2 レイアウト */
-.grid-2-1-2 {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 1rem;
-}
-@media (max-width: 768px) {
-  .grid-2-1-2 { grid-template-columns: 1fr; }
-}
-
-/* 掲示板カード */
-.board-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr; /* コメント・リクエスト・ギャラリー追加の3つ */
-  gap: 20px;
-}
-@media (max-width: 1024px) {
-  .board-container { grid-template-columns: 1fr 1fr; }
-}
-@media (max-width: 768px) {
-  .board-container { grid-template-columns: 1fr; }
-}
-
-.board-banner {
-  width: 100%;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 6px;
-  margin-bottom: 10px;
-}
-
-.board-title {
-  font-size: 20px;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-.memories-board .card,
-.request-board .card,
-.gallery-request .card {
-  background: #fff;
-  padding: 10px;
-  margin-bottom: 10px;
-  border-radius: 6px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-/* 投稿フォーム */
-form {
-  margin-bottom: 15px;
-}
-form input, form textarea {
-  width: 100%;
-  margin-bottom: 8px;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-}
-form button {
-  background: #004a99;
-  color: #fff;
   border: none;
-  padding: 10px 15px;
-  border-radius: 6px;
   cursor: pointer;
 }
-form button:hover {
-  background: #006edc;
+
+.btn-primary { background: #004a99; color: #fff; }
+.btn-secondary { background: #666; color: #fff; }
+.btn-danger { background: #cc0000; color: #fff; }
+
+/* 状態ラベル */
+.status {
+  font-weight: bold;
+  padding: 4px 8px;
+  border-radius: 4px;
+  display: inline-block;
+  color: #fff;
 }
 
-/* 下部投稿ボタン */
-.grid-2 {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-  margin-top: 20px;
-}
-@media (max-width: 768px) {
-  .grid-2 { grid-template-columns: 1fr; }
-}
+.status-happy { background-color: #ff99cc; }   /* 叶った！ → ピンク */
+.status-plan  { background-color: #66cc66; }   /* 計画中 → グリーン */
+.status-think { background-color: #3399ff; }   /* 検討中 → ブルー */
+.status-later { background-color: #ff9933; }   /* また今度！ → オレンジ */

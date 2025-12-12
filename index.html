@@ -12,15 +12,6 @@
   <h1>SUNBLANK｜memories</h1>
 </header>
 
-<nav>
-  <ul>
-    <li><a href="memory_gallery/index.html">フォトギャラリー</a></li>
-    <li><a href="#memories-list">コメント</a></li>
-    <li><a href="#requests-list">リクエスト</a></li>
-    <li><a href="#galleryRequestsList">ギャラリー追加</a></li>
-  </ul>
-</nav>
-
 <main class="container">
 
   <!-- ▼ 旅の計画 -->
@@ -43,13 +34,24 @@
   <!-- ▼ コンテンツ -->
   <h2 class="section-title">コンテンツ</h2>
   <section class="grid-2-1-2">
-    <!-- 左：フォトギャラリーカード -->
-    <a href="memory_gallery/index.html" class="card-large album">
+    <!-- 左：フォトギャラリーカード（リクエスト統合） -->
+    <div class="card-large album">
       <img src="images/gallery-banner.jpg" alt="フォトギャラリー" class="board-banner">
       <p>📸 新しく追加！フォトギャラリーはこちら</p>
-    </a>
+      <a href="memory_gallery/index.html" class="btn">ギャラリーを見る</a>
 
-    <!-- 右：掲示板3つ -->
+      <!-- ▼ ギャラリー追加リクエストフォーム -->
+      <form id="galleryRequestForm">
+        <input type="text" id="galleryRequestName" placeholder="名前" required>
+        <textarea id="galleryRequestText" placeholder="追加してほしい写真の内容" required></textarea>
+        <button type="submit">投稿</button>
+      </form>
+
+      <!-- ▼ リクエスト一覧 -->
+      <section id="galleryRequestsList"></section>
+    </div>
+
+    <!-- 右：掲示板2つ -->
     <div class="board-container">
       <!-- 思い出コメント掲示板 -->
       <div class="card-large memories">
@@ -73,18 +75,6 @@
           <button type="submit">投稿</button>
         </form>
         <section class="request-board" id="requests-list"></section>
-      </div>
-
-      <!-- フォトギャラリー追加リクエスト掲示板 -->
-      <div class="card-large gallery-request">
-        <img src="images/gallery-banner.jpg" alt="フォトギャラリー追加" class="board-banner">
-        <p class="board-title">フォトギャラリー追加リクエスト</p>
-        <form id="galleryRequestForm">
-          <input type="text" id="galleryRequestName" placeholder="名前" required>
-          <textarea id="galleryRequestText" placeholder="追加してほしい写真の内容" required></textarea>
-          <button type="submit">投稿</button>
-        </form>
-        <section id="galleryRequestsList"></section>
       </div>
     </div>
   </section>

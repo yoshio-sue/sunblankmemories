@@ -132,16 +132,147 @@
 
   // ▼ リクエスト投稿処理
   const requestForm = document.getElementById("requestForm");
+  <!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SUNBLANK｜memories</title>
+<link rel="stylesheet" href="css/common.css">
+</head>
+<body>
+
+<header>
+  <h1>SUNBLANK｜memories</h1>
+</header>
+<nav>
+  <ul>
+    <li><a href="memory_gallery/index.html">フォトギャラリー</a></li>
+    <li><a href="#memories-list">コメント</a></li>
+    <li><a href="#requests-list">リクエスト</a></li>
+    <li><a href="#galleryRequestsList">ギャラリー追加</a></li>
+  </ul>
+</nav>
+
+<main class="container">
+
+  <!-- ▼ 旅の計画 -->
+  <h2 class="section-title">旅の計画</h2>
+  <section class="events">
+    <a href="kusatsu2026/index.html" class="event">
+      <img src="kusatsu2026/thumb.jpg" alt="草津温泉">
+      <span>草津温泉旅行（案）</span>
+    </a>
+    <a href="arima2026/index.html" class="event">
+      <img src="arima2026/thumb.jpg" alt="有馬温泉">
+      <span>有馬温泉旅行（案）</span>
+    </a>
+    <a href="katsunuma2026/index.html" class="event">
+      <img src="katsunuma2026/thumb.jpg" alt="ぶどうの丘">
+      <span>山梨県勝沼市ぶどうの丘旅（案）</span>
+    </a>
+  </section>
+
+  <!-- ▼ コンテンツ -->
+  <h2 class="section-title">コンテンツ</h2>
+  <section class="grid-2-1-2">
+    <!-- 左：フォトギャラリーカード -->
+    <a href="memory_gallery/index.html" class="card-large album">
+      <img src="images/gallery-banner.jpg" alt="フォトギャラリー" class="board-banner">
+      <p>📸 新しく追加！フォトギャラリーはこちら</p>
+    </a>
+
+    <!-- 右：掲示板3つ -->
+    <div class="board-container">
+      <!-- 思い出コメント掲示板 -->
+      <div class="card-large memories">
+        <img src="images/memories-banner.jpg" alt="思い出コメント" class="board-banner">
+        <p class="board-title">思い出コメント掲示板</p>
+        <form id="memoriesForm">
+          <input type="text" id="memoriesName" placeholder="名前" required>
+          <textarea id="memoriesText" placeholder="コメント内容" required></textarea>
+          <button type="submit">投稿</button>
+        </form>
+        <section class="memories-board" id="memories-list"></section>
+      </div>
+
+      <!-- リクエスト掲示板 -->
+      <div class="card-large request">
+        <img src="images/request-banner.jpg" alt="リクエスト" class="board-banner">
+        <p class="board-title">リクエスト掲示板</p>
+        <form id="requestForm">
+          <input type="text" id="requestName" placeholder="名前" required>
+          <textarea id="requestText" placeholder="リクエスト内容" required></textarea>
+          <button type="submit">投稿</button>
+        </form>
+        <section class="request-board" id="requests-list"></section>
+      </div>
+
+      <!-- フォトギャラリー追加リクエスト掲示板 -->
+      <div class="card-large gallery-request">
+        <img src="images/gallery-banner.jpg" alt="フォトギャラリー追加" class="board-banner">
+        <p class="board-title">フォトギャラリー追加リクエスト</p>
+        <form id="galleryRequestForm">
+          <input type="text" id="galleryRequestName" placeholder="名前" required>
+          <textarea id="galleryRequestText" placeholder="追加してほしい写真の内容" required></textarea>
+          <button type="submit">投稿</button>
+        </form>
+        <section id="galleryRequestsList"></section>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+  import { getFirestore, collection, addDoc, query, orderBy, onSnapshot, updateDoc, doc, serverTimestamp } 
+    from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyAMynBwvGhlGbEi6UCHrZjYHNedf9pqXJQ",
+    authDomain: "sunblank-memories.firebaseapp.com",
+    projectId: "sunblank-memories",
+    storageBucket: "sunblank-memories.appspot.com",
+    messagingSenderId: "916551819188",
+    appId: "1:916551819188:web:741bfd8c4534b511e35ce1"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+
+  // ▼ 思い出コメント投稿処理
+  const memoriesForm = document.getElementById("memoriesForm");
+  memoriesForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const name = document.getElementById("memoriesName").value;
+    const text = document.getElementById("memoriesText").value;
+    await addDoc(collection(db, "memories"), { name, text, createdAt: serverTimestamp() });
+    memoriesForm.reset();
+  });
+
+  // ▼ 思い出コメント一覧表示
+  const memoriesList = document.getElementById("memories-list");
+  const qMemories = query(collection(db, "memories"), orderBy("createdAt", "desc"));
+  onSnapshot(qMemories, (snapshot) => {
+    memoriesList.innerHTML = "";
+    snapshot.forEach((docSnap) => {
+      const data = docSnap.data();
+      const card = document.createElement("div");
+      card.className = "card";
+      let dateText = data.createdAt ? data.createdAt.toDate().toLocaleString("ja-JP") : "";
+      card.innerHTML = `<p><strong>${data.name}</strong>：${data.text}</p>${dateText ? `<small>投稿日時: ${dateText}</small>` : ""}`;
+      memoriesList.appendChild(card);
+    });
+  });
+
+  // ▼ リクエスト投稿処理
+  const requestForm = document.getElementById("requestForm");
   requestForm.addEventListener("submit", async (e) => {
     e.preventDefault();
     const name = document.getElementById("requestName").value;
     const text = document.getElementById("requestText").value;
-    await addDoc(collection(db, "requests"), {
-      name,
-      text,
-      createdAt: serverTimestamp(),
-      status: "考え中…"
-    });
+    await addDoc(collection(db, "requests"), { name, text, createdAt: serverTimestamp(), status: "考え中…" });
     requestForm.reset();
   });
 
@@ -173,7 +304,11 @@
     const ref = doc(db, "requests", id);
     await updateDoc(ref, { status });
   };
-</script>
 
-</body>
-</html>
+  // ▼ フォトギャラリー追加リクエスト投稿処理
+  const galleryRequestForm = document.getElementById("galleryRequestForm");
+  galleryRequestForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const name = document.getElementById("galleryRequestName").value;
+    const text = document.getElementById("galleryRequestText").value;
+    await addDoc(collection

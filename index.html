@@ -5,6 +5,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SUNBLANK｜memories</title>
 <link rel="stylesheet" href="css/common.css">
+<style>
+  .board-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  @media (max-width: 768px) {
+    .board-container {
+      grid-template-columns: 1fr;
+    }
+  }
+  .card-list .card {
+    background: #fff;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+</style>
 </head>
 <body>
 
@@ -13,9 +32,9 @@
 </header>
 <nav>
   <ul>
-    <li><a href="album/index.html">アルバム</a></li>
-    <li><a href="comment/index.html">コメント</a></li>
-    <li><a href="request/index.html">リクエスト</a></li>
+    <li><a href="memory_gallery/index.html">フォトギャラリー</a></li>
+    <li><a href="#memories-list">コメント</a></li>
+    <li><a href="#requests-list">リクエスト</a></li>
   </ul>
 </nav>
 
@@ -41,27 +60,26 @@
   <!-- ▼ コンテンツ -->
   <h2 class="section-title">コンテンツ</h2>
   <section class="grid-2-1-2">
-    <!-- 左：アルバムカード -->
-    <a href="album/index.html" class="card-large album">
+    <!-- 左：フォトギャラリーカード -->
+    <a href="memory_gallery/index.html" class="card-large album">
       <img src="images/album-thumb.jpg" alt="アルバム">
-      <p>思い出アルバム</p>
+      <p>思い出フォトギャラリー</p>
     </a>
 
-    <!-- 右：リクエスト掲示板 -->
-    <div class="card-large request">
-      <p class="board-title">リクエスト掲示板</p>
-      <section class="request-board" id="requests-list"></section>
+    <!-- 右：掲示板2つ -->
+    <div class="board-container">
+      <!-- 思い出コメント掲示板 -->
+      <div class="card-large memories">
+        <p class="board-title">思い出コメント掲示板</p>
+        <section class="memories-board" id="memories-list"></section>
+      </div>
+
+      <!-- リクエスト掲示板 -->
+      <div class="card-large request">
+        <p class="board-title">リクエスト掲示板</p>
+        <section class="request-board" id="requests-list"></section>
+      </div>
     </div>
-  </section>
-
-  <!-- ▼ 投稿ボタン -->
-  <section class="grid-2">
-    <a href="comment/index.html" class="card-small">
-      <p>思い出を投稿</p>
-    </a>
-    <a href="request/index.html" class="card-small">
-      <p>リクエストを投稿</p>
-    </a>
   </section>
 
 </main>
@@ -69,10 +87,8 @@
 <script type="module">
   // Firebase SDKの読み込み
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-  import { getFirestore, collection, addDoc, query, orderBy, onSnapshot, updateDoc, doc, serverTimestamp } 
+  import { getFirestore, collection, query, orderBy, onSnapshot, updateDoc, doc, serverTimestamp, addDoc } 
     from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
-  import { getStorage, ref, uploadBytes, getDownloadURL } 
-    from "https://www.gstatic.com/firebasejs/10.7.1/firebase-storage.js";
 
   // Firebase設定
   const firebaseConfig = {
@@ -87,13 +103,36 @@
   // 初期化
   const app = initializeApp(firebaseConfig);
   const db = getFirestore(app);
-  const storage = getStorage(app);
+
+  // ▼ 思い出コメント一覧のリアルタイム表示
+  const memoriesList = document.getElementById("memories-list");
+  const qMemories = query(collection(db, "memories"), orderBy("createdAt", "desc"));
+
+  onSnapshot(qMemories, (snapshot) => {
+    memoriesList.innerHTML = "";
+    snapshot.forEach((docSnap) => {
+      const data = docSnap.data();
+      const card = document.createElement("div");
+      card.className = "card";
+
+      let dateText = "";
+      if (data.createdAt) {
+        dateText = data.createdAt.toDate().toLocaleString("ja-JP");
+      }
+
+      card.innerHTML = `
+        <p><strong>${data.name}</strong>：${data.text}</p>
+        ${dateText ? `<small>投稿日時: ${dateText}</small>` : ""}
+      `;
+      memoriesList.appendChild(card);
+    });
+  });
 
   // ▼ リクエスト一覧のリアルタイム表示
   const requestsList = document.getElementById("requests-list");
-  const q = query(collection(db, "requests"), orderBy("createdAt", "desc"));
+  const qRequests = query(collection(db, "requests"), orderBy("createdAt", "desc"));
 
-  onSnapshot(q, (snapshot) => {
+  onSnapshot(qRequests, (snapshot) => {
     requestsList.innerHTML = "";
     snapshot.forEach((docSnap) => {
       const data = docSnap.data();
@@ -102,7 +141,6 @@
 
       card.innerHTML = `
         <p><strong>${data.name}</strong>：${data.text}</p>
-        ${data.imageUrl ? `<img src="${data.imageUrl}" style="max-width:100%;border-radius:6px;margin:8px 0;">` : ""}
         <p>状態：${data.status || "考え中…"}</p>
         <div class="status-buttons">
           <button onclick="updateStatus('${docSnap.id}','叶った！')">叶った！</button>
@@ -120,35 +158,6 @@
     const ref = doc(db, "requests", id);
     await updateDoc(ref, { status });
   };
-
-  // ▼ 投稿処理（フォームから呼び出し）
-  const form = document.getElementById("requestForm");
-  if (form) {
-    form.addEventListener("submit", async (e) => {
-      e.preventDefault();
-      const name = document.getElementById("name").value;
-      const text = document.getElementById("text").value;
-      const file = document.getElementById("image").files[0];
-
-      let imageUrl = "";
-      if (file) {
-        const fileRef = ref(storage, `requests/${Date.now()}_${file.name}`);
-        await uploadBytes(fileRef, file);
-        imageUrl = await getDownloadURL(fileRef);
-      }
-
-      await addDoc(collection(db, "requests"), {
-        name,
-        text,
-        imageUrl,
-        createdAt: serverTimestamp(),
-        status: "考え中…"
-      });
-
-      alert("投稿しました！");
-      form.reset();
-    });
-  }
 </script>
 
 </body>

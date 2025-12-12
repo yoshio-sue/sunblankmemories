@@ -1,4 +1,4 @@
- /* ベース */
+/* ベース */
 html, body {
   margin: 0;
   padding: 0;
@@ -116,18 +116,59 @@ nav ul li a:hover {
 }
 
 /* 掲示板カード */
+.board-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+@media (max-width: 768px) {
+  .board-container { grid-template-columns: 1fr; }
+}
+
+.board-banner {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
 .board-title {
   font-size: 20px;
   font-weight: bold;
   margin-bottom: 10px;
 }
-.request-board {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
+
+.memories-board .card,
+.request-board .card {
+  background: #fff;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
-@media (max-width: 768px) {
-  .request-board { grid-template-columns: 1fr; }
+
+/* 投稿フォーム */
+form {
+  margin-bottom: 15px;
+}
+form input, form textarea {
+  width: 100%;
+  margin-bottom: 8px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+form button {
+  background: #004a99;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+form button:hover {
+  background: #006edc;
 }
 
 /* 下部投稿ボタン */

@@ -5,25 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SUNBLANK｜memories</title>
 <link rel="stylesheet" href="css/common.css">
-<style>
-  .board-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-  }
-  @media (max-width: 768px) {
-    .board-container {
-      grid-template-columns: 1fr;
-    }
-  }
-  .card-list .card {
-    background: #fff;
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 6px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  }
-</style>
+<link rel="stylesheet" href="css/boards.css">
 </head>
 <body>
 
@@ -62,14 +44,15 @@
   <section class="grid-2-1-2">
     <!-- 左：フォトギャラリーカード -->
     <a href="memory_gallery/index.html" class="card-large album">
-      <img src="images/album-thumb.jpg" alt="アルバム">
-      <p>思い出フォトギャラリー</p>
+      <img src="images/gallery-banner.jpg" alt="フォトギャラリー" class="board-banner">
+      <p>📸 新しく追加！フォトギャラリーはこちら</p>
     </a>
 
     <!-- 右：掲示板2つ -->
     <div class="board-container">
       <!-- 思い出コメント掲示板 -->
       <div class="card-large memories">
+        <img src="images/memories-banner.jpg" alt="思い出コメント" class="board-banner">
         <p class="board-title">思い出コメント掲示板</p>
         <form id="memoriesForm">
           <input type="text" id="memoriesName" placeholder="名前" required>
@@ -81,6 +64,7 @@
 
       <!-- リクエスト掲示板 -->
       <div class="card-large request">
+        <img src="images/request-banner.jpg" alt="リクエスト" class="board-banner">
         <p class="board-title">リクエスト掲示板</p>
         <form id="requestForm">
           <input type="text" id="requestName" placeholder="名前" required>

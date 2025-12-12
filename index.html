@@ -71,12 +71,22 @@
       <!-- 思い出コメント掲示板 -->
       <div class="card-large memories">
         <p class="board-title">思い出コメント掲示板</p>
+        <form id="memoriesForm">
+          <input type="text" id="memoriesName" placeholder="名前" required>
+          <textarea id="memoriesText" placeholder="コメント内容" required></textarea>
+          <button type="submit">投稿</button>
+        </form>
         <section class="memories-board" id="memories-list"></section>
       </div>
 
       <!-- リクエスト掲示板 -->
       <div class="card-large request">
         <p class="board-title">リクエスト掲示板</p>
+        <form id="requestForm">
+          <input type="text" id="requestName" placeholder="名前" required>
+          <textarea id="requestText" placeholder="リクエスト内容" required></textarea>
+          <button type="submit">投稿</button>
+        </form>
         <section class="request-board" id="requests-list"></section>
       </div>
     </div>
@@ -85,12 +95,10 @@
 </main>
 
 <script type="module">
-  // Firebase SDKの読み込み
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-  import { getFirestore, collection, query, orderBy, onSnapshot, updateDoc, doc, serverTimestamp, addDoc } 
+  import { getFirestore, collection, addDoc, query, orderBy, onSnapshot, updateDoc, doc, serverTimestamp } 
     from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
-  // Firebase設定
   const firebaseConfig = {
     apiKey: "AIzaSyAMynBwvGhlGbEi6UCHrZjYHNedf9pqXJQ",
     authDomain: "sunblank-memories.firebaseapp.com",
@@ -100,26 +108,36 @@
     appId: "1:916551819188:web:741bfd8c4534b511e35ce1"
   };
 
-  // 初期化
   const app = initializeApp(firebaseConfig);
   const db = getFirestore(app);
 
-  // ▼ 思い出コメント一覧のリアルタイム表示
+  // ▼ 思い出コメント投稿処理
+  const memoriesForm = document.getElementById("memoriesForm");
+  memoriesForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const name = document.getElementById("memoriesName").value;
+    const text = document.getElementById("memoriesText").value;
+    await addDoc(collection(db, "memories"), {
+      name,
+      text,
+      createdAt: serverTimestamp()
+    });
+    memoriesForm.reset();
+  });
+
+  // ▼ 思い出コメント一覧表示
   const memoriesList = document.getElementById("memories-list");
   const qMemories = query(collection(db, "memories"), orderBy("createdAt", "desc"));
-
   onSnapshot(qMemories, (snapshot) => {
     memoriesList.innerHTML = "";
     snapshot.forEach((docSnap) => {
       const data = docSnap.data();
       const card = document.createElement("div");
       card.className = "card";
-
       let dateText = "";
       if (data.createdAt) {
         dateText = data.createdAt.toDate().toLocaleString("ja-JP");
       }
-
       card.innerHTML = `
         <p><strong>${data.name}</strong>：${data.text}</p>
         ${dateText ? `<small>投稿日時: ${dateText}</small>` : ""}
@@ -128,17 +146,30 @@
     });
   });
 
-  // ▼ リクエスト一覧のリアルタイム表示
+  // ▼ リクエスト投稿処理
+  const requestForm = document.getElementById("requestForm");
+  requestForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const name = document.getElementById("requestName").value;
+    const text = document.getElementById("requestText").value;
+    await addDoc(collection(db, "requests"), {
+      name,
+      text,
+      createdAt: serverTimestamp(),
+      status: "考え中…"
+    });
+    requestForm.reset();
+  });
+
+  // ▼ リクエスト一覧表示
   const requestsList = document.getElementById("requests-list");
   const qRequests = query(collection(db, "requests"), orderBy("createdAt", "desc"));
-
   onSnapshot(qRequests, (snapshot) => {
     requestsList.innerHTML = "";
     snapshot.forEach((docSnap) => {
       const data = docSnap.data();
       const card = document.createElement("div");
       card.className = "card";
-
       card.innerHTML = `
         <p><strong>${data.name}</strong>：${data.text}</p>
         <p>状態：${data.status || "考え中…"}</p>
